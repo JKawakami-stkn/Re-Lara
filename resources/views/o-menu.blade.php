@@ -2,61 +2,37 @@
 
 @section('content')
 
+
+
+
+
+
+<div class="container">
+
 <!-- パンくずリスト -->
 <nav aria-label="breadcrumb">
-    <ol class="breadcrumb bg-light">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Sample</li>
+    <ol class="breadcrumb" style="background-color:white; border-bottom:solid 1px #e3e3e3; padding:8px;">
+        <li class="breadcrumb-item"><a href="{{ route('menu') }}">メニュー</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('o-list') }}">販売会確認</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ $oname }}</li>
     </ol>
 </nav>
 
-<div class="container">
-    <!-- ページタイトル -->
-    <h1 class="jumbotron-heading" style="border-bottom: solid 1px;">TEST</h1>
+<div class="card _border-0 mb-4">
+  <div class="card-body">
+    <h4>{{ $oname }}の詳細</h4>
+    <br>
+    <p>　期日：</p>
+    <p>　対象：</p>
+  </div>
 </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col">
-            One of three columns
-        </div>
-        <div class="col">
-            One of three columns
-        </div>
-    </div>
-
-    <!-- アラート -->
-    <div class="alert alert-success" role="alert">
-        A simple success alert—check it out!
-    </div>
-
-    <div class="alert alert-danger" role="alert">
-        A simple info alert—check it out!
-    </div>
+<div class="row">
 
 </div>
+    <div class="row mb-4">
 
-<!-- カード -->
-<div class="container" >
-    <div class="card">
-        <h5 class="card-header text-center">
-            販売会名
-        </h5>
-        <div class="card-body">
-            <h5 class="card-title"></h5>
-            <p class="card-text">
-                期　日：
-            </p>
-            <a href="#" class="btn btn-outline-primary" style="width:100%;">選択する</a>
-        </div>
-    </div>
-</div>
-
-
-<!-- 画像のみカード -->
-<div class="container" >
-    <div class="row">
-
+        <!-- 画像のみカード -->
         <div class="col-4">
             <div class="card card-body">
                 <img class="card-img" src="{{ asset('img/purchase.png') }}" data-toggle="tooltip" title="購入">
