@@ -30,12 +30,15 @@
         <!-- 画像のみカード -->
         <div class="col-4">
             <div class="card card-body">
-                <img class="card-img" src="{{ asset('img/purchase.png') }}" data-toggle="tooltip" title="購入">
+                <a href="{{ route('menu') }}">
+                    <img class="card-img" src="{{ asset('img/purchase.png') }}" data-toggle="tooltip" title="購入">
+                </a>
             </div>
         </div>
 
         <div class="col-4">
             <div class="card card-body">
+
                 <img class="card-img" src="{{ asset('img/check.png') }}" data-toggle="tooltip" title="検品">
             </div>
         </div>
