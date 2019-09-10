@@ -13,9 +13,22 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Route::get('/sample', function () {
     return view('sample');
-})->name('sample');;
+})->name('sample');
+
+Route::get('/menu', function () {
+    return view('menu');
+})->name('menu');
+
+Route::get('/menu/olist', function () {
+    return view('o-list');
+})->name('o-list');
+
+Route::get('/menu/olist/{oname}', function ($oname) {
+    return view('o-menu', ["oname"=>$oname]);
+})->name('o-menu');
+
 
