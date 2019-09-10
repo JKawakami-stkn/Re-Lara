@@ -6,7 +6,7 @@
 
     <!-- パンくずリスト -->
     <nav aria-label="breadcrumb">
-        <ol class="breadcrumb" style="background-color:white; border-bottom:solid 1px #e3e3e3; padding:8px;">
+        <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('menu') }}">メニュー</a></li>
             <li class="breadcrumb-item active" aria-current="page">販売会確認</li>
         </ol>
@@ -22,7 +22,7 @@
             <p class="card-text">
                 期　日：
             </p>
-            <a href="{{ route('o-menu', 'テスト') }}" class="btn btn-primary btn-block" style="width:100%;">選択する</a>
+            <a href="{{ route('o-menu', 'テスト販売会') }}" class="btn btn-primary btn-block" style="width:100%;">選択する</a>
         </div>
     </div>
 </div>
