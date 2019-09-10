@@ -31,4 +31,8 @@ Route::get('/menu/olist/{oname}', function ($oname) {
     return view('o-menu', ["oname"=>$oname]);
 })->name('o-menu');
 
+Route::get('/contacts', 'ContactController@show');
+Route::post('/contacts', 'ContactController@ajax')->name('contacts.ajax');
+
+
 
