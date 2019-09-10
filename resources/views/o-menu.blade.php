@@ -2,16 +2,11 @@
 
 @section('content')
 
-
-
-
-
-
 <div class="container">
 
 <!-- パンくずリスト -->
 <nav aria-label="breadcrumb">
-    <ol class="breadcrumb" style="background-color:white; border-bottom:solid 1px #e3e3e3; padding:8px;">
+    <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('menu') }}">メニュー</a></li>
         <li class="breadcrumb-item"><a href="{{ route('o-list') }}">販売会確認</a></li>
         <li class="breadcrumb-item active" aria-current="page">{{ $oname }}</li>

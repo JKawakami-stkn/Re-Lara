@@ -6,7 +6,7 @@
 
     <!-- パンくずリスト -->
     <nav aria-label="breadcrumb">
-        <ol class="breadcrumb" style="background-color:white; border-bottom:solid 1px #e3e3e3; padding:8px;">
+        <ol class="breadcrumb">
             <li class="breadcrumb-item active" aria-current="page">メニュー</li>
         </ol>
     </nav>
