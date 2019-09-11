@@ -23,13 +23,13 @@ Route::get('/menu', function () {
     return view('menu');
 })->name('menu');
 
-Route::get('/menu/olist', function () {
-    return view('o-list');
-})->name('o-list');
+Route::get('/menu/sales', function () {
+    return view('sales-list');
+})->name('sales-list');
 
-Route::get('/menu/olist/{oname}', function ($oname) {
-    return view('o-menu', ["oname"=>$oname]);
-})->name('o-menu');
+Route::get('/menu/olist/{sale_name}', function ($sale_name) {
+    return view('sale-menu', ["sale_name"=>$sale_name]);
+})->name('sale-menu');
 
 Route::get('/contacts', 'ContactController@show');
 Route::post('/contacts', 'ContactController@ajax')->name('contacts.ajax');

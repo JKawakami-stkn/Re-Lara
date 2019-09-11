@@ -12,10 +12,30 @@
     </nav>
 
     <!-- カード -->
-    <div class="card">
+    <div class="card mb-4">
         <div class="card-body">
-            <a href="{{ route('o-list') }}">
-                <h5 class="card-title">販売会確認</h5>
+            <a href="{{ route('sales-list') }}">
+                <h5 class="card-title">物品販売</h5>
+                <p class="card-text">かくにんできるよ！！</p>
+            </a>
+        </div>
+    </div>
+
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <a href="">
+                <h5 class="card-title">商品</h5>
+                <p class="card-text">かくにんできるよ！！</p>
+            </a>
+        </div>
+    </div>
+
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <a href="">
+                <h5 class="card-title">取引先</h5>
                 <p class="card-text">かくにんできるよ！！</p>
             </a>
         </div>
