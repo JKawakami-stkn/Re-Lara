@@ -2,7 +2,7 @@
 
 @section('content')
 
-<button type="button" class="btn btn-primary rounded-circle p-0 position-fixed" style="width:4rem;height:4rem; bottom:55px; right:20px; z-index:30;">＋</button>
+<button type="button" class="btn btn-primary rounded-circle p-0 position-fixed border-white" style="width:4rem;height:4rem; bottom:55px; right:20px; z-index:30;">＋</button>
 
 <div class="container" >
 

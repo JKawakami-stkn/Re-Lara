@@ -8,7 +8,7 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('menu') }}">メニュー</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('sales-list') }}">販売会確認</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('sales-list') }}">物品販売</a></li>
         <li class="breadcrumb-item active" aria-current="page">{{ $sale_name }}</li>
     </ol>
 </nav>
