@@ -31,9 +31,17 @@ Route::get('/menu/sales/{sale_name}', function ($sale_name) {
     return view('sale-menu', ["sale_name"=>$sale_name]);
 })->name('sale-menu');
 
+Route::get('/menu/sales/{sale_name}/purchase', function ($sale_name) {
+    return view('purchase', ["sale_name" => $sale_name]);
+})->name('sale-purchase');
+
+
 Route::get('/menu/supplies', function () {
     return view('supplies-list');
 })->name('supplies-list');
+
+
+
 
 Route::get('/contacts', 'ContactController@show');
 Route::post('/contacts', 'ContactController@ajax')->name('contacts.ajax');

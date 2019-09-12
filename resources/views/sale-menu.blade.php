@@ -30,7 +30,7 @@
         <!-- 画像のみカード -->
         <div class="col-4">
             <div class="card card-body">
-                <a href="">
+                <a href="{{ route('sale-purchase', $sale_name) }}">
                     <img class="card-img" src="{{ asset('img/purchase.png') }}" data-toggle="tooltip" title="購入">
                 </a>
             </div>

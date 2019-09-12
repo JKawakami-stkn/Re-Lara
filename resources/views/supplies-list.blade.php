@@ -41,16 +41,13 @@
         </div><!-- /.col-sm-6.col-md-3 -->
     </div><!-- /.row -->
 
-    
-
-
 </div>
 
 <style>
     .card-img-top {
         width: 200px;
         height: 150px;
-        object-fit: cover; /* この一行を追加するだけ！ */
+        object-fit: cover;
     }
 </style>
 @stop

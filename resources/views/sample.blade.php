@@ -106,5 +106,63 @@
     </div>
 </div>
 
+<div class="container" >
+    <!-- メディアオブジェクト -->
+    <div class="media mt-4">
+        <img class="card-img-top mx-auto" src="{{ asset('spplie_imgs/taisougi.png') }}">
+        <div class="media-body">
+            <h5 class="mt-0">体操服</h5>
+            ￥0,000
+            <div class="row">
+
+                <div class="form-group col-3">
+                    <label>サイズ</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-3">
+                    <label>カラー</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-3">
+                    <label>数量</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="media">
+        <img class="card-img-top mx-auto" src="{{ asset('spplie_imgs/fashion_tsuugakubou_hat.png') }}">
+        <div class="media-body">
+            <h5 class="mt-0">Media heading</h5>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+        </div>
+    </div>
+
+</div>
+
+<style>
+    .card-img-top {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+    }
+</style>
+
 @stop
 
