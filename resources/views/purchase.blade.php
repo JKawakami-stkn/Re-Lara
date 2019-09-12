@@ -40,8 +40,8 @@
 
     <!-- メディアオブジェクト -->
     <div class="media mt-4 border-bottom">
-        <img class="card-img-top" src="{{ asset('spplie_imgs/taisougi.png') }}">
-        <div class="media-body">
+        <img class="card-img-top img-thumbnail" src="{{ asset('spplie_imgs/taisougi.png') }}">
+        <div class="media-body pl-2">
             <h5 class="mt-0">体操服</h5>
             ￥0,000
             <div class="row">
@@ -78,9 +78,9 @@
     </div>
 
     <div class="media mt-4 border-bottom">
-        <img class="card-img-top" src="{{ asset('spplie_imgs/fashion_tsuugakubou_hat.png') }}">
-        <div class="media-body">
-            <h5 class="mt-0">体操服</h5>
+        <img class="card-img-top img-thumbnail" src="{{ asset('spplie_imgs/fashion_tsuugakubou_hat.png') }}">
+        <div class="media-body pl-2">
+            <h5 class="mt-0">帽子</h5>
             ￥0,000
             <div class="row">
 
