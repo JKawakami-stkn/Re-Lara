@@ -8,7 +8,7 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('menu') }}">メニュー</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('sales-list') }}">物品販売</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('sales') }}">物品販売</a></li>
         <li class="breadcrumb-item active" aria-current="page">{{ $sale_name }}</li>
     </ol>
 </nav>
@@ -30,7 +30,7 @@
         <!-- 画像のみカード -->
         <div class="col-4">
             <div class="card card-body">
-                <a href="{{ route('sale-purchase', $sale_name) }}">
+                <a href="{{ route('purchase-target', $sale_name) }}">
                     <img class="card-img" src="{{ asset('img/purchase.png') }}" data-toggle="tooltip" title="購入">
                 </a>
             </div>
