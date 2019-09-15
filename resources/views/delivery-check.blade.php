@@ -54,7 +54,9 @@
     </div>
 
      <div class="mt-5 mb-3">
-        <a class="btn btn-primary btn-block" href="{{ route('sale-menu', $sale_name) }}" role="button">確　　定</a>
+        <a class="btn btn-primary btn-block" href="{{ route('sale-menu', $sale_name) }}" role="button" onclick="window.onbeforeunload=null"> 
+            確　　定
+        </a>
     </div>
 
 </div>
@@ -67,4 +69,9 @@
     }
 </style>
 @stop
+
+@section('script')
+<script src="{{ asset('public/js/dialog.js') }}"></script>
+@stop
+
 

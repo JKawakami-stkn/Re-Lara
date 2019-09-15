@@ -44,7 +44,9 @@
 
     <div class="mt-5 mb-3">
         <!-- <button type="submit" class="btn btn-primary btn-block">選　　択</button> -->
-        <a class="btn btn-primary btn-block" href="{{ route('purchase-supplies', [$sale_name, '例之太郎']) }}" role="button">確　　定</a>
+        <a class="btn btn-primary btn-block" href="{{ route('purchase-supplies', [$sale_name, '例之太郎']) }}" role="button" onclick="window.onbeforeunload=null">
+            確　　定
+        </a>
     </div>
 </div>
 
@@ -56,4 +58,9 @@
     }
 </style>
 @stop
+
+@section('script')
+<script src="{{ asset('public/js/dialog.js') }}"></script>
+@stop
+
 
