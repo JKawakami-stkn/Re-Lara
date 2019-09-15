@@ -40,7 +40,9 @@
     </a>
 
     <div class="mt-5 mb-3">
-        <a class="btn btn-primary btn-block" href="{{ route('sale-menu', $sale_name) }}" role="button">確　　定</a>
+        <a class="btn btn-primary btn-block" href="{{ route('sale-menu', $sale_name) }}">
+            確　　定
+        </a>
     </div>
 
 </div>
@@ -53,4 +55,5 @@
     }
 </style>
 @stop
+
 
