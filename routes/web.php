@@ -29,12 +29,12 @@ Route::get('/menu/sales', function () {
     return view('sales');
 })->name('sales');
 
-# 販売会メニュー
+# 販売会/販売会メニュー
 Route::get('/menu/sales/{sale_name}', function ($sale_name) {
     return view('sale-menu', ["sale_name" => $sale_name]);
 })->name('sale-menu');
 
-# 販売会/購入対象選択画面
+# 販売会/購入/対象選択画面
 Route::get('/menu/sales/{sale_name}/purchase', function ($sale_name) {
     return view('purchase-target', ["sale_name" => $sale_name]);
 })->name('purchase-target');
@@ -49,12 +49,20 @@ Route::get('/menu/sales/{sale_name}/purchase/{target}/{supplie}', function ($sal
     return view('purchase-supplie', ["sale_name" => $sale_name, "target" => $target, "supplie" => $supplie]);
 })->name('purchase-supplie');
 
-# 販売会/引き渡し対象選択画面
+# 販売会/購入/対象選択画面
 Route::get('/menu/sales/{sale_name}/delivery', function ($sale_name) {
     return view('delivery-target', ["sale_name" => $sale_name]);
 })->name('delivery-target');
 
+Route::get('/menu/sales/{sale_name}/delivery/{target}', function ($sale_name, $target) {
+    return view('delivery-check', ["sale_name" => $sale_name, "target" => $target]);
+})->name('delivery-check');
 
+
+# 販売会一覧画面
+Route::get('/menu/supplies', function () {
+    return view('supplies-list');
+})->name('supplies-list');
 
 
 
