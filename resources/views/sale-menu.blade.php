@@ -29,7 +29,7 @@
 
         <!-- 画像のみカード -->
         <div class="col-4">
-            <a href="{{ route('purchase-target', $sale_name) }}">
+            <a href="{{ route('purchase-target', $sale_name) }} ">
                 <div class="card card-body">
                     <img class="card-img" src="{{ asset('img/purchase.png') }}" data-toggle="tooltip" title="購入">
                 </div>
@@ -37,7 +37,7 @@
         </div>
 
         <div class="col-4">
-            <a href="">
+            <a href="{{ route('inspection', $sale_name) }}">
                 <div class="card card-body">
                     <img class="card-img" src="{{ asset('img/check.png') }}" data-toggle="tooltip" title="検品">
                 </div>
