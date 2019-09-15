@@ -22,36 +22,7 @@
         <div class="media-body pl-2">
             <h5 class="mt-0">体操服</h5>
             ￥0,000
-            <div class="row">
-
-                <div class="form-group col-3">
-                    <label>サイズ</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                    </select>
-                </div>
-
-                <div class="form-group col-3">
-                    <label>カラー</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                    </select>
-                </div>
-
-                <div class="form-group col-3">
-                    <label>数量</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                    </select>
-                </div>
-
-            </div>
+            <p class="mt-4 text-danger">購入状態：未購入</p>
         </div>
     </div>
 
@@ -60,36 +31,7 @@
         <div class="media-body pl-2">
             <h5 class="mt-0">帽子</h5>
             ￥0,000
-            <div class="row">
-
-                <div class="form-group col-3">
-                    <label>サイズ</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                    </select>
-                </div>
-
-                <div class="form-group col-3">
-                    <label>カラー</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                    </select>
-                </div>
-
-                <div class="form-group col-3">
-                    <label>数量</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                    </select>
-                </div>
-
-            </div>
+            <p class="mt-4 text-success">購入状態：購入済み</p>
         </div>
     </div>
 
