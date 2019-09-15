@@ -44,9 +44,8 @@ Route::get('/menu/sales/{sale_name}/purchase/{target}', function ($sale_name, $t
     return view('purchase-supplies', ["sale_name" => $sale_name, "target" => $target]);
 })->name('purchase-supplies');
 
-
 # 購入/商品画面
-Route::get('/menu/sales/{sale_name}/purchase/supplie', function ($sale_name, $target, $supplie) {
+Route::get('/menu/sales/{sale_name}/purchase/{target}/{supplie}', function ($sale_name, $target, $supplie) {
     return view('purchase-supplie', ["sale_name" => $sale_name, "target" => $target, "supplie" => $supplie]);
 })->name('purchase-supplie');
 
