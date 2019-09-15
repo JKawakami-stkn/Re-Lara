@@ -44,7 +44,7 @@
 
             <div class="mt-5 mb-3">
                 <!-- <button type="submit" class="btn btn-primary btn-block">選　　択</button> -->
-                <a class="btn btn-primary btn-block" href="{{ route('purchase-supplies', [$sale_name, '例之太郎']) }}" role="button">選　　択</a>
+                <a class="btn btn-primary btn-block" href="{{ route('delivery-check', [$sale_name, '例之太郎']) }}" role="button">選　　択</a>
             </div>
 
     </form>
