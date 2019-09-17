@@ -85,7 +85,15 @@ Route::get('/menu/supplies', function () {
     return view('supplies');
 })->name('supplies');
 
+# 取引先一覧
+Route::get('/menu/suppliers', function () {
+    return view('suppliers');
+})->name('suppliers');
 
+# 取引先一覧/取引先/
+Route::get('/menu/supplier/{supplier_name}', function ($supplier_name) {
+    return view('supplier-menu', ["supplier_name" => $supplier_name]);
+})->name('supplier-menu');
 
 
 

@@ -40,7 +40,17 @@
         </select>
     </div>
 
-    <p class="mt-5">価格：0,000</p>
+    <p class="mt-5 mb-5">価格：0,000</p>
+
+    <p>数量</p>
+    <div class="input-group">
+        <input type="text" class="form-control" aria-label="ドル金額（小数点以下2桁）">
+        <div class="input-group-append">
+            <span class="input-group-text">個</span>
+        </div>
+    </div>
+
+    
 
     <div class="mt-5 mb-3">
         <!-- <button type="submit" class="btn btn-primary btn-block">選　　択</button> -->
