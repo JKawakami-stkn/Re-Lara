@@ -34,7 +34,7 @@
 
     <div class="accordion" id="accordion2" role="tablist">
         <div class="card">
-            <div class="card-header" role="tab" id="heading1">
+            <div class="card-header" role="tab" id="heading1" style="background-color:#c9c9c9;">
                 <h5 class="mb-0">
                     <a data-toggle="collapse" class="text-body stretched-link text-decoration-none" href="#collapse1" aria-expanded="true" aria-controls="collapse1"> 園児の名前１ </a>
                 </h5>
@@ -73,7 +73,7 @@
         </div>
 
         <div class="card">
-            <div class="card-header" role="tab" id="heading2">
+            <div class="card-header bg-gradient-secondary" role="tab" id="heading2" style="background-color:#c9c9c9;">
                 <h5 class="mb-0">
                     <a class="collapsed text-body stretched-link text-decoration-none" data-toggle="collapse" href="#collapse2" aria-expanded="false" aria-controls="collapse2"> 園児の名前２ </a>
                 </h5>
@@ -81,7 +81,7 @@
             <div id="collapse2" class="collapse show" role="tabpanel" aria-labelledby="heading2"_ data-parent="#accordion2">
                 <div class="card-body">
                         <table class="table">
-                            <caption>園児の名前１の注文</caption>
+                            <caption>園児の名前２の注文</caption>
                             <thead class="thead-light">
                                 <tr>
                                     <th></th>
