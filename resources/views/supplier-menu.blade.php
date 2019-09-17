@@ -29,7 +29,7 @@
 
         <!-- 画像のみカード -->
         <div class="col-4">
-            <a href="{{ route('supplies') }}">
+            <a href="{{ route('supplies', $supplier_name) }}">
                 <div class="card card-body">
                     <img class="card-img" src="{{ asset('img/supplies.png') }}" data-toggle="tooltip" title="取扱商品">
                 </div>
@@ -37,20 +37,13 @@
         </div>
 
         <div class="col-4">
-            <a href="">
+            <a href="{{ route('supplier-edit', $supplier_name) }}">
                 <div class="card card-body">
                     <img class="card-img" src="{{ asset('img/edit.png') }}" data-toggle="tooltip" title="編集">
                 </div>
             </a>
         </div>
 
-        <div class="col-4">
-            <a href="">
-                <div class="card card-body">
-                    <img class="card-img" src="" data-toggle="tooltip" title="検品">
-                </div>
-            </a>
-        </div>
 
     </div>
     
