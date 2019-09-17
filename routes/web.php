@@ -82,12 +82,11 @@ Route::get('/menu/sales/{sale_name}/order', function ($sale_name) {
 # 取引先一覧
 Route::get('/menu/suppliers', function () {
     return view('suppliers');
-})->name('suppliers');
+})->name('suppliers.show');
 
 # 取引先一覧/取引先登録
-Route::get('/menu/suppliers/regist', function () {
-    return view('supplier-registration');
-})->name('supplier-registration');
+Route::get('/menu/suppliers/regist', 'SupplierRegistrationController@show')->name('supplier-registration.show');
+Route::post('/menu/suppliers/regist', 'SupplierRegistrationController@store')->name('supplier-registration.store');
 
 # 取引先一覧/取引先
 Route::get('/menu/suppliers/{supplier_name}', function ($supplier_name) {
