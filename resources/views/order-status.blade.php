@@ -2,6 +2,8 @@
 
 @section('content')
 
+<div class="container">
+
 <!-- パンくずリスト -->
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
@@ -11,8 +13,6 @@
         <li class="breadcrumb-item active" aria-current="page">注文状況確認</li>
     </ol>
 </nav>
-
-<div class="container">
 
     <form>
         <div class="row">
