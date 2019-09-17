@@ -90,17 +90,17 @@ Route::get('/menu/suppliers/regist', function () {
 })->name('supplier-registration');
 
 # 取引先一覧/取引先
-Route::get('/menu/supplier/{supplier_name}', function ($supplier_name) {
+Route::get('/menu/suppliers/{supplier_name}', function ($supplier_name) {
     return view('supplier-menu', ["supplier_name" => $supplier_name]);
 })->name('supplier-menu');
 
 # 取引先一覧/取引先/取引先編集
-Route::get('/menu/supplier/{supplier_name}/edit', function ($supplier_name) {
+Route::get('/menu/suppliers/{supplier_name}/edit', function ($supplier_name) {
     return view('supplier-edit', ["supplier_name" => $supplier_name]);
 })->name('supplier-edit');
 
 # 取引先一覧/取引先/用品一覧
-Route::get('/menu/supplier/{supplier_name}/supplies', function ($supplier_name) {
+Route::get('/menu/suppliers/{supplier_name}/supplies', function ($supplier_name) {
     return view('supplies', ["supplier_name" => $supplier_name]);
 })->name('supplies');
 
