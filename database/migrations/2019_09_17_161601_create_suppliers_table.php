@@ -15,17 +15,16 @@ class CreateSuppliersTable extends Migration
     {
         Schema::create('suppliers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('name')->nullable(false);
+            $table->char('name', 30)->nullable(false);
             $table->char('person_charge', 30)->nullable(false);
-            $table->integer('phone_number')->nullable(false);
-            $table->integer('postal_code')->nullable(false);
+            $table->string('phone_number', 30)->nullable(false);
+            $table->string('postal_code', 30)->nullable(false);
             $table->char('street_address_1', 30)->nullable(false);
             $table->char('street_address_2', 30)->nullable(false);
-            $table->string('person_charge_3', 100)->nullable(false);
+            $table->string('street_address_3', 100)->nullable(false);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
             $table->softDeletes();
-
         });
     }
 

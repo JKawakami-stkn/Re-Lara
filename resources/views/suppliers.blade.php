@@ -2,7 +2,7 @@
 
 @section('content')
 
-<a href="{{ route('supplier-registration') }}">
+<a href="{{ route('supplier-registration.show') }}">
     <button type="button" class="btn btn-primary rounded-circle p-0 position-fixed border-white" style="width:4rem;height:4rem; bottom:55px; right:20px; z-index:30;">＋</button>
 </a>
 
