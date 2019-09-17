@@ -24,9 +24,9 @@
                     <p class="card-text">発注先：</p>
                     <p class="mb-0"><a href="#" class="btn btn-primary btn-sm" style="width:100%;">確　認</a></p>
 
-                </div><!-- /.card-body -->
-            </div><!-- /.card -->
-        </div><!-- /.col-sm-6.col-md-3 -->
+                </div>
+            </div>
+        </div>
 
         <div class="col-sm-6 col-md-6">
             <div class="card img-thumbnail mb-4">
@@ -36,10 +36,10 @@
                     <p class="card-text">発注先：</p>
                     <p class="mb-0"><a href="#" class="btn btn-primary btn-sm" style="width:100%;">確　認</a> </p>
 
-                </div><!-- /.card-body -->
-            </div><!-- /.card -->
-        </div><!-- /.col-sm-6.col-md-3 -->
-    </div><!-- /.row -->
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>
 

@@ -95,6 +95,10 @@ Route::get('/menu/supplier/{supplier_name}', function ($supplier_name) {
     return view('supplier-menu', ["supplier_name" => $supplier_name]);
 })->name('supplier-menu');
 
+Route::get('/menu/suppliers/regist', function () {
+    return view('supplier-registration');
+})->name('supplier-registration');
+
 
 
 
