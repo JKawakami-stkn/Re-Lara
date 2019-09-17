@@ -8,7 +8,7 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('menu') }}">メニュー</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('suppliers') }}">取引先一覧</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('suppliers') }}">取引先</a></li>
         <li class="breadcrumb-item active" aria-current="page">{{ $supplier_name }}</li>
     </ol>
 </nav>
