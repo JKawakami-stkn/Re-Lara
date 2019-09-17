@@ -79,22 +79,30 @@ Route::get('/menu/sales/{sale_name}/order', function ($sale_name) {
     return view('order-status', ["sale_name" => $sale_name]);
 })->name('order-status');
 
-
-# 用品一覧
-Route::get('/menu/supplies', function () {
-    return view('supplies');
-})->name('supplies');
-
 # 取引先一覧
 Route::get('/menu/suppliers', function () {
     return view('suppliers');
 })->name('suppliers');
 
-# 取引先一覧/取引先/
+# 取引先一覧/取引先登録
+Route::get('/menu/suppliers/regist', function () {
+    return view('supplier-registration');
+})->name('supplier-registration');
+
+# 取引先一覧/取引先
 Route::get('/menu/supplier/{supplier_name}', function ($supplier_name) {
     return view('supplier-menu', ["supplier_name" => $supplier_name]);
 })->name('supplier-menu');
 
+# 取引先一覧/取引先/取引先編集
+Route::get('/menu/supplier/{supplier_name}/edit', function ($supplier_name) {
+    return view('supplier-edit', ["supplier_name" => $supplier_name]);
+})->name('supplier-edit');
+
+# 取引先一覧/取引先/用品一覧
+Route::get('/menu/supplier/{supplier_name}/supplies', function ($supplier_name) {
+    return view('supplies', ["supplier_name" => $supplier_name]);
+})->name('supplies');
 
 
 

@@ -8,8 +8,9 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('menu') }}">メニュー</a></li>
-            <li class="breadcrumb-item"><a href="{{ route('sales') }}">取引先</a></li>
-            <li class="breadcrumb-item active" aria-current="page">取引先登録</li>
+            <li class="breadcrumb-item"><a href="{{ route('sales') }}">取引先一覧</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('supplier-menu', $supplier_name) }}">{{$supplier_name}}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">取引先編集</li>
         </ol>
     </nav>
 
