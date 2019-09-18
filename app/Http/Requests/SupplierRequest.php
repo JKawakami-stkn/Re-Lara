@@ -13,7 +13,7 @@ class SupplierRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,25 @@ class SupplierRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required',
+            'person_charge' => 'required',
+            'phone_number' => 'required',
+            'postal_code' => 'required',
+            'street_address_1' => 'required',
+            'street_address_2' => 'required',
+            'street_address_3' => 'required',
+        ];
+    }
+
+    public function messages(){
+        return [
+            'name.required' => '取引先名を入力してください',
+            'person_charge.required' => '取引先担当者を入力してください',
+            'phone_number.required' => '電話番号を入力してください',
+            'postal_code.required' => '郵便番号を入力してください',
+            'street_address_1.required' => '住所を入力してください',
+            'street_address_2.required' => '住所を入力してください',
+            'street_address_3.required' => '住所を入力してください',
         ];
     }
 }

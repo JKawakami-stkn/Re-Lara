@@ -6,20 +6,19 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\SupplierRequest;
 
-class SupplierRegistrationController extends Controller
+class SupplierEdit extends Controller
 {
-
     public function __construct(){
         $this->middleware('auth');
     }
 
      public function show()
     {
-        return view('supplier-registration');
+        return view('supplier-edit');
     }
     
 
-    public function store(SupplierRequest $request)
+    public function edit(SupplierRequest $request)
     {
         \Debugbar::info($request);
         $request->session()->regenerateToken();
@@ -38,7 +37,4 @@ class SupplierRegistrationController extends Controller
 
         $suppliers_controller = new SuppliersController();
         return  $suppliers_controller -> show();
-
-    }
-
 }
