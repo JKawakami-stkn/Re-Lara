@@ -78,9 +78,7 @@ Route::get('/menu/sales/{sale_name}/order', function ($sale_name) {
 })->name('order-status');
 
 # 取引先一覧
-Route::get('/menu/suppliers', function () {
-    return view('suppliers');
-})->name('suppliers.show');
+Route::get('/menu/suppliers', 'SuppliersController@show')->name('suppliers.show');
 
 # 取引先一覧/取引先登録
 Route::get('/menu/suppliers/regist', 'SupplierRegistrationController@show')->name('supplier-registration.show');
