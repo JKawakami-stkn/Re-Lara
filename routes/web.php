@@ -90,9 +90,8 @@ Route::get('/menu/suppliers/{supplier_name}', function ($supplier_name) {
 })->name('supplier-menu');
 
 # 取引先一覧/取引先/取引先編集
-Route::get('/menu/suppliers/{supplier_name}/edit', function ($supplier_name) {
-    return view('supplier-edit', ["supplier_name" => $supplier_name]);
-})->name('supplier-edit');
+Route::get('/menu/suppliers/{supplier_name}/edit', 'SupplierEditController@show')->name('supplier-edit.show');
+Route::post('/menu/suppliers/{supplier_name}/edit', 'SupplierEditController@edit')->name('supplier-edit.edit');
 
 # 取引先一覧/取引先/用品一覧
 Route::get('/menu/suppliers/{supplier_name}/supplies', function ($supplier_name) {

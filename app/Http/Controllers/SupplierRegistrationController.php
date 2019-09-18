@@ -32,7 +32,7 @@ class SupplierRegistrationController extends Controller
                 'postal_code' => $request->postal_code,
                 'street_address_1' => $request->street_address_1,
                 'street_address_2' => $request->street_address_2,
-                'street_address_3' => $request->street_address_3
+                'street_address_3' => $request->street_address_3,
             ]
         );
 
