@@ -20,9 +20,7 @@ Route::get('/sample', function () {
 })->name('sample');
 
 # 機能一覧
-Route::get('/menu', function () {
-    return view('menu');
-})->name('menu');
+Route::get('/menu', 'MenuController@show')->name('menu.show');
 
 # 販売会一覧
 Route::get('/menu/sales', function () {
@@ -107,9 +105,6 @@ Route::get('/menu/suppliers/{supplier_name}/supplies', function ($supplier_name)
 
 Route::get('/contacts', 'ContactController@show');
 Route::post('/contacts', 'ContactController@ajax')->name('contacts.ajax');
-
-
-
 
 Auth::routes();
 
