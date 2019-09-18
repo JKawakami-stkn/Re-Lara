@@ -110,3 +110,7 @@ Route::post('/contacts', 'ContactController@ajax')->name('contacts.ajax');
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
