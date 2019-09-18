@@ -7,10 +7,16 @@ use Illuminate\Support\Facades\DB;
 
 class SupplierRegistrationController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
      public function show()
     {
         return view('supplier-registration');
     }
+    
 
     public function store(Request $request)
     {

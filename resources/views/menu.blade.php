@@ -23,7 +23,7 @@
 
     <div class="card mb-4">
         <div class="card-body">
-            <a href="{{ route('suppliers') }}">
+            <a href="{{ route('suppliers.show') }}">
                 <h5 class="card-title">取引先</h5>
                 <p class="card-text">かくにんできるよ！！</p>
             </a>
