@@ -35,8 +35,8 @@ class SupplierRegistrationController extends Controller
             ]
         );
 
-
-        return view('suppliers');
+        $suppliers_controller = new SuppliersController();
+        return  $suppliers_controller -> show();
 
     }
 
