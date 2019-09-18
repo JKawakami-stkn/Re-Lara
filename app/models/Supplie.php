@@ -8,5 +8,8 @@ class Supplie extends Model
 {
     use SoftDeletes;
 
+    protected $table = 'suppliers';
+    protected $primaryKey = 'id';
     protected $dates = ['deleted_at'];
+
 }
