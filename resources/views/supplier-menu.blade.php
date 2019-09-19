@@ -37,7 +37,7 @@
         </div>
 
         <div class="col-4">
-            <a href="{{ route('supplier-edit', $supplier_name) }}">
+            <a href="{{ route('supplier-edit.show', $supplier_name) }}">
                 <div class="card card-body">
                     <img class="card-img" src="{{ asset('img/edit.png') }}" data-toggle="tooltip" title="編集">
                 </div>
