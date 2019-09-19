@@ -24,9 +24,10 @@ class SupplierRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
+            'name' => 'required|unique:suppliers,name',
             'person_charge' => 'required',
-            'phone_number' => 'required',
+            'phone_number_1' => 'required',
+            'phone_number_2' => 'required',
             'postal_code' => 'required',
             'street_address_1' => 'required',
             'street_address_2' => 'required',
@@ -37,8 +38,10 @@ class SupplierRequest extends FormRequest
     public function messages(){
         return [
             'name.required' => '取引先名を入力してください',
+            'name.unique' => 'この名前の取引先名はすでに登録されています',
             'person_charge.required' => '取引先担当者を入力してください',
-            'phone_number.required' => '電話番号を入力してください',
+            'phone_number_1.required' => '電話番号を入力してください',
+            'phone_number_2.required' => '電話番号を入力してください',
             'postal_code.required' => '郵便番号を入力してください',
             'street_address_1.required' => '住所を入力してください',
             'street_address_2.required' => '住所を入力してください',
