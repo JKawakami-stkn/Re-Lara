@@ -15,9 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-Route::get('/sample', function () {
-    return view('sample');
-})->name('sample');
+Route::get('/sample', 'SampleController@show')->name('sample.show');
 
 # 機能一覧
 Route::get('/menu', 'MenuController@show')->name('menu.show');
