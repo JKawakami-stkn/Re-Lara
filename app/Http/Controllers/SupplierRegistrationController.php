@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\SupplierRequest;
 
 class SupplierRegistrationController extends Controller
 {
@@ -18,9 +19,9 @@ class SupplierRegistrationController extends Controller
     }
     
 
-    public function store(Request $request)
+    public function store(SupplierRequest $request)
     {
-        \Debugbar::info($request);
+        
         $request->session()->regenerateToken();
 
         DB::table('suppliers')->insert(
@@ -31,7 +32,7 @@ class SupplierRegistrationController extends Controller
                 'postal_code' => $request->postal_code,
                 'street_address_1' => $request->street_address_1,
                 'street_address_2' => $request->street_address_2,
-                'street_address_3' => $request->street_address_3
+                'street_address_3' => $request->street_address_3,
             ]
         );
 

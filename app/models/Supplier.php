@@ -3,16 +3,15 @@
 namespace App\models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Sku extends Model
+
+class Supplier extends Model
 {
     use SoftDeletes;
 
-    protected $table = 'skus';
+    protected $table = 'suppliers';
     protected $primaryKey = 'id';
     protected $dates = ['deleted_at'];
     
-    public function supplies(){
-        return $this->belongsToMany('App\models\Supplie');
-    }
 }

@@ -85,18 +85,17 @@ Route::get('/menu/suppliers/regist', 'SupplierRegistrationController@show')->nam
 Route::post('/menu/suppliers/regist', 'SupplierRegistrationController@store')->name('supplier-registration.store');
 
 # 取引先一覧/取引先
-Route::get('/menu/suppliers/{supplier_name}', function ($supplier_name) {
-    return view('supplier-menu', ["supplier_name" => $supplier_name]);
+Route::get('/menu/suppliers/{supplier}', function (App\models\Supplier $supplier) {
+    return view('supplier-menu', ["supplier" => $supplier]);
 })->name('supplier-menu');
 
 # 取引先一覧/取引先/取引先編集
-Route::get('/menu/suppliers/{supplier_name}/edit', function ($supplier_name) {
-    return view('supplier-edit', ["supplier_name" => $supplier_name]);
-})->name('supplier-edit');
+Route::get('/menu/suppliers/{supplier_id}/edit', 'SupplierEditController@show')->name('supplier-edit.show');
+Route::post('/menu/suppliers/{supplier_id}/edit', 'SupplierEditController@edit')->name('supplier-edit.edit');
 
 # 取引先一覧/取引先/用品一覧
-Route::get('/menu/suppliers/{supplier_name}/supplies', function ($supplier_name) {
-    return view('supplies', ["supplier_name" => $supplier_name]);
+Route::get('/menu/suppliers/{supplier}/supplies', function (App\models\Supplier $supplier) {
+    return view('supplies', ["supplier" => $supplier]);
 })->name('supplies');
 
 
