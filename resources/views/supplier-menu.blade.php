@@ -9,16 +9,18 @@
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('menu.show') }}">メニュー</a></li>
         <li class="breadcrumb-item"><a href="{{ route('suppliers.show') }}">取引先</a></li>
-        <li class="breadcrumb-item active" aria-current="page">{{ $supplier_name }}</li>
+        <li class="breadcrumb-item active" aria-current="page">{{ $supplier->name }}</li>
     </ol>
 </nav>
 
 <div class="card _border-0 mb-4">
   <div class="card-body">
-    <h4>{{ $supplier_name }}の詳細</h4>
+    <h4>{{ $supplier->name }}の詳細</h4>
     <br>
-    <p>　期日：</p>
-    <p>　対象：</p>
+    <p>　取引先担当者：{{ $supplier->person_charge }}</p>
+    <p>　住　所：{{ $supplier->street_address_1." ".$supplier->street_address_2." ".$supplier->street_address_3 }}</p>
+    <p>　電話番号：{{ $supplier->phone_number }}</p>
+    <p>　郵便番号：{{ $supplier->postal_code }}</p>
   </div>
 </div>
 
@@ -29,7 +31,7 @@
 
         <!-- 画像のみカード -->
         <div class="col-4">
-            <a href="{{ route('supplies', $supplier_name) }}">
+            <a href="{{ route('supplies', $supplier) }}">
                 <div class="card card-body">
                     <img class="card-img" src="{{ asset('img/supplies.png') }}" data-toggle="tooltip" title="取扱商品">
                 </div>
@@ -37,7 +39,7 @@
         </div>
 
         <div class="col-4">
-            <a href="{{ route('supplier-edit.show', $supplier_name) }}">
+            <a href="{{ route('supplier-edit.show', $supplier) }}">
                 <div class="card card-body">
                     <img class="card-img" src="{{ asset('img/edit.png') }}" data-toggle="tooltip" title="編集">
                 </div>

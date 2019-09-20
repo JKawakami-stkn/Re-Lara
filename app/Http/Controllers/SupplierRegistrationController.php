@@ -21,7 +21,7 @@ class SupplierRegistrationController extends Controller
 
     public function store(SupplierRequest $request)
     {
-        \Debugbar::info($request);
+        
         $request->session()->regenerateToken();
 
         DB::table('suppliers')->insert(

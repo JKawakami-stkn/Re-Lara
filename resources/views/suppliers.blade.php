@@ -17,18 +17,18 @@
     </nav>
 
     <!-- カード -->
-    @foreach($suppliers_data as $supplier_data)
+    @foreach($suppliers_data as $supplier)
     <div class="card mb-4">
-        <h5 class="card-header text-center">{{$supplier_data->name}}</h5>
+        <h5 class="card-header text-center">{{$supplier->name}}</h5>
         <div class="card-body">
             <h5 class="card-title"></h5>
             <p class="card-text">
-                住所：{{$supplier_data->street_address_1." ".$supplier_data->street_address_2." ".$supplier_data->street_address_3}}
+                住所：{{$supplier->street_address_1." ".$supplier->street_address_2." ".$supplier->street_address_3}}
             </p>
             <p class="card-text">
-                TEL：{{$supplier_data->phone_number}}
+                TEL：{{$supplier->phone_number}}
             </p>
-            <a href="{{ route('supplier-menu', $supplier_data->name) }}" class="btn btn-primary btn-block" style="width:100%;">選択する</a>
+            <a href="{{ route('supplier-menu', $supplier->id) }}" class="btn btn-primary btn-block" style="width:100%;">選択する</a>
         </div>
     </div>
     @endforeach
