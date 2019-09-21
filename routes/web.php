@@ -92,11 +92,12 @@ Route::get('/menu/suppliers/{supplier_id}/edit', 'SupplierEditController@show')-
 Route::post('/menu/suppliers/{supplier_id}/edit', 'SupplierEditController@edit')->name('supplier-edit.edit');
 
 # 取引先一覧/取引先/用品一覧
+/*
 Route::get('/menu/suppliers/{supplier}/supplies', function (App\models\Supplier $supplier) {
     return view('supplies', ["supplier" => $supplier]);
 })->name('supplies');
-
-
+*/
+Route::get('/menu/suppliers/{supplier}/supplies', 'SuppliesController@show')->name('supplies');
 
 Route::get('/contacts', 'ContactController@show');
 Route::post('/contacts', 'ContactController@ajax')->name('contacts.ajax');
