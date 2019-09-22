@@ -12,4 +12,8 @@ class Supplie extends Model
     protected $primaryKey = 'id';
     protected $dates = ['deleted_at'];
 
+    public function skus()
+    {
+        return $this->hasMany('App\models\Sku');
+    }
 }
