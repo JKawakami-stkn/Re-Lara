@@ -34,7 +34,6 @@ class SupplieRegistrationController extends Controller
                 'name' => $request->name,
                 'supplier_id' => $supplier_id,
                 'price' => $request->name,
-                'img_path' => 'public/spplie_imgs/no_image.png',
             ]
         );
 
