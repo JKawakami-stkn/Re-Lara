@@ -15,7 +15,7 @@ class AddSuppliesTableToImgPathDefault extends Migration
     {
         Schema::table('supplies', function (Blueprint $table) {
             
-            $table->string('img_path')->default("public/spplie_imgs/no_image.png")->change();
+            $table->string('img_path')->default("spplie_imgs/no_image.png")->change();
 
 
         });

@@ -20,29 +20,18 @@
 
     <!-- カード -->
     <div class="row">
-        <div class="col-sm-6 col-md-6">
-            <div class="card img-thumbnail mb-4">
-                <img class="card-img-top mx-auto" src="{{ asset('spplie_imgs/fashion_tsuugakubou_hat.png') }}">
-                <div class="card-body px-2 py-3">
-                    <h5 class="card-title">帽子</h5>
-                    <p class="card-text">発注先：</p>
-                    <p class="mb-0"><a href="#" class="btn btn-primary btn-sm" style="width:100%;">確　認</a></p>
+        @foreach($supplies as $supplie)
+            <div class="col-sm-6 col-md-6">
+                <div class="card img-thumbnail mb-4">
+                    <img class="card-img-top mx-auto" src="{{ asset('storage/'.$supplie->img_path) }}">
+                    <div class="card-body px-2 py-3">
+                        <h5 class="card-title">{{ $supplie->name }}</h5>
+                        <p class="mb-0"><a href="#" class="btn btn-primary btn-sm" style="width:100%;">確　認</a></p>
 
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div class="col-sm-6 col-md-6">
-            <div class="card img-thumbnail mb-4">
-                <img class="card-img-top mx-auto" src="{{ asset('spplie_imgs/taisougi.png') }}">
-                <div class="card-body px-2 py-3">
-                    <h5 class="card-title">体操服</h5>
-                    <p class="card-text">発注先：</p>
-                    <p class="mb-0"><a href="#" class="btn btn-primary btn-sm" style="width:100%;">確　認</a> </p>
-
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div>
 
 </div>

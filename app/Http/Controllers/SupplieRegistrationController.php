@@ -13,6 +13,7 @@ class SupplieRegistrationController extends Controller
         $this->middleware('auth');
     }
 
+
      public function show($supplier_id)
     {
         $supplier = \App\models\Supplier::find($supplier_id);
@@ -23,22 +24,31 @@ class SupplieRegistrationController extends Controller
 
     public function store($supplier_id, SupplieRequest $request)
     {
-
         $request->session()->regenerateToken();
 
-        \Debugbar::info($request);
+        if ($request->file('img_path') != null) {
+            $path = $request->file('img_path')->storeAs('public/spplie_imgs', time().'.jpg');
+            $path = str_replace('public/', '', $path);
 
+        }else{
+            $path = 'spplie_imgs/no_image.png';
+        }
+
+        \Debugbar::info($path);
 
         DB::table('supplies')->insert(
             [
                 'name' => $request->name,
                 'supplier_id' => $supplier_id,
-                'price' => $request->name,
+                'price' => $request->price,
+                'img_path' => $path,
             ]
         );
 
+
+
         $supplies_controller = new SuppliesController();
-        return  $supplies_controller->show();
+        return  $supplies_controller->show($supplier_id);
 
     }
 

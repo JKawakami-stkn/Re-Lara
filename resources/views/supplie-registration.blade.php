@@ -16,10 +16,10 @@
     </nav>
 
     <!-- フォーム -->
-    <form action="{{ route('supplie-registration.store', $supplier->id) }}" method="post">
+    <form action="{{ route('supplie-registration.store', $supplier->id) }}" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="form-group">
-            <label for="name">用品の名前</label>
+            <label for="name">用品名</label>
             <input class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}" placeholder="例：">
             @error('name')
                 <span class="invalid-feedback" role="alert">
@@ -28,7 +28,7 @@
             @enderror
         </div>
         
-        <p class="mb-2">用品価格</p>
+        <p class="mb-2">価格</p>
         <div class="input-group mb-3 mt-0">
             <input type="text" class="form-control" name="price" aria-label="">
             <div class="input-group-append">
@@ -69,6 +69,17 @@
             </div>
         </div>
 
+        <p class="mb-2">イメージ</p>
+        <div class="input-group mb-5">
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="customFile" name="img_path">
+                <label class="custom-file-label" for="customFile" data-browse="参照">ファイル選択...</label>
+            </div>
+            <div class="input-group-append">
+                <button type="button" class="btn btn-outline-secondary reset">取消</button>
+            </div>
+        </div>
+
         <button type="submit" class="btn btn-primary" onclick="window.onbeforeunload=null">送信する</button>
         
     </form>
@@ -78,40 +89,8 @@
 
 @section('script')
 <script src="{{ asset('public/js/dialog.js') }}"></script>
-
-<script>
-
-    $(function() {
-        $(".size-add-button-addon").click(function() {
-            console.log("追加")
-            $(this).parent().parent().clone(true).appendTo('#size-form-row');
-        });
-    });
-    $(function() {
-        $(".size-remove-button-addon").click(function() {
-            console.log("削除")
-            if($(".input-group-size").length > 1){
-                 $(this).parent().parent().remove();
-            }
-        });
-    });
-
-    $(function() {
-        $(".color-add-button-addon").click(function() {
-            console.log("追加")
-            $(this).parent().parent().clone(true).appendTo('#color-form-row');
-        });
-    });
-    $(function() {
-        $(".color-remove-button-addon").click(function() {
-            console.log("削除")
-            if($(".input-group-color").length > 1){
-                 $(this).parent().parent().remove();
-            }
-        });
-    });
-
-</script>
+<script src="{{ asset('public/js/form.js') }}"></script>
+<script src="{{ asset('public/js/upload_image.js') }}"></script>
 @stop
 
 @stop
