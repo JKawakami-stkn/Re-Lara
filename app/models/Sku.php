@@ -12,7 +12,4 @@ class Sku extends Model
     protected $primaryKey = 'id';
     protected $dates = ['deleted_at'];
     
-    public function supplies(){
-        return $this->belongsToMany('App\models\Supplie');
-    }
 }

@@ -17,4 +17,5 @@ class SuppliersController extends Controller
         
         return view('suppliers', ['suppliers_data' => $suppliers_data]);
     }
+
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddOrdersTableToDeliveryAt extends Migration
+class AddSuppliesTableToPrice extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class AddOrdersTableToDeliveryAt extends Migration
      */
     public function up()
     {
-        Schema::table('orders', function (Blueprint $table) {
-
-            $table->dateTime('delivery_at')->nullable()->default(null);
+        Schema::table('supplies', function (Blueprint $table) {
+            
+            $table->integer('price');
 
         });
     }
@@ -27,8 +27,6 @@ class AddOrdersTableToDeliveryAt extends Migration
      */
     public function down()
     {
-        
-        Schema::drop('delivery_at');
-
+        Schema::drop('price');
     }
 }

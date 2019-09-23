@@ -4,8 +4,8 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddOrdersTableToDeliveryAt extends Migration
-{
+class AddSuppliesTableToImgPathDefault extends Migration
+{   
     /**
      * Run the migrations.
      *
@@ -13,9 +13,10 @@ class AddOrdersTableToDeliveryAt extends Migration
      */
     public function up()
     {
-        Schema::table('orders', function (Blueprint $table) {
+        Schema::table('supplies', function (Blueprint $table) {
+            
+            $table->string('img_path')->default("spplie_imgs/no_image.png")->change();
 
-            $table->dateTime('delivery_at')->nullable()->default(null);
 
         });
     }
@@ -27,8 +28,7 @@ class AddOrdersTableToDeliveryAt extends Migration
      */
     public function down()
     {
-        
-        Schema::drop('delivery_at');
+        $table->string('img_path')->change();
 
     }
 }

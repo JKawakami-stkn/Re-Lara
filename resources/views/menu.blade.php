@@ -15,8 +15,17 @@
     <div class="card mb-4">
         <div class="card-body">
             <a href="{{ route('sales') }}">
-                <h5 class="card-title">物品販売</h5>
+                <h5 class="card-title">一括注文</h5>
                 <p class="card-text">かくにんできるよ！！</p>
+            </a>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <a href="">
+                <h5 class="card-title">個別注文</h5>
+                <p class="card-text">未実装！！</p>
             </a>
         </div>
     </div>

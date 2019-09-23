@@ -6,10 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Supplie extends Model
 {
-    use SoftDeletes;
+    // use SoftDeletes;
 
-    protected $table = 'suppliers';
+    protected $table = 'supplies';
     protected $primaryKey = 'id';
     protected $dates = ['deleted_at'];
 
+    public function skus()
+    {
+        return $this->hasMany('App\models\Sku');
+    }
 }

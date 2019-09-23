@@ -14,4 +14,8 @@ class Supplier extends Model
     protected $primaryKey = 'id';
     protected $dates = ['deleted_at'];
     
+    public function supplies()
+    {
+        return $this->hasMany('App\models\Supplie');
+    }
 }
