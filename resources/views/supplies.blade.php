@@ -26,7 +26,7 @@
                     <img class="card-img-top mx-auto" src="{{ asset('storage/'.$supplie->img_path) }}">
                     <div class="card-body px-2 py-3">
                         <h5 class="card-title">{{ $supplie->name }}</h5>
-                        <p class="mb-0"><a href="#" class="btn btn-primary btn-sm" style="width:100%;">確　認</a></p>
+                        <p class="mb-0"><a href="{{ route('supplie-menu', [$supplier->id, $supplie->id]) }}" class="btn btn-primary btn-sm" style="width:100%;">確　認</a></p>
 
                     </div>
                 </div>
