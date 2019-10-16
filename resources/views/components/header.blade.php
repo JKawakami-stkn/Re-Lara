@@ -1,6 +1,6 @@
 <!-- ナビゲーションバー -->
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-<a class="navbar-brand text-black-50" href="#">
+<a class="navbar-brand text-black-50" href="https://relaso.serveo.net/Re-Lara/">
 <img src="{{ asset('img/logo.png') }}" width="30" height="30" class="d-inline-block align-top" >
 Re:Lara-sotuken
 </a>
