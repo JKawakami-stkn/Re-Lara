@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="ja">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset('css/sticky-footer.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/checkbox.css') }}">
+    <link rel="manifest" href="{{ asset('manifest.json') }}">
 
     <title>Re:Lara</title>
 </head>
@@ -27,15 +28,22 @@
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     
     @yield('script')
-
-    <!-- ツールチップ -->
+   
     <script>
+    // ツールチップ
     $('[data-toggle="tooltip"]').tooltip()
+
+    // service workerの登録関係
+    if('serviceWorker' in navigator) {
+    navigator.serviceWorker
+            .register('{{ asset("sw.js") }}')
+            .then(function() { console.log("Service Worker Registered"); });
+    }
+
     </script>
 </body>
 
