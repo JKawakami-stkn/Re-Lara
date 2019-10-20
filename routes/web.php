@@ -88,8 +88,8 @@ Route::get('/menu/suppliers/{supplier}', function (App\models\Supplier $supplier
 })->name('supplier-menu');
 
 # 取引先一覧/取引先/取引先編集
-Route::get('/menu/suppliers/{supplier_id}/edit', 'SupplierEditController@show')->name('supplier-edit.show');
-Route::post('/menu/suppliers/{supplier_id}/edit', 'SupplierEditController@edit')->name('supplier-edit.edit');
+Route::get('/menu/suppliers/{supplier}/edit', 'SupplierEditController@show')->name('supplier-edit.show');
+Route::post('/menu/suppliers/{supplier}/edit', 'SupplierEditController@edit')->name('supplier-edit.edit');
 
 # 取引先一覧/取引先/用品一覧
 Route::get('/menu/suppliers/{supplier}/supplies', 'SuppliesController@show')->name('supplies');
@@ -97,6 +97,13 @@ Route::get('/menu/suppliers/{supplier}/supplies', 'SuppliesController@show')->na
 # 取引先一覧/取引先/用品一覧/用品登録
 Route::get('/menu/suppliers/{supplier}/supplies/regist', 'SupplieRegistrationController@show')->name('supplie-registration.show');
 Route::post('/menu/suppliers/{supplier}/supplies/regist', 'SupplieRegistrationController@store')->name('supplie-registration.store');
+
+# 取引先一覧/取引先/用品一覧/用品
+Route::get('/menu/suppliers/{supplier}/supplies/{supplie}', function (App\models\Supplier $supplier, App\models\Supplie $supplie) {
+    return view('supplie-menu', ["supplier" => $supplier, "supplie" => $supplie]);
+})->name('supplie-menu');
+
+
 
 
 Route::get('/contacts', 'ContactController@show');
