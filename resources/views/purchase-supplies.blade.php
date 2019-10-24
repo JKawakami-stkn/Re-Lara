@@ -19,7 +19,7 @@
     <!-- メディアオブジェクト -->
     <a class="text-decoration-none" href="{{ route('purchase-supplie', [$sale_name, $target, '体操服']) }}">
         <div class="media mt-4 pb-4 border-bottom text-dark">
-            <img class="card-img-top img-thumbnail" src="{{ asset('spplie_imgs/taisougi.png') }}">
+            <img class="card-img-top img-thumbnail" src="{{ asset('storage/spplie_imgs/taisougi.png') }}">
             <div class="media-body pl-2">
                 <h5 class="mt-0">体操服</h5>
                 <p>￥0,000</p>
@@ -30,7 +30,7 @@
 
     <a class="text-decoration-none" href="{{ route('purchase-supplie', [$sale_name, $target, '帽子']) }}">
         <div class="media mt-4 pb-4 border-bottom text-dark">
-            <img class="card-img-top img-thumbnail" src="{{ asset('spplie_imgs/fashion_tsuugakubou_hat.png') }}">
+            <img class="card-img-top img-thumbnail" src="{{ asset('storage/spplie_imgs/fashion_tsuugakubou_hat.png') }}">
             <div class="media-body pl-2">
                 <h5 class="mt-0">帽子</h5>
                 ￥0,000
