@@ -9,7 +9,14 @@ const FILES_TO_CACHE = [
     '/Re-Lara/css/sticky-footer.css',
     '/Re-Lara/cache/offline.html',
     '/Re-Lara/img/logo.png',
-    '/favicon.ico'
+    '/favicon.ico',
+    '/Re-Lara/img/check.png',
+    '/Re-Lara/img/delivery.png',
+    '/Re-Lara/img/dl.png',
+    '/Re-Lara/img/print.png',
+    '/Re-Lara/img/purchase_confirmation.png',
+    '/Re-Lara/img/purchase.png',
+    '/Re-Lara/img/print.png',
 ];
 
 self.addEventListener('install', (evt) => {
