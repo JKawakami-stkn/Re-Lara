@@ -101,10 +101,8 @@ Route::post('/menu/suppliers/{supplier}/supplies/regist', 'SupplieRegistrationCo
 
 // TODO : コントローラーにまとめる
 # 取引先一覧/取引先/用品一覧/用品
-Route::get('/menu/suppliers/{supplier}/supplies/{supplie}', function (App\models\Supplier $supplier, App\models\Supplie $supplie) {
-    return view('supplie-menu', ["supplier" => $supplier, "supplie" => $supplie]);
-})->name('supplie-menu');
-
+Route::get('/menu/suppliers/{supplier}/supplies/{supplie}', 'SupplieMenuController@show')->name('supplie-menu.show');
+Route::post('/menu/suppliers/{supplier}/supplies/{supplie}', 'SupplieMenuController@delete')->name('supplie-menu.delete');
 
 Route::get('/contacts', 'ContactController@show');
 Route::post('/contacts', 'ContactController@ajax')->name('contacts.ajax');

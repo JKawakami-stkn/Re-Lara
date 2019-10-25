@@ -11,7 +11,7 @@ class SuppliesController extends Controller
     }
 
      public function show($supplier_id)
-    {   
+    {
 
         $supplier = \App\models\Supplier::find($supplier_id);
         $supplies = \App\models\Supplier::find($supplier_id)->supplies;

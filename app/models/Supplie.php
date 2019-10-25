@@ -3,10 +3,11 @@
 namespace App\models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Supplie extends Model
 {
-    // use SoftDeletes;
+    use SoftDeletes;
 
     protected $table = 'supplies';
     protected $primaryKey = 'id';
