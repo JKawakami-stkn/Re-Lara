@@ -1,5 +1,5 @@
 <?php
-
+use App\models\Supplier;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -70,7 +70,7 @@ Route::get('/menu/sales/{sale_name}/inspection', function ($sale_name) {
     return view('inspection', ["sale_name" => $sale_name]);
 })->name('inspection');
 
-# 販売会一覧/販売会/検品
+# 販売会一覧/販売会/注文
 Route::get('/menu/sales/{sale_name}/order', function ($sale_name) {
     return view('order-status', ["sale_name" => $sale_name]);
 })->name('order-status');
@@ -82,6 +82,7 @@ Route::get('/menu/suppliers', 'SuppliersController@show')->name('suppliers.show'
 Route::get('/menu/suppliers/regist', 'SupplierRegistrationController@show')->name('supplier-registration.show');
 Route::post('/menu/suppliers/regist', 'SupplierRegistrationController@store')->name('supplier-registration.store');
 
+// TODO : コントローラーにまとめる
 # 取引先一覧/取引先
 Route::get('/menu/suppliers/{supplier}', function (App\models\Supplier $supplier) {
     return view('supplier-menu', ["supplier" => $supplier]);
@@ -98,12 +99,11 @@ Route::get('/menu/suppliers/{supplier}/supplies', 'SuppliesController@show')->na
 Route::get('/menu/suppliers/{supplier}/supplies/regist', 'SupplieRegistrationController@show')->name('supplie-registration.show');
 Route::post('/menu/suppliers/{supplier}/supplies/regist', 'SupplieRegistrationController@store')->name('supplie-registration.store');
 
+// TODO : コントローラーにまとめる
 # 取引先一覧/取引先/用品一覧/用品
 Route::get('/menu/suppliers/{supplier}/supplies/{supplie}', function (App\models\Supplier $supplier, App\models\Supplie $supplie) {
     return view('supplie-menu', ["supplier" => $supplier, "supplie" => $supplie]);
 })->name('supplie-menu');
-
-
 
 
 Route::get('/contacts', 'ContactController@show');

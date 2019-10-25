@@ -59,9 +59,12 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <button type="button" class="float-right btn btn-secondary" data-dismiss="modal">キャンセル</button>
-                    <button type="button" class="float-right btn btn-danger mr-3">削　除</button>
-                </div>
+                        <button type="button" class="float-right btn btn-secondary" data-dismiss="modal">キャンセル</button>
+                        <!-- <form action="{{ "route('supplie-delete', $supplie)" }}" method="post"> -->
+                            {{ csrf_field() }}
+                            <button type="submit" class="float-right btn btn-danger mr-3">削　除</button>
+                        <!-- </form> -->
+                    </div>
             </div>
         </div>
     </div>
