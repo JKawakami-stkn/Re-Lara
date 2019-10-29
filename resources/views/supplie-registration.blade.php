@@ -16,7 +16,7 @@
     </nav>
 
     <!-- フォーム -->
-    <form action="{{ route('supplie-registration.store', $supplier->id) }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('supplie-registration.store', $supplier->id) }}" method="post">
         {{ csrf_field() }}
         <div class="form-group">
             <label for="name">用品名</label>
