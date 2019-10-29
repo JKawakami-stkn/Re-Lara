@@ -13,7 +13,7 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('menu.show') }}">メニュー</a></li>
             <li class="breadcrumb-item"><a href="{{ route('suppliers.show') }}">取引先</a></li>
-            <li class="breadcrumb-item"><a href="{{ route('supplier-menu', $supplier->id) }}">{{$supplier->name}}</a></li>
+            <li class="breadcrumb-item"><a href="">{{$supplier->name}}</a></li>
             <li class="breadcrumb-item active" aria-current="page">取り扱い商品</li>
         </ol>
     </nav>
@@ -26,7 +26,7 @@
                     <img class="card-img-top mx-auto" src="{{ asset('storage/'.$supplie->img_path) }}">
                     <div class="card-body px-2 py-3">
                         <h5 class="card-title">{{ $supplie->name }}</h5>
-                        <p class="mb-0"><a href="{{ route('supplie-menu', [$supplier->id, $supplie->id]) }}" class="btn btn-primary btn-sm" style="width:100%;">確　認</a></p>
+                        <p class="mb-0"><a href="{{ route('supplie-menu.show', [$supplier->id, $supplie->id]) }}" class="btn btn-primary btn-sm" style="width:100%;">確　認</a></p>
 
                     </div>
                 </div>
