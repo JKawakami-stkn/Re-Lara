@@ -70,10 +70,10 @@
                     </div>
                     <div class="modal-body">
                         <button type="button" class="float-right btn btn-secondary" data-dismiss="modal">キャンセル</button>
-                        <!-- <form action="{{("route('supplier-delete', $supplier)") }}" method="post"> -->
+                        <form action="{{(route('supplier-delete', $supplier)) }}" method="post">
                             {{ csrf_field() }}
                             <button type="submit" class="float-right btn btn-danger mr-3">削　除</button>
-                        <!-- </form> -->
+                        </form> 
                     </div>
                 </div>
             </div>
