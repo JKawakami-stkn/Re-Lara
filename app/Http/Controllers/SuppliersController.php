@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Supplier;
 
 class SuppliersController extends Controller
 {
@@ -13,7 +14,7 @@ class SuppliersController extends Controller
 
      public function show()
     {   
-        $suppliers_data = DB::table('suppliers')->get();
+        $suppliers_data = Supplier::all();
         
         return view('suppliers', ['suppliers_data' => $suppliers_data]);
     }

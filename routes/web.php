@@ -84,9 +84,8 @@ Route::post('/menu/suppliers/regist', 'SupplierRegistrationController@store')->n
 
 // TODO : コントローラーにまとめる
 # 取引先一覧/取引先
-Route::get('/menu/suppliers/{supplier}', function (App\models\Supplier $supplier) {
-    return view('supplier-menu', ["supplier" => $supplier]);
-})->name('supplier-menu');
+Route::get('/menu/suppliers/{supplier}','SupplierMenuController@show')->name('supplier-menu');
+Route::post('/menu/suppliers/{supplier}','SupplierMenuController@delete')->name('supplier-delete');
 
 # 取引先一覧/取引先/取引先編集
 Route::get('/menu/suppliers/{supplier}/edit', 'SupplierEditController@show')->name('supplier-edit.show');
@@ -110,3 +109,6 @@ Route::post('/contacts', 'ContactController@ajax')->name('contacts.ajax');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+
