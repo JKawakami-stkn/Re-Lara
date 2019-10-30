@@ -43,6 +43,18 @@
 
 
         <p class="mb-2">用品選択</p>
+
+        <div class="row">
+            <p class="col-2 text-secondary">絞り込み：</p>
+            <select class="col-3 mb-2 custom-select custom-select-sm">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+        </div>
+
+
         <div class="form-group form-check border rounded">
 
             <input type="checkbox" class="form-check-input" id="1">
