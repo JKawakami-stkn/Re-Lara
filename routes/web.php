@@ -98,10 +98,13 @@ Route::get('/menu/suppliers/{supplier}/supplies', 'SuppliesController@show')->na
 Route::get('/menu/suppliers/{supplier}/supplies/regist', 'SupplieRegistrationController@show')->name('supplie-registration.show');
 Route::post('/menu/suppliers/{supplier}/supplies/regist', 'SupplieRegistrationController@store')->name('supplie-registration.store');
 
-// TODO : コントローラーにまとめる
 # 取引先一覧/取引先/用品一覧/用品
 Route::get('/menu/suppliers/{supplier}/supplies/{supplie}', 'SupplieMenuController@show')->name('supplie-menu.show');
 Route::post('/menu/suppliers/{supplier}/supplies/{supplie}', 'SupplieMenuController@delete')->name('supplie-menu.delete');
+
+# 取引先一覧/取引先/用品一覧/用品/用品編集
+Route::get('/menu/suppliers/{supplier}/supplies/{supplie}/edit', 'SupplieEditController@show')->name('supplie-edit.show');
+Route::post('/menu/suppliers/{supplier}/supplies/{supplie}/edit', 'SupplieEditController@edit')->name('supplie-edit.edit');
 
 Route::get('/contacts', 'ContactController@show');
 Route::post('/contacts', 'ContactController@ajax')->name('contacts.ajax');

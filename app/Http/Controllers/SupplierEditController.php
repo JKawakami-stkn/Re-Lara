@@ -19,7 +19,7 @@ class SupplierEditController extends Controller
 
         return view('supplier-edit', ['supplier' => $supplier]);
     }
-    
+
 
     public function edit(SupplierRequest $request, $supplier_id)
     {
