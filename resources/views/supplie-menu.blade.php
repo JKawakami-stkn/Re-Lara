@@ -18,9 +18,11 @@
     <img class="card-img-top mx-auto border" src="{{ asset('storage/'.$supplie->img_path) }}">
     <div class="card-body">
         <br>
-        <p>　価格：{{ $supplie->price }}</p>
+        <p>　価　格：{{ $supplie->price }}</p>
         <p>　サイズ：{{ $supplier->name }}</p>
-        <p>　カラー：{{ $supplier->name }}　対応：</p>
+        <p>　カラー：{{ $supplier->name }}</p>
+        <p>　男女別：{{ $supplier->name }}</p>
+        <p>　区　分：{{ $supplier->name }}</p>
   </div>
 </div>
 
@@ -31,7 +33,7 @@
 
         <!-- 画像のみカード -->
         <div class="col-4">
-            <a href="{{ route('supplier-edit.show', $supplier) }}">
+            <a href="{{ route('supplie-edit.show', [$supplier, $supplie]) }}">
                 <div class="card card-body">
                     <img class="card-img" src="{{ asset('img/edit.png') }}" data-toggle="tooltip" title="編集">
                 </div>
@@ -47,7 +49,7 @@
         </div>
 
     </div>
-    
+
     <!-- モーダルの設定 -->
     <div class="modal fade" id="ModalLong" tabindex="-1" role="dialog" aria-labelledby="ModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">

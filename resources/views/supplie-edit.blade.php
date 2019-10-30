@@ -11,12 +11,12 @@
             <li class="breadcrumb-item"><a href="{{ route('suppliers.show') }}">取引先</a></li>
             <li class="breadcrumb-item"><a href="{{ route('supplier-menu', $supplier->id) }}">{{$supplier->name}}</a></li>
             <li class="breadcrumb-item"><a href="{{ route('supplies', $supplier->id) }}">取り扱い用品</a></li>
-            <li class="breadcrumb-item active" aria-current="page">用品登録</li>
+            <li class="breadcrumb-item active" aria-current="page">用品編集</li>
         </ol>
     </nav>
 
     <!-- フォーム -->
-    <form action="{{ route('supplie-registration.store', $supplier->id) }}" method="post">
+    <form action="{{ route('supplie-edit.edit', [$supplier->id, $supplie->id]) }}" method="post">
         {{ csrf_field() }}
         <div class="form-group">
             <label for="name">用品名</label>
@@ -84,8 +84,6 @@
                 </div>
             </div>
         </div>
-
-
 
         <div class="mt-3 mb-3">
             <div class="form-group">
