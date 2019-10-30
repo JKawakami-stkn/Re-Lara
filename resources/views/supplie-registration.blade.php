@@ -72,14 +72,13 @@
         <p class="mb-2">男女による違い</p>
         <div class="border rounded p-2 mb-4">
             <div id="color-form-row" class="form-row">
-
                 <div class="input-group col-md-12 ">
                     <div class="custom-control custom-radio custom-control-inline mr-4">
-                        <input type="radio" id="customRadioInline1" name="customRadioInline" class="custom-control-input">
+                        <input type="radio" id="difference-available" class="custom-control-input">
                         <label class="custom-control-label" for="customRadioInline1">あり</label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline ml-4">
-                        <input type="radio" id="customRadioInline2" name="customRadioInline" class="custom-control-input">
+                        <input type="radio" id="difference-not-available" class="custom-control-input">
                         <label class="custom-control-label" for="customRadioInline2">なし</label>
                     </div>
                 </div>
@@ -88,8 +87,8 @@
 
         <div class="mt-3 mb-3">
             <div class="form-group">
-                <label for="class">用品区分</label>
-                <select class="form-control form-control" id="class">
+                <label for="division">用品区分</label>
+                <select class="form-control form-control" id="division">
                     <option selected disabled="disabled">選択してください</option>
                     <option>区分１</option>
                     <option>区分２</option>
