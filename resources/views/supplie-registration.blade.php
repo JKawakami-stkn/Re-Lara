@@ -69,6 +69,25 @@
             </div>
         </div>
 
+
+        <p class="mb-2">男女による違い</p>
+        <div class="border rounded p-2 mb-4">
+            <div id="color-form-row" class="form-row">
+
+                <div class="input-group input-group-color col-md-12 ">
+                    <div class="custom-control custom-radio custom-control-inline mr-4">
+                        <input type="radio" id="customRadioInline1" name="customRadioInline" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadioInline1">あり</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline ml-4">
+                        <input type="radio" id="customRadioInline2" name="customRadioInline" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadioInline2">なし</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <p class="mb-2">イメージ</p>
         <div class="input-group mb-5">
             <div class="custom-file">
