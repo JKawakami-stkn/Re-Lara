@@ -27,7 +27,7 @@
                 </span>
             @enderror
         </div>
-        
+
         <p class="mb-2">価格</p>
         <div class="input-group mb-3 mt-0">
             <input type="text" class="form-control" name="price" aria-label="">
@@ -69,12 +69,11 @@
             </div>
         </div>
 
-
         <p class="mb-2">男女による違い</p>
         <div class="border rounded p-2 mb-4">
             <div id="color-form-row" class="form-row">
 
-                <div class="input-group input-group-color col-md-12 ">
+                <div class="input-group col-md-12 ">
                     <div class="custom-control custom-radio custom-control-inline mr-4">
                         <input type="radio" id="customRadioInline1" name="customRadioInline" class="custom-control-input">
                         <label class="custom-control-label" for="customRadioInline1">あり</label>
@@ -87,6 +86,17 @@
             </div>
         </div>
 
+        <div class="mt-3 mb-3">
+            <div class="form-group">
+                <label for="class">用品区分</label>
+                <select class="form-control form-control" id="class">
+                    <option selected disabled="disabled">選択してください</option>
+                    <option>区分１</option>
+                    <option>区分２</option>
+                    <option>区分３</option>
+                </select>
+            </div>
+        </div>
 
         <p class="mb-2">イメージ</p>
         <div class="input-group mb-5">
@@ -100,7 +110,7 @@
         </div>
 
         <button type="submit" class="btn btn-primary" onclick="window.onbeforeunload=null">送信する</button>
-        
+
     </form>
 
 </div>
