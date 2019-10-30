@@ -23,7 +23,7 @@
 
     <div class="card mb-4">
         <div class="card-body">
-            <a href="">
+            <a href="{{ route('personal-orders.show') }}">
                 <h5 class="card-title">個別注文</h5>
                 <p class="card-text">未実装！！</p>
             </a>
