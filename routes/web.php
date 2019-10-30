@@ -20,6 +20,8 @@ Route::get('/sample', 'SampleController@show')->name('sample.show');
 # 機能一覧
 Route::get('/menu', 'MenuController@show')->name('menu.show');
 
+### 一括注文 #####################################################################################
+
 # 販売会一覧
 Route::get('/menu/sales', function () {
     return view('sales');
@@ -75,6 +77,20 @@ Route::get('/menu/sales/{sale_name}/order', function ($sale_name) {
     return view('order-status', ["sale_name" => $sale_name]);
 })->name('order-status');
 
+### 個別注文 #####################################################################################
+
+# 個別注文一覧
+Route::get('/menu/porders', 'PersonalOrdersController@show')->name('personal-orders.show');
+
+# 個別注文一覧/注文登録
+Route::get('/menu/porders/regist', 'PersonalOrderRegistrationController@show')->name('personal-order-registration.show');
+Route::post('/menu/porders/regist', 'PersonalOrderRegistrationController@store')->name('personal-order-registration.store');
+
+# 個別注文一覧/注文
+Route::get('/menu/porders/{porder}', 'PersonalOrderMenuController@show')->name('personal-order-menu.show');
+
+### 取引先登録 #####################################################################################
+
 # 取引先一覧
 Route::get('/menu/suppliers', 'SuppliersController@show')->name('suppliers.show');
 
@@ -82,7 +98,6 @@ Route::get('/menu/suppliers', 'SuppliersController@show')->name('suppliers.show'
 Route::get('/menu/suppliers/regist', 'SupplierRegistrationController@show')->name('supplier-registration.show');
 Route::post('/menu/suppliers/regist', 'SupplierRegistrationController@store')->name('supplier-registration.store');
 
-// TODO : コントローラーにまとめる
 # 取引先一覧/取引先
 Route::get('/menu/suppliers/{supplier}','SupplierMenuController@show')->name('supplier-menu');
 Route::post('/menu/suppliers/{supplier}','SupplierMenuController@delete')->name('supplier-delete');
@@ -98,7 +113,6 @@ Route::get('/menu/suppliers/{supplier}/supplies', 'SuppliesController@show')->na
 Route::get('/menu/suppliers/{supplier}/supplies/regist', 'SupplieRegistrationController@show')->name('supplie-registration.show');
 Route::post('/menu/suppliers/{supplier}/supplies/regist', 'SupplieRegistrationController@store')->name('supplie-registration.store');
 
-// TODO : コントローラーにまとめる
 # 取引先一覧/取引先/用品一覧/用品
 Route::get('/menu/suppliers/{supplier}/supplies/{supplie}', 'SupplieMenuController@show')->name('supplie-menu.show');
 Route::post('/menu/suppliers/{supplier}/supplies/{supplie}', 'SupplieMenuController@delete')->name('supplie-menu.delete');

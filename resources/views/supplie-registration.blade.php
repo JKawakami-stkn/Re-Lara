@@ -91,6 +91,9 @@
 <script src="{{ asset('public/js/dialog.js') }}"></script>
 <script src="{{ asset('public/js/form.js') }}"></script>
 <script src="{{ asset('public/js/upload_image.js') }}"></script>
+
+<script>
+</script>
 @stop
 
 @stop
