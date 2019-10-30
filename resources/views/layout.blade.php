@@ -27,8 +27,7 @@
     <!-- JavaScript -->
     <script src=" {{ asset('js/jquery-3.4.1.min.js' )}} "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-    <script src="{{ asset('js/bootstrap.min.js') }}" 
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     
     @yield('script')
    
