@@ -27,7 +27,7 @@
                 </span>
             @enderror
         </div>
-        
+
         <p class="mb-2">価格</p>
         <div class="input-group mb-3 mt-0">
             <input type="text" class="form-control" name="price" aria-label="">
@@ -69,6 +69,36 @@
             </div>
         </div>
 
+        <p class="mb-2">男女による違い</p>
+        <div class="border rounded p-2 mb-4">
+            <div id="color-form-row" class="form-row">
+                <div class="input-group col-md-12 ">
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadioInline1">あり</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadioInline2">なし</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="mt-3 mb-3">
+            <div class="form-group">
+                <label for="division">用品区分</label>
+                <select class="form-control form-control" id="division">
+                    <option selected disabled="disabled">選択してください</option>
+                    <option>区分１</option>
+                    <option>区分２</option>
+                    <option>区分３</option>
+                </select>
+            </div>
+        </div>
+
         <p class="mb-2">イメージ</p>
         <div class="input-group mb-5">
             <div class="custom-file">
@@ -79,9 +109,9 @@
                 <button type="button" class="btn btn-outline-secondary reset">取消</button>
             </div>
         </div>
-
-        <button type="submit" class="btn btn-primary" onclick="window.onbeforeunload=null">送信する</button>
         
+        <button type="submit" class="btn btn-primary" onclick="window.onbeforeunload=null">送信する</button>
+
     </form>
 
 </div>
@@ -91,9 +121,6 @@
 <script src="{{ asset('public/js/dialog.js') }}"></script>
 <script src="{{ asset('public/js/form.js') }}"></script>
 <script src="{{ asset('public/js/upload_image.js') }}"></script>
-
-<script>
-</script>
 @stop
 
 @stop
