@@ -109,7 +109,7 @@
                 <button type="button" class="btn btn-outline-secondary reset">取消</button>
             </div>
         </div>
-
+        
         <button type="submit" class="btn btn-primary" onclick="window.onbeforeunload=null">送信する</button>
 
     </form>
@@ -121,9 +121,6 @@
 <script src="{{ asset('public/js/dialog.js') }}"></script>
 <script src="{{ asset('public/js/form.js') }}"></script>
 <script src="{{ asset('public/js/upload_image.js') }}"></script>
-
-<script>
-</script>
 @stop
 
 @stop

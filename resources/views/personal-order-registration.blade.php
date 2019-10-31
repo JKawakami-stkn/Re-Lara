@@ -42,6 +42,22 @@
             <input type="date" class="form-control" name="deadline" aria-label="deadline">
         </div>
 
+        <p class="mb-2">入力</p>
+        <div class="border rounded p-2 mb-4">
+            <div id="color-form-row" class="form-row">
+                <div class="input-group col-md-12 ">
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadioInline1">今すぐ入力</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadioInline2">保護者が入力</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <button type="submit" class="btn btn-primary" onclick="window.onbeforeunload=null">送信する</button>
         
     </form>

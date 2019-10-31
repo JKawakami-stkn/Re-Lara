@@ -27,14 +27,17 @@
             <th scope="col"></th>
             </tr>
         </thead>
+        @foreach($personal_sales as $personal_sale)
         <tbody>
             <tr class="table-success">
-                <th scope="row">1</th>
+                <th scope="row">{{ $personal_sale->id }}</th>
                 <td>入力済み太郎</td>
                 <td>2020/10/10</td>
                 <td><input type="button" class="btn-sm btn-outline-primary" value="確　認" onclick="location.href='{{ route('personal-order-menu.show', 1)}}'"></td>
             </tr>
         </tbody>
+        @endforeach
+<!--
         <tbody>
             <tr class="table-danger">
                 <th scope="row">2</th>
@@ -67,6 +70,7 @@
             <td><input type="button" class="btn-sm btn-outline-primary" value="確　認" onclick="location.href='#'"></td>
             </tr>
         </tbody>
+-->
     </table>
 
 </div>

@@ -8,7 +8,10 @@ class PersonalOrdersController extends Controller
 {
 
     public function show(){
-        return view('personal-orders');
+
+        $personal_sales = \App\models\Personal_sale::all();
+
+        return view('personal-orders', ['personal_sales' => $personal_sales]);
     }
 
 }
