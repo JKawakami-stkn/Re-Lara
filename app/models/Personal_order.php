@@ -12,5 +12,5 @@ class Personal_order extends Model
     protected $table = 'personal_orders';
     protected $primaryKey = 'id';
     protected $dates = ['deleted_at'];
-    
+    protected $guarded = ['id'];
 }

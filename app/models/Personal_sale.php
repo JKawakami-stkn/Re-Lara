@@ -12,6 +12,7 @@ class Personal_sale extends Model
     protected $table = 'personal_sales';
     protected $primaryKey = 'id';
     protected $dates = ['deleted_at'];
+    protected $guarded = ['id'];
 
     public function personal_orders()
     {

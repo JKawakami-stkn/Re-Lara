@@ -23,7 +23,7 @@
         <div class="mt-3 mb-3">
             <div class="form-group">
                 <label for="group">組の名前</label>
-                <select class="form-control form-control" id="group">
+                <select id="group" class="form-control form-control">
                     <option selected disabled="disabled">選択してください</option>
                     @foreach($groups as $group)
                         <option value="{{ $group->GP_CD }}">{{ $group->GP_NM }}</option>
@@ -35,9 +35,8 @@
         <div class="mt-3 mb-3">
             <div class="form-group">
                 <label for="kids">購入する園児の名前</label>
-                <select class="form-control form-control" id="kids" disabled>
+                <select id="kids" class="form-control form-control" name="kids_id" disabled>
                     <option selected disabled="disabled">選択してください</option>
-                    <option value="">園児</option>
                 </select>
             </div>
         </div>

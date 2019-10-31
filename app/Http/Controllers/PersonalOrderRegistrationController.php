@@ -39,6 +39,8 @@ class PersonalOrderRegistrationController extends Controller
 
         $request->session()->regenerateToken();
 
+        \App\models\Personal_sale::create(['kids_id' => $request->kids_id, 'deadline' => $request->deadline]);
+
         $personal_orders_controller = new PersonalOrdersController();
         return $personal_orders_controller->show();
     }
