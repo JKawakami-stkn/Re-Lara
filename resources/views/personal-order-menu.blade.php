@@ -32,7 +32,7 @@
         <div class="col-4">
             <a href=" ">
                 <div class="card card-body">
-                    <img class="card-img" src="{{ asset('img/purchase.png') }}" data-toggle="tooltip" title="購入">
+                    <img class="card-img" src="{{ asset('img/purchase.png') }}" data-toggle="tooltip" title="入力">
                 </div>
              </a>
         </div>
@@ -40,7 +40,7 @@
         <div class="col-4">
             <a href="">
                 <div class="card card-body">
-                    <img class="card-img" src="{{ asset('img/check.png') }}" data-toggle="tooltip" title="検品">
+                    <img class="card-img" src="{{ asset('img/purchase_confirmation.png') }}" data-toggle="tooltip" title="注文状況確認">
                 </div>
             </a>
         </div>
@@ -57,26 +57,12 @@
 
     <div class="row">
     
-        <div class="col-3">
-            <a href="">
-                <div class="card card-body">
-                    <img class="card-img" src="{{ asset('img/purchase_confirmation.png') }}" data-toggle="tooltip" title="注文状況確認">
-                </div>
-            </a>
-        </div>
+
 
         <div class="col-3">
             <a href="">
                 <div class="card card-body">
                     <img class="card-img" src="{{ asset('img/print.png') }}" data-toggle="tooltip" title="印刷">
-                </div>
-            </a>
-        </div>
-
-        <div class="col-3">
-            <a href="">
-                <div class="card card-body">
-                    <img class="card-img" src="{{ asset('img/dl.png') }}" data-toggle="tooltip" title="ダウンロード">
                 </div>
             </a>
         </div>
