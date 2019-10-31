@@ -14,23 +14,27 @@
     </nav>
 
     <form action="{{ route('personal-order-registration.store') }}" method="post">
+
         {{ csrf_field() }}
+
+        <!-- jsでajaxのリンクを取得するため -->
+        <input type="hidden" id="ajax_url">
         <div class="mt-3 mb-3">
             <div class="form-group">
-                <label for="class">組の名前</label>
-                <select class="form-control form-control" id="class">
+                <label for="group">組の名前</label>
+                <select class="form-control form-control" id="group">
                     <option selected disabled="disabled">選択してください</option>
-                    <option>組</option>
-                    <option>組</option>
-                    <option>組</option>
+                    @foreach($groups as $group)
+                        <option>{{ $group->GP_NM }}</option>
+                    @endforeach
                 </select>
             </div>
         </div>
-        
+
         <div class="mt-3 mb-3">
             <div class="form-group">
-                <label for="name">購入する園児の名前</label>
-                <select class="form-control form-control" id="name" disabled>
+                <label for="kids">購入する園児の名前</label>
+                <select class="form-control form-control" id="kids" disabled>
                     <option selected disabled="disabled">選択してください</option>
                     <option>園児</option>
                 </select>
@@ -59,7 +63,7 @@
         </div>
 
         <button type="submit" class="btn btn-primary" onclick="window.onbeforeunload=null">送信する</button>
-        
+
     </form>
 
 </div>
