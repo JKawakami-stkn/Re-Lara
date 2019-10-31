@@ -15,7 +15,7 @@ class MWfGroupSeeder extends Seeder
           [
           'WC_CD'=> '0014',
           'WF_CD'=> '0001',
-          'id'=> '1',
+          'GP_CD'=> '0001',
           'WF_YEAR'=> '2019',
           'CRE_DTTIME'=> '2019/03/19 10:48:22',
           'UPD_DTTIME'=> '2019/07/12 8:07:47',
@@ -27,7 +27,7 @@ class MWfGroupSeeder extends Seeder
           [
           'WC_CD'=> '0014',
           'WF_CD'=> '0001',
-          'id'=> '2',
+          'GP_CD'=> '0002',
           'WF_YEAR'=> '2019',
           'CRE_DTTIME'=> '2019/03/19 10:48:57',
           'UPD_DTTIME'=> '2019/07/08 7:04:31',
@@ -39,7 +39,7 @@ class MWfGroupSeeder extends Seeder
           [
           'WC_CD'=> '0014',
           'WF_CD'=> '0001',
-          'id'=> '3',
+          'GP_CD'=> '0003',
           'WF_YEAR'=> '2019',
           'CRE_DTTIME'=> '2019/03/19 10:49:13',
           'UPD_DTTIME'=> '2019/07/08 7:04:36',
@@ -51,7 +51,7 @@ class MWfGroupSeeder extends Seeder
           [
           'WC_CD'=> '0014',
           'WF_CD'=> '0001',
-          'id'=> '4',
+          'GP_CD'=> '0004',
           'WF_YEAR'=> '2019',
           'CRE_DTTIME'=> '2019/03/19 10:49:34',
           'UPD_DTTIME'=> '2019/07/08 7:05:03',
@@ -63,7 +63,7 @@ class MWfGroupSeeder extends Seeder
           [
           'WC_CD'=> '0014',
           'WF_CD'=> '0001',
-          'id'=> '5',
+          'GP_CD'=> '0005',
           'WF_YEAR'=> '2019',
           'CRE_DTTIME'=> '2019/03/19 10:49:49',
           'UPD_DTTIME'=> '2019/07/08 7:04:48',
@@ -75,7 +75,7 @@ class MWfGroupSeeder extends Seeder
           [
           'WC_CD'=> '0014',
           'WF_CD'=> '0001',
-          'id'=> '6',
+          'GP_CD'=> '0006',
           'WF_YEAR'=> '2019',
           'CRE_DTTIME'=> '2019/03/19 10:50:05',
           'UPD_DTTIME'=> '2019/07/08 7:05:09',
@@ -87,7 +87,7 @@ class MWfGroupSeeder extends Seeder
           [
           'WC_CD'=> '0014',
           'WF_CD'=> '0001',
-          'id'=> '7',
+          'GP_CD'=> '0007',
           'WF_YEAR'=> '2019',
           'CRE_DTTIME'=> '2019/03/19 10:50:33',
           'UPD_DTTIME'=> '2019/07/08 7:05:15',
@@ -99,7 +99,7 @@ class MWfGroupSeeder extends Seeder
           [
           'WC_CD'=> '0014',
           'WF_CD'=> '0001',
-          'id'=> '8',
+          'GP_CD'=> '0008',
           'WF_YEAR'=> '2019',
           'CRE_DTTIME'=> '2019/03/19 10:50:53',
           'UPD_DTTIME'=> '2019/07/08 7:05:21',
@@ -111,7 +111,7 @@ class MWfGroupSeeder extends Seeder
           [
           'WC_CD'=> '0014',
           'WF_CD'=> '0001',
-          'id'=> '9',
+          'GP_CD'=> '0009',
           'WF_YEAR'=> '2019',
           'CRE_DTTIME'=> '2019/03/19 10:51:09',
           'UPD_DTTIME'=> '2019/07/08 7:05:27',
@@ -123,7 +123,7 @@ class MWfGroupSeeder extends Seeder
           [
           'WC_CD'=> '0014',
           'WF_CD'=> '0001',
-          'id'=> '10',
+          'GP_CD'=> '0010',
           'WF_YEAR'=> '2019',
           'CRE_DTTIME'=> '2019/03/19 10:51:22',
           'UPD_DTTIME'=> '2019/07/12 8:07:53',
@@ -135,7 +135,7 @@ class MWfGroupSeeder extends Seeder
           [
           'WC_CD'=> '0014',
           'WF_CD'=> '0001',
-          'id'=> '11',
+          'GP_CD'=> '0011',
           'WF_YEAR'=> '2019',
           'CRE_DTTIME'=> '2019/03/19 10:51:56',
           'UPD_DTTIME'=> '2019/07/12 8:08:01',
@@ -147,7 +147,7 @@ class MWfGroupSeeder extends Seeder
           [
           'WC_CD'=> '0014',
           'WF_CD'=> '0001',
-          'id'=> '12',
+          'GP_CD'=> '0012',
           'WF_YEAR'=> '2019',
           'CRE_DTTIME'=> '2019/03/19 10:52:12',
           'UPD_DTTIME'=> '2019/07/12 8:08:05',
@@ -159,7 +159,7 @@ class MWfGroupSeeder extends Seeder
           [
           'WC_CD'=> '0014',
           'WF_CD'=> '0001',
-          'id'=> '13',
+          'GP_CD'=> '0013',
           'WF_YEAR'=> '2019',
           'CRE_DTTIME'=> '2019/03/19 10:52:30',
           'UPD_DTTIME'=> '2019/07/12 8:08:13',
@@ -171,7 +171,7 @@ class MWfGroupSeeder extends Seeder
           [
           'WC_CD'=> '0014',
           'WF_CD'=> '0001',
-          'id'=> '14',
+          'GP_CD'=> '0014',
           'WF_YEAR'=> '2019',
           'CRE_DTTIME'=> '2019/03/19 10:52:46',
           'UPD_DTTIME'=> '2019/07/12 8:08:18',
@@ -183,7 +183,7 @@ class MWfGroupSeeder extends Seeder
           [
           'WC_CD'=> '0014',
           'WF_CD'=> '0001',
-          'id'=> '15',
+          'GP_CD'=> '0015',
           'WF_YEAR'=> '2019',
           'CRE_DTTIME'=> '2019/03/19 10:53:13',
           'UPD_DTTIME'=> '2019/07/18 14:35:56',
@@ -195,7 +195,7 @@ class MWfGroupSeeder extends Seeder
           [
           'WC_CD'=> '0014',
           'WF_CD'=> '0001',
-          'id'=> '16',
+          'GP_CD'=> '0016',
           'WF_YEAR'=> '2019',
           'CRE_DTTIME'=> '2019/03/19 10:53:34',
           'UPD_DTTIME'=> '2019/06/29 8:35:05',
@@ -207,14 +207,38 @@ class MWfGroupSeeder extends Seeder
           [
           'WC_CD'=> '0014',
           'WF_CD'=> '0001',
-          'id'=> '17',
-          'WF_YEAR'=> '2019',
-          'CRE_DTTIME'=> '2019/05/16 10:09:56',
-          'UPD_DTTIME'=> '2019/05/30 17:56:34',
+          'GP_CD'=> '0017',
+          'WF_YEAR'=> '2018',
+          'CRE_DTTIME'=> '2018/05/16 10:09:56',
+          'UPD_DTTIME'=> '2018/05/30 17:56:34',
           'UPD_ID'=> '17048',
           'DAT_VALID_KBN'=> 'N',
-          'GP_NM'=> '検証用（5才）',
+          'GP_NM'=> 'これが表示されたらあかん',
           'GP_AGE_KBN'=> '5'
+          ],
+          [
+            'WC_CD'=> '0015',
+            'WF_CD'=> '0001',
+            'GP_CD'=> '0017',
+            'WF_YEAR'=> '2019',
+            'CRE_DTTIME'=> '2018/05/16 10:09:56',
+            'UPD_DTTIME'=> '2018/05/30 17:56:34',
+            'UPD_ID'=> '17048',
+            'DAT_VALID_KBN'=> 'N',
+            'GP_NM'=> 'これが表示されたらあかん',
+            'GP_AGE_KBN'=> '5'
+          ],
+          [
+            'WC_CD'=> '0014',
+            'WF_CD'=> '0002',
+            'GP_CD'=> '0017',
+            'WF_YEAR'=> '2019',
+            'CRE_DTTIME'=> '2018/05/16 10:09:56',
+            'UPD_DTTIME'=> '2018/05/30 17:56:34',
+            'UPD_ID'=> '17048',
+            'DAT_VALID_KBN'=> 'N',
+            'GP_NM'=> 'これが表示されたらあかん',
+            'GP_AGE_KBN'=> '5'
           ]
 
       ]);
