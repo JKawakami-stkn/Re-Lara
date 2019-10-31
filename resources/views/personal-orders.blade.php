@@ -31,7 +31,7 @@
         <tbody>
             <tr class="table-success">
                 <th scope="row">{{ $personal_sale->id }}</th>
-                <td>入力済み太郎</td>
+                <td>{{ $personal_sale->m_kids->KIDS_NM_KJ }}</td>
                 <td>2020/10/10</td>
                 <td><input type="button" class="btn-sm btn-outline-primary" value="確　認" onclick="location.href='{{ route('personal-order-menu.show', 1)}}'"></td>
             </tr>

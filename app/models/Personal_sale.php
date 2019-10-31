@@ -17,4 +17,9 @@ class Personal_sale extends Model
     {
         return $this->hasMany('App\models\Personal_order');
     }
+
+    public function m_kids()
+    {
+        return $this->belongsTo('App\models\M_kids', 'kids_id', 'KIDS_ID');
+    }
 }
