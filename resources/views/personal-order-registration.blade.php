@@ -18,14 +18,15 @@
         {{ csrf_field() }}
 
         <!-- jsでajaxのリンクを取得するため -->
-        <input type="hidden" id="ajax_url">
+        <input type="hidden" id="ajax_url" value="{{ route('personal-order-registration.load') }}">
+
         <div class="mt-3 mb-3">
             <div class="form-group">
                 <label for="group">組の名前</label>
                 <select class="form-control form-control" id="group">
                     <option selected disabled="disabled">選択してください</option>
                     @foreach($groups as $group)
-                        <option>{{ $group->GP_NM }}</option>
+                        <option value="{{ $group->GP_CD }}">{{ $group->GP_NM }}</option>
                     @endforeach
                 </select>
             </div>
@@ -36,7 +37,7 @@
                 <label for="kids">購入する園児の名前</label>
                 <select class="form-control form-control" id="kids" disabled>
                     <option selected disabled="disabled">選択してください</option>
-                    <option>園児</option>
+                    <option value="">園児</option>
                 </select>
             </div>
         </div>

@@ -14,15 +14,17 @@ class PersonalOrderRegistrationController extends Controller
 
     public function show(){
 
-        $groups = \App\models\M_wf_group::all();
+        $groups = \App\models\M_wf_group::currentYearGroups();
 
         return view('personal-order-registration', ['groups' => $groups]);
     }
 
-    public function load($group_id){
+    public function load($gp_cd){
 
-        $data =\App\models\M_Kids::where('KIDS_ID', 1)
-            ->get()
+        // 絞り込みに使用する現在年度を取得
+        $wf_year = (new \DateTime('-3 month'))->format('Y');
+
+        $data = \App\models\M_wf_group::kids($gp_cd, $wf_year)
             ->toArray();
 
         // jsonを返す

@@ -83,6 +83,7 @@ Route::get('/menu/porders', 'PersonalOrdersController@show')->name('personal-ord
 
 # 個別注文一覧/注文登録
 Route::get('/menu/porders/regist', 'PersonalOrderRegistrationController@show')->name('personal-order-registration.show');
+Route::post('/menu/porders/regist/load/{GP_CD?}', 'PersonalOrderRegistrationController@load')->name('personal-order-registration.load');
 Route::post('/menu/porders/regist', 'PersonalOrderRegistrationController@store')->name('personal-order-registration.store');
 
 # 個別注文一覧/注文
