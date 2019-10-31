@@ -26,9 +26,8 @@ Route::get('/menu/sales', function () {
 })->name('sales');
 
 # 販売会一覧/販売会登録
-Route::get('/menu/sales/regist', function () {
-    return view('sale-registration');
-})->name('sale-registration');
+Route::get('/menu/sales/regist',"SaleRegistrationController@show")->name('sale-registration');
+Route::post('/menu/sales/regist',"SaleRegistrationController@store")->name('sale-registrationStore');
 
 # 販売会一覧/販売会/販売会編集
 Route::get('/menu/sales/{sale_name}/edit', function ($sale_name) {
