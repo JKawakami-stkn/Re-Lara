@@ -30,7 +30,7 @@
 
         <!-- 画像のみカード -->
         <div class="col-4">
-            <a href=" ">
+            <a href="{{ route('personal-order-supplies.show', $personal_sale->id ) }}">
                 <div class="card card-body">
                     <img class="card-img" src="{{ asset('img/purchase.png') }}" data-toggle="tooltip" title="入力">
                 </div>
@@ -56,8 +56,6 @@
     </div>
 
     <div class="row">
-    
-
 
         <div class="col-3">
             <a href="">

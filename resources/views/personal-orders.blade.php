@@ -33,7 +33,7 @@
                 <th scope="row">{{ $personal_sale->id }}</th>
                 <td>{{ $personal_sale->m_kids->KIDS_NM_KJ }}</td>
                 <td>{{ date('Y年m月d日', strtotime($personal_sale->deadline)) }}</td>
-                <td><input type="button" class="btn-sm btn-outline-primary" value="確　認" onclick="location.href='{{ route('personal-order-menu.show', 1)}}'"></td>
+                <td><input type="button" class="btn-sm btn-outline-primary" value="確　認" onclick="location.href='{{ route('personal-order-menu.show', $personal_sale->id)}}'"></td>
             </tr>
         </tbody>
         @endforeach

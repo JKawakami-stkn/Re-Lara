@@ -89,6 +89,9 @@ Route::post('/menu/porders/regist', 'PersonalOrderRegistrationController@store')
 # 個別注文一覧/注文
 Route::get('/menu/porders/{porder}', 'PersonalOrderMenuController@show')->name('personal-order-menu.show');
 
+# 個別注文一覧/注文/用品一覧
+Route::get('/menu/porders/{porder}/supplies', 'PersonalOrderSuppliesController@show')->name('personal-order-supplies.show');
+
 ### 取引先登録 #####################################################################################
 
 # 取引先一覧
