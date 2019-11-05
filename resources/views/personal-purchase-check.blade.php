@@ -4,11 +4,14 @@
 
 <div class="container" >
 
+    {{ $personal_sale }}
+    <br><br>
+
     <!-- パンくずリスト -->
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('menu.show') }}">メニュー</a></li>
-            <li class="breadcrumb-item"><a href="{{ route('personal-orders.show') }}">個別注文</a></li>
+            <li class="breadcrumb-item"><a href="">個別注文</a></li>
             <li class="breadcrumb-item active" aria-current="page">注文確認</li>
         </ol>
     </nav>
