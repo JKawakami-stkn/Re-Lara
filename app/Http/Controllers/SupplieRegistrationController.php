@@ -20,12 +20,17 @@ class SupplieRegistrationController extends Controller
 
         return view('supplie-registration', ['supplier' => $supplier]);
     }
-    
+
 
     public function store($supplier_id, SupplieRequest $request)
     {
         $request->session()->regenerateToken();
 
+        // デコード
+        $encoded_name = $request->name;
+        $decoded_name = mb_convert_encoding($encoded_name, "UTF-8", "HTML-ENTITIES");
+
+        // 画像保存処理
         if ($request->file('img_path') != null) {
             $path = $request->file('img_path')->storeAs('public/spplie_imgs', time().'.jpg');
             $path = str_replace('public/', '', $path);
@@ -33,12 +38,10 @@ class SupplieRegistrationController extends Controller
         }else{
             $path = 'spplie_imgs/no_image.png';
         }
-        
-        \Debugbar::info($path);
 
         DB::table('supplies')->insert(
             [
-                'name' => $request->name,
+                'name' => $decoded_name,
                 'supplier_id' => $supplier_id,
                 'price' => $request->price,
                 'img_path' => $path,
