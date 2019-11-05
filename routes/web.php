@@ -95,6 +95,7 @@ Route::get('/menu/porders/{personal_sale}/purchase', 'PersonalPurchaseSuppliesCo
 # 個別注文一覧/注文/用品一覧/用品
 Route::get('/menu/porders/{personal_sale}/purchase/{supplie}', 'PersonalPurchaseSupplieController@show')->name('personal-purchase-supplie.show');
 Route::post('/menu/porders/{personal_sale}/purchase/{supplie}', 'PersonalPurchaseSupplieController@store')->name('personal-purchase-supplie.store');
+
 ### 取引先登録 #####################################################################################
 
 # 取引先一覧
