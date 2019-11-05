@@ -15,8 +15,8 @@ class RenameMWfGroupTableToId extends Migration
     {
         Schema::table('M_WF_GROUP', function (Blueprint $table) {
             $table->char('GP_CD',4)->nullable(false);
-            $table->primary(['WC_CD','WF_CD','GP_CD','WF_YEAR']);
             $table->dropColumn('id');
+            $table->primary(['WC_CD','WF_CD','GP_CD','WF_YEAR']);
         });
     }
 
