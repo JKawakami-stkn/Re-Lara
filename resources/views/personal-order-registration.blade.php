@@ -69,8 +69,8 @@
 </div>
 
 @section('script')
-<script src="{{ asset('public/js/dialog.js') }}"></script>
-<script src="{{ asset('public/js/select_child.js') }}"></script>
+<script src="{{ asset('js/dialog.js') }}"></script>
+<script src="{{ asset('js/select_child.js') }}"></script>
 @stop
 
 @stop
