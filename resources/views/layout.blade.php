@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ asset('css/checkbox.css') }}">
     <link rel="manifest" href="{{ asset('manifest.json') }}">
 
-    <title>Re:Lara</title>
+    <title>Partone</title>
 </head>
 
 <body>
