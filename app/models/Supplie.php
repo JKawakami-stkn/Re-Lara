@@ -13,6 +13,11 @@ class Supplie extends Model
     protected $primaryKey = 'id';
     protected $dates = ['deleted_at'];
 
+    public function supplier()
+    {
+        return $this->belongsTo('App\models\Supplier');
+    }
+
     public function skus()
     {
         return $this->hasMany('App\models\Sku');

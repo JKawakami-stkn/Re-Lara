@@ -87,7 +87,14 @@ Route::post('/menu/porders/regist/load/{GP_CD?}', 'PersonalOrderRegistrationCont
 Route::post('/menu/porders/regist', 'PersonalOrderRegistrationController@store')->name('personal-order-registration.store');
 
 # 個別注文一覧/注文
-Route::get('/menu/porders/{porder}', 'PersonalOrderMenuController@show')->name('personal-order-menu.show');
+Route::get('/menu/porders/{personal_sale}', 'PersonalOrderMenuController@show')->name('personal-order-menu.show');
+
+# 個別注文一覧/注文/用品一覧
+Route::get('/menu/porders/{personal_sale}/purchase', 'PersonalPurchaseSuppliesController@show')->name('personal-purchase-supplies.show');
+
+# 個別注文一覧/注文/用品一覧/用品
+Route::get('/menu/porders/{personal_sale}/purchase/{supplie}', 'PersonalPurchaseSupplieController@show')->name('personal-purchase-supplie.show');
+Route::post('/menu/porders/{personal_sale}/purchase/{supplie}', 'PersonalPurchaseSupplieController@store')->name('personal-purchase-supplie.store');
 
 ### 取引先登録 #####################################################################################
 

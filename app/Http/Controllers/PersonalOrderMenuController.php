@@ -10,7 +10,10 @@ class PersonalOrderMenuController extends Controller
         $this->middleware('auth');
     }
     
-    public function show(){
-        return view('personal-order-menu');
+    public function show($personal_sale_id){
+
+        $personal_sale = \App\models\Personal_sale::find($personal_sale_id);
+
+        return view('personal-order-menu', ['personal_sale' => $personal_sale]);
     }
 }
