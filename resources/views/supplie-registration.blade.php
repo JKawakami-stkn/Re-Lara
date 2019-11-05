@@ -14,9 +14,9 @@
             <li class="breadcrumb-item active" aria-current="page">用品登録</li>
         </ol>
     </nav>
-
+    <?php print_r(mb_get_info()); ?>
     <!-- フォーム -->
-    <form action="{{ route('supplie-registration.store', $supplier->id) }}" method="post">
+    <form action="{{ route('supplie-registration.store', $supplier->id) }}" method="post" enctype="multipart/form-data" accept-charset="ASCII">
         {{ csrf_field() }}
         <div class="form-group">
             <label for="name">用品名</label>
