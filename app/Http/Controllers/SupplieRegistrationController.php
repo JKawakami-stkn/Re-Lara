@@ -33,7 +33,7 @@ class SupplieRegistrationController extends Controller
         }else{
             $path = 'spplie_imgs/no_image.png';
         }
-
+        
         \Debugbar::info($path);
 
         DB::table('supplies')->insert(
