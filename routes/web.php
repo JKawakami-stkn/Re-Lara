@@ -71,7 +71,7 @@ Route::get('/menu/sales/{sale_name}/inspection', function ($sale_name) {
     return view('inspection', ["sale_name" => $sale_name]);
 })->name('inspection');
 
-# 販売会一覧/販売会/注文
+# 販売会一覧/販売会/注文内容確認
 Route::get('/menu/sales/{sale_name}/order', function ($sale_name) {
     return view('order-status', ["sale_name" => $sale_name]);
 })->name('order-status');
@@ -95,6 +95,9 @@ Route::get('/menu/porders/{personal_sale}/purchase', 'PersonalPurchaseSuppliesCo
 # 個別注文一覧/注文/用品一覧/用品
 Route::get('/menu/porders/{personal_sale}/purchase/{supplie}', 'PersonalPurchaseSupplieController@show')->name('personal-purchase-supplie.show');
 Route::post('/menu/porders/{personal_sale}/purchase/{supplie}', 'PersonalPurchaseSupplieController@store')->name('personal-purchase-supplie.store');
+
+# 個別注文一覧/注文/注文内容確認
+Route::get('/menu/porders/{personal_sale}/order', 'PersonalPurchaseCheckController@show')->name('personal-purchase-check.show');
 
 ### 取引先登録 #####################################################################################
 
