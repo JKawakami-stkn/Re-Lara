@@ -1,8 +1,26 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.wrapper:before {
+  content:"";
+  display: block;
+  padding-top: 141.4%; /* 高さを幅の75%に固定 */
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
 .layout{
-  margin-top:20px;
   border:solid 1px;
   padding:20px;
-  max-width: 720px;
+  max-width: 21cm;
 }
 
 .day{
@@ -16,7 +34,7 @@
 }
 
 .title{
-  font-size:30px;
+  font-size:29px;
   text-align:center;
   border-bottom:solid 2px;
   margin-bottom:5px;
@@ -28,7 +46,7 @@
 
 .vendor-name, .vendor-rep{
   text-align:left;
-  font-size:15px;
+  font-size:16px;
   width:50%;
 }
 
@@ -48,14 +66,14 @@ table{
 
 td,th{
   border:solid 1px;
-  padding:3px;
-  height:1.5rem;
+  padding:1.5px;
+  height:1rem;
   max-width:100%;
 }
 
 .office{
   width:30%;
-  font-size:10px;
+  font-size:11px;
   margin:0 0 0 auto;
   margin-bottom:20px;
   border-bottom:solid 1px;
@@ -90,9 +108,9 @@ td,th{
 }
 
 .message{
-  font-size:13px;
+  font-size:12px;
+  margin-bottom:5px;
 }
-
 
 @media print{
 
@@ -142,15 +160,15 @@ td,th{
   }
 
   table {
-    _border-collapse: collapse;
+    border-collapse: collapse;
     width:100%;
   }
 
   td,th {
-    _border: 2px #000000 solid;
-    _padding: 3px;
-    _height: 1.5rem;
-    _max-width: 100%;
+    border: 2px #000000 solid;
+    padding: 3px;
+    height: 1.5rem;
+    max-width: 100%;
   }
 
   .office {
