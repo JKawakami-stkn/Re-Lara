@@ -1,9 +1,8 @@
 <!-- ナビゲーションバー -->
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-<a class="navbar-brand text-black-50" href="https://relaso.serveo.net/Re-Lara/">
-<img src="{{ asset('img/logo.png') }}" width="30" height="30" class="d-inline-block align-top" >
-Partone
-</a>
+<a class="navbar-brand text-black-50 pt-0 pb-0" href="{{ route('menu.show') }}">
+<img src="{{ asset('img/partone_logo.png') }}"  height="40" class="d-inline-block align-top" >
+</a> 
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
 <span class="navbar-toggler-icon"></span>
 </button>
