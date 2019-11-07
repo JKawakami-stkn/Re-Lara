@@ -87,6 +87,7 @@ td,th{
   margin-top:20px;
   border:solid 1px;
   height:7rem;
+  page-break-after: always;
 }
 
 
@@ -195,6 +196,7 @@ td,th{
     margin-top:20px;
     border:solid 1px;
     height:10rem;
+    page-break-after: always;
   }
 
   .message{

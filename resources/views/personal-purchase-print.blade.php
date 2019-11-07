@@ -17,9 +17,10 @@
             
 
     @foreach($suppliers as $supplier)
+        <!-- TODO : ここで、この注文に、この取引先が扱う商品が含まれているか確認する処理 -->
         <div class="layout">
             <div class="day">{{ date("Y/m/d") }}</div>
-            <div class="number">注文番号：{{ sprintf('%05d', $personal_sale->id) }}</div>
+            <div class="number">注文番号：{{ sprintf('%05d', $personal_sale->id). sprintf('%02d',$supplier->id) }}</div>
 
             <div class="header">
                 <div class="title">注　文　書</div>
@@ -27,8 +28,8 @@
             </div>
 
             <div class="vender">
-                <div class="vendor-name"> 取引先名 </div>
-                <div class="vendor-rep">(取引先名)様</div>
+                <div class="vendor-name"> {{$supplier->name}} </div>
+                <div class="vendor-rep">{{$supplier->person_charge}}　様</div>
             </div>
 
             <div class="office">
@@ -37,7 +38,7 @@
                 <div class="street-address">岡山市南区浦安南町425-1</div>
                 <div class="tel">TEL: 086-265-556</div>
                 <div class="fax">FAX: 086-265-5562</div>
-                <div class="rep">担当者：(担当者名)</div>
+                <div class="rep">担当者：</div>
             </div>
 
             <div class="message"> 以下の通り発注いたします。</div>
@@ -53,6 +54,7 @@
                 <tbody>
                     <?php  $order_loop_index = 0?>
                     @foreach ($personal_orders as $personal_order)
+                        
                         <!-- 一致するオーダーが存在する -->
                         @if($supplier->id == \App\models\Supplie::find($personal_order->supplie_id)->supplier_id)
                             <td class="no">{{ $order_loop_index + 1 }}</td>
@@ -61,7 +63,6 @@
                             </tr>
                             <?php  $order_loop_index += 1?>
                         @endif
-                        {{$order_loop_index}}
                         <!-- オーダーのループ終了 -->
                         @if ($order_loop_index == count($personal_orders) )
                             @for ($i = $order_loop_index + 1; $i < 16; $i++)
@@ -81,6 +82,8 @@
             </div>
 
         </div>
+        <!-- 印刷区切り -->
+
     @endforeach
 
     <!-- 印刷ボタン -->
