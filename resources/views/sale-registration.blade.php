@@ -23,9 +23,10 @@
 
         <p class="mb-2">対象選択</p>
         <div class="form-group form-check border rounded">
-
-            <input type="checkbox" class="form-check-input" id="6">
-            <label class="form-check-label mt-2 mb-1 mr-3" for="6">対象組</label>
+            @foreach($kumis as $kumi)
+            <input type="checkbox" class="form-check-input" id="{{$kumi->GP_CD}}" name="kumis[]" value="{{$kumi->GP_CD}}">
+            <label class="form-check-label mt-2 mb-1 mr-3" for="{{$kumi->GP_CD}}">{{$kumi->GP_NM}}</label>
+            @endforeach
         </div>
 
 
