@@ -24,8 +24,17 @@
         <p class="mb-2">対象選択</p>
         <div class="form-group form-check border rounded">
             @foreach($kumis as $kumi)
-            <input type="checkbox" class="form-check-input" id="{{$kumi->GP_CD}}" name="kumis[]" value="{{$kumi->GP_CD}}">
-            <label class="form-check-label mt-2 mb-1 mr-3" for="{{$kumi->GP_CD}}">{{$kumi->GP_NM}}</label>
+                @if($loop->index % 2 == 0)
+                <div class="row">
+                @endif
+                    <div class="col-sm-6 col-12">
+                        <input type="checkbox" class="form-check-input " id="{{$kumi->GP_CD}}" name="kumis[]" value="{{$kumi->GP_CD}}">
+                        <label class="form-check-label mt-2 mb-1 mr-3" for="{{$kumi->GP_CD}}">{{$kumi->GP_NM}}</label>
+                    </div>
+                @if($loop->index % 2 == 1)
+                </div>
+                @endif
+
             @endforeach
         </div>
 
@@ -33,13 +42,22 @@
         <p class="mb-2">用品選択</p>
         <div class="form-group form-check border rounded">
             @foreach ($supplies as $supplie)
-                <input type="checkbox" class="form-check-input" name="supplie[]" id="{{$supplie->id}}" value="{{$supplie->id}}">
-                <label class="form-check-label mt-2 mb-1 mr-3" for="{{$supplie->id}}" >{{$supplie->name}}</label>
+                @if($loop->index % 2 == 0)
+                <div class="row">
+                @endif
+                    <div class="col-sm-6 col-12">
+                        <input type="checkbox" class="form-check-input" name="supplie[]" id="{{$supplie->id}}" value="{{$supplie->id}}">
+                        <label class="form-check-label mt-2 mb-1 mr-3" for="{{$supplie->id}}" >{{$supplie->name}}</label>
+                    </div>
+                @if($loop->index % 2 == 1)
+                </div>
+                @elseif($loop->last && $loop->index % 2 == 0)
+                </div>
+                @endif
             @endforeach
         </div>
-       
 
-        <button type="submit" class="btn btn-primary" onclick="window.onbeforeunload=null">送信する</button> 
+        <button type="submit" class="btn btn-primary" onclick="window.onbeforeunload=null">送信する</button>
     </form>
 
 </div>
