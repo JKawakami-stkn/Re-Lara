@@ -33,6 +33,8 @@
                     </div>
                 @if($loop->index % 2 == 1)
                 </div>
+                @elseif($loop->last && $loop->index % 2 == 0)
+                </div>
                 @endif
 
             @endforeach
