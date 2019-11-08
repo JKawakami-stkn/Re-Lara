@@ -99,6 +99,10 @@ Route::post('/menu/porders/{personal_sale}/purchase/{supplie}', 'PersonalPurchas
 # 個別注文一覧/注文/注文内容確認
 Route::get('/menu/porders/{personal_sale}/order', 'PersonalPurchaseCheckController@show')->name('personal-purchase-check.show');
 
+# 個別注文一覧/注文編集
+Route::get('/menu/porders/{personal_sale}/edit','PersonalOrderEditController@show')->name('personal-order-edit.show');
+Route::post('/menu/porders/{personal_sale}/edit', 'PersonalOrderEditController@store')->name('personal-order-edit.store');
+
 ### 取引先登録 #####################################################################################
 
 # 取引先一覧
@@ -137,6 +141,3 @@ Route::post('/contacts', 'ContactController@ajax')->name('contacts.ajax');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-
-

@@ -14,7 +14,7 @@ class M_kids extends Model
 
     public $incrementing = false;
 
-    public function group($GP_CD, $WF_YEAR)
+    public static function group($GP_CD, $WF_YEAR)
     {
 
         $WC_CD = '0014';

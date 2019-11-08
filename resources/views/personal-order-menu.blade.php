@@ -56,7 +56,7 @@
     </div>
 
     <div class="row">
-    
+
 
 
         <div class="col-3">
@@ -68,7 +68,7 @@
         </div>
 
         <div class="col-3">
-            <a href="">
+            <a href="{{route('personal-order-edit.show', $personal_sale->id)}}">
                 <div class="card card-body">
                     <img class="card-img" src="{{ asset('img/edit.png') }}" alt="カードの画像" data-toggle="tooltip" title="情報編集">
                 </div>
@@ -85,4 +85,3 @@
 
 
 @stop
-
