@@ -24,7 +24,6 @@ class PersonalPurchasePrintController extends Controller
         // 発注書を送る取引先一覧
         $supplies_id = Supplie::whereIn('id', $ordered_supplies_id)->groupBy('supplier_id')->get('supplier_id');
         $suppliers = Supplier::find($supplies_id);
-        \Debugbar::info($suppliers);
 
         return view('personal-purchase-print', ['personal_sale'=>$personal_sale, 'personal_orders'=>$personal_orders, 'suppliers'=>$suppliers]);
     }

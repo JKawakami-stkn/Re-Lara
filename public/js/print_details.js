@@ -1,9 +1,13 @@
-window.onload = function() {
+$(function () {
+  $('#supplier').change(function () {
+    $('#supplier').val()
 
-  // 実行日の日時を取得
-  var today = new Date();
-
-  var formatted_date = today.getFullYear() + "年 " + (today.getMonth() + 1) + "月 " + today.getDate() + "日";
-
-  document.getElementById('day').textContent = formatted_date
-};
+    $('#supplier option').each(function(index, element){
+      if($('#supplier').val() != element.value){
+        $('#' + element.value).hide();
+      }else{
+        $('#' + element.value).show(); 
+      }
+    });
+  });
+});

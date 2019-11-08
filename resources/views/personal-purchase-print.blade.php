@@ -16,19 +16,20 @@
     </nav>
 
     <div class="form-group noprint">
-        <label for="exampleSelect1exampleFormControlSelect1">発注書の選択</label>
-        <select class="form-control" id="exampleFormControlSelect1">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+        <label for="supplier">発注書の選択</label>
+        <select class="form-control" id="supplier">
+        @foreach($suppliers as $supplier)
+            <option value="{{ $supplier->id }}">{{ $supplier->name }}</option>
+        @endforeach
         </select>
   </div>
 
     @foreach($suppliers as $supplier)
-
-        <div class="layout">
+        @if($loop->first)
+        <div id="{{$supplier->id}}" class="layout">
+        @else
+        <div id="{{$supplier->id}}" class="layout" style="display:none;">
+        @endif
             <div class="day">{{ date("Y/m/d") }}</div>
             <div class="number">注文番号：{{ sprintf('%05d', $personal_sale->id). sprintf('%02d',$supplier->id) }}</div>
 
@@ -38,8 +39,8 @@
             </div>
 
             <div class="vender">
-                <div class="vendor-name"> {{$supplier->name}} </div>
-                <div class="vendor-rep">{{$supplier->person_charge}}　様</div>
+                <div class="vendor-name"> {{ $supplier->name }} </div>
+                <div class="vendor-rep">{{ $supplier->person_charge }}　様</div>
             </div>
 
             <div class="office">
