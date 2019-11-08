@@ -48,4 +48,15 @@ class M_wf_group extends Model
 
         return $kids;
     }
+    #KIDS_IDから組みの名前を持ってくるメソッド
+    public static function getgroup($KIDS_ID){
+      $WF_CD = "0001";
+      $WC_CD = "0014";
+      $WF_YEAR = (new \DateTime('-3 month'))->format('Y');
+      $GP_CD = \App\models\T_kids_gp_posi::where("KIDS_ID", $KIDS_ID)->where("WF_YEAR", $WF_YEAR)->value("GP_CD");
+      $group_neme = M_wf_group::where('WC_CD', $WC_CD)->where('WF_CD', $WF_CD)->where('WF_YEAR', $WF_YEAR)->where('GP_CD', $GP_CD)->value("GP_NM");
+
+      return $group_neme;
+
+    }
 }
