@@ -103,6 +103,9 @@ Route::get('/menu/porders/{personal_sale}/order', 'PersonalPurchaseCheckControll
 Route::get('/menu/porders/{personal_sale}/edit','PersonalOrderEditController@show')->name('personal-order-edit.show');
 Route::post('/menu/porders/{personal_sale}/edit', 'PersonalOrderEditController@store')->name('personal-order-edit.store');
 
+# 個別注文一覧/注文/注文書印刷
+Route::get('/menu/porders/{personal_sale}/print', 'PersonalPurchasePrintController@show')->name('personal-purchase-print.show');
+
 ### 取引先登録 #####################################################################################
 
 # 取引先一覧

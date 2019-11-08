@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/checkbox.css') }}">
     <link rel="manifest" href="{{ asset('manifest.json') }}">
-
+    @yield('style')
     <title>Partone</title>
 </head>
 
