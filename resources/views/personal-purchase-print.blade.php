@@ -68,10 +68,9 @@
                         $order_match = 0;
                     ?>
                     @foreach ($personal_orders as $personal_order)
-
                         <!-- 一致するオーダーが存在する -->
                         @if($supplier->id == \App\models\Supplie::find($personal_order->supplie_id)->supplier_id)
-                            <td class="no">{{ $order_loop_index + 1 }}</td>
+                            <td class="no">{{ $order_match + 1 }}</td>
                             <td class="supplie-name">{{ \App\models\Supplie::find($personal_order->supplie_id)->name }}</td>
                             <td class="num">{{$personal_order->quantity}}</td>
                             </tr>
