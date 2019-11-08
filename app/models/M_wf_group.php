@@ -10,7 +10,7 @@ class M_wf_group extends Model
 
     protected $table = 'm_wf_group';
 
-    protected $primaryKey = ['WC_CD', 'WF_CD', 'GP_CD', 'WF_YEAR'];
+    protected $primaryKey = 'GP_CD';
 
     public $incrementing = false;
 
