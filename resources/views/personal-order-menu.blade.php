@@ -60,7 +60,7 @@
 
 
         <div class="col-3">
-            <a href="">
+            <a href="{{ route('personal-purchase-print.show', $personal_sale->id) }}">
                 <div class="card card-body">
                     <img class="card-img" src="{{ asset('img/print.png') }}" data-toggle="tooltip" title="印刷">
                 </div>
