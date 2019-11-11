@@ -29,7 +29,6 @@ class SupplieRegistrationController extends Controller
         // デコード
         $encoded_name = $request->name;
         $decoded_name = mb_convert_encoding($encoded_name, "UTF-8", "HTML-ENTITIES");
-
         // 画像保存処理
         if ($request->file('img_path') != null) {
             $path = $request->file('img_path')->storeAs('public/spplie_imgs', time().'.jpg');
@@ -45,6 +44,7 @@ class SupplieRegistrationController extends Controller
                 'supplier_id' => $supplier_id,
                 'price' => $request->price,
                 'img_path' => $path,
+                'division_id' => 0
             ]
         );
 

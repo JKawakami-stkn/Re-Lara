@@ -2,6 +2,7 @@ $(function () {
     $(".size-add-button-addon").click(function () {
         console.log("追加")
         $(this).parent().parent().clone(true).appendTo('#size-form-row');
+        $(".size").last().val('');
     });
 });
 $(function () {
@@ -17,6 +18,7 @@ $(function () {
     $(".color-add-button-addon").click(function () {
         console.log("追加")
         $(this).parent().parent().clone(true).appendTo('#color-form-row');
+        $(".colorsize").last().val('');
     });
 });
 $(function () {
