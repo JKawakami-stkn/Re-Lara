@@ -46,7 +46,7 @@
         </div>
 
         <div class="col-4">
-            <a href="">
+            <a href="{{ route('personal-purchase-delivery.show', $personal_sale->id) }}">
                 <div class="card card-body">
                     <img class="card-img" src="{{ asset('img/delivery.png') }}" data-toggle="tooltip" title="引き渡し">
                 </div>
