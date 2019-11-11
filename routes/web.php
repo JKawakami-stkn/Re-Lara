@@ -101,6 +101,7 @@ Route::get('/menu/porders/{personal_sale}/order', 'PersonalPurchaseCheckControll
 
 # 個別注文一覧/注文/引き渡し
 Route::get('/menu/porders/{personal_sale}/delivery', 'PersonalPurchaseDeliveryController@show')->name('personal-purchase-delivery.show');
+Route::post('/menu/porders/{personal_sale}/delivery', 'PersonalPurchaseDeliveryController@store')->name('personal-purchase-delivery.store');
 
 # 個別注文一覧/注文編集
 Route::get('/menu/porders/{personal_sale}/edit','PersonalOrderEditController@show')->name('personal-order-edit.show');

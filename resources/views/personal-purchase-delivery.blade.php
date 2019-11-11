@@ -11,10 +11,9 @@
         </ol>
     </nav>
 
-
     <!-- メディアオブジェクト -->
     @if(! $personal_orders->isEmpty())
-    <form action="#" method="post" onsubmit="return checkbox_check()">
+    <form action="{{ route('personal-purchase-delivery.store', $personal_sale_id) }}" method="post" onsubmit="return checkbox_check()">
         @foreach($personal_orders as $personal_order)
         <div class="media mt-4 pb-4 border-bottom">
             <img class="card-img-top img-thumbnail" src="{{ asset('storage/'.\App\models\Supplie::find($personal_order->supplie_id)->img_path ) }}">
