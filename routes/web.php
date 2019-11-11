@@ -23,9 +23,7 @@ Route::get('/menu', 'MenuController@show')->name('menu.show');
 ### 一括注文 #####################################################################################
 
 # 販売会一覧
-Route::get('/menu/sales', function () {
-    return view('sales');
-})->name('sales');
+Route::get('/menu/sales', "SalesTopController@show")->name('sales');
 
 # 販売会一覧/販売会登録
 Route::get('/menu/sales/regist',"SaleRegistrationController@show")->name('sale-registration');
@@ -37,9 +35,7 @@ Route::get('/menu/sales/{sale_name}/edit', function ($sale_name) {
 })->name('sale-edit');
 
 # 販売会一覧/販売会/販売会メニュー
-Route::get('/menu/sales/{sale_name}', function ($sale_name) {
-    return view('sale-menu', ["sale_name" => $sale_name]);
-})->name('sale-menu');
+Route::get('/menu/sales/{sale_id}','SaleMenuController@show')->name('sale-menu');
 
 # 販売会一覧/販売会/購入対象選択
 Route::get('/menu/sales/{sale_name}/purchase', function ($sale_name) {

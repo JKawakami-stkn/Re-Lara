@@ -33,4 +33,5 @@ class PersonalOrderEditRequest extends FormRequest
         return [
             'deadline.required' => '締め切りを入力してください',
         ];
+    }
 }
