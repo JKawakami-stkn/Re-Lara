@@ -14,21 +14,23 @@
             <li class="breadcrumb-item active" aria-current="page">注文確認</li>
         </ol>
     </nav>
-
+    <!--
     <div class="form-group noprint">
         <label for="supplier">発注書の選択</label>
         <select class="form-control" id="supplier">
+            <option value="0">全て表示</option>
         @foreach($suppliers as $supplier)
             <option value="{{ $supplier->id }}">{{ $supplier->name }}</option>
         @endforeach
         </select>
-  </div>
+    </div>
+    -->
 
     @foreach($suppliers as $supplier)
         @if($loop->first)
         <div id="{{$supplier->id}}" class="layout">
         @else
-        <div id="{{$supplier->id}}" class="layout" style="display:none;">
+        <div id="{{$supplier->id}}" class="layout">
         @endif
             <div class="day">{{ date("Y/m/d") }}</div>
             <div class="number">注文番号：{{ sprintf('%05d', $personal_sale->id). sprintf('%02d',$supplier->id) }}</div>
