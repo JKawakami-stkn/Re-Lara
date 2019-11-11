@@ -40,7 +40,7 @@
         <div class="border rounded p-2 mb-3">
             <div id="size-form-row" class="form-row">
                 <div class="input-group input-group-size col-md-6 mb-1">
-                    <input type="text" class="form-control @error('size') is-invalid @enderror size" name="sizes[]" value="{{ old('size')}}" placeholder="" aria-label="" aria-describedby="button-addon">
+                    <input type="text" class="form-control @error('size') is-invalid @enderror size bachsize" name="sizes[]" value="{{ old('size')}}" placeholder="" aria-label="" aria-describedby="button-addon">
                     <div class="input-group-append" id="button-addon">
                         <button type="button" id="button-addon" class="btn btn-outline-success size-add-button-addon">＋</button>
                         <button type="button" id="button-addon" class="btn btn-outline-danger size-remove-button-addon">ー</button>
@@ -54,13 +54,13 @@
             <div id="color-form-row" class="form-row">
 
                 <div class="input-group input-group-color col-md-12 mb-1">
-                    <input type="text" class="form-control @error('color') is-invalid @enderror color" name="colors[color]" value="{{ old('color')}}" placeholder="" aria-label="" aria-describedby="button-addon">
-                    <select class="custom-select" name="colors[target]" id="inputGroupSelect01">
+                    <input type="text" class="form-control @error('color') is-invalid @enderror color colorsize" name="colors[color]" value="{{ old('color')}}" placeholder="" aria-label="" aria-describedby="button-addon">
+                    <!--<select class="custom-select" name="colors[target]" id="inputGroupSelect01">
                         <option selected value="">対象</option>
                         <option value="1">その1</option>
                         <option value="2">その2</option>
                         <option value="3">その3</option>
-                    </select>
+                    </select>-->
                     <div class="input-group-append" id="button-addon">
                         <button type="button" id="button-addon" class="btn btn-outline-success color-add-button-addon">＋</button>
                         <button type="button" id="button-addon" class="btn btn-outline-danger color-remove-button-addon">ー</button>
@@ -69,7 +69,7 @@
             </div>
         </div>
 
-        <p class="mb-2">男女による違い</p>
+        <!-- <p class="mb-2">男女による違い</p>
         <div class="border rounded p-2 mb-4">
             <div id="color-form-row" class="form-row">
                 <div class="input-group col-md-12 ">
@@ -83,7 +83,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
 
 
@@ -109,7 +109,7 @@
                 <button type="button" class="btn btn-outline-secondary reset">取消</button>
             </div>
         </div>
-        
+
         <button type="submit" class="btn btn-primary" onclick="window.onbeforeunload=null">送信する</button>
 
     </form>
@@ -118,10 +118,9 @@
 
 
 @section('script')
-<script src="{{ asset('public/js/dialog.js') }}"></script>
-<script src="{{ asset('public/js/form.js') }}"></script>
-<script src="{{ asset('public/js/upload_image.js') }}"></script>
+<script src="{{ asset('js/dialog.js') }}"></script>
+<script src="{{ asset('js/form.js') }}"></script>
+<script src="{{ asset('js/upload_image.js') }}"></script>
 @stop
 
 @stop
-

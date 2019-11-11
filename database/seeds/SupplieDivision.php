@@ -13,19 +13,16 @@ class SupplieDivision extends Seeder
     {
       DB::table('supplie_division')->insert([
         [
-          'division_name' => '寝具',
+          'division_name' => '衣類、靴、鞄等',
         ],
         [
-          'division_name' => '衣類',
+          'division_name' => 'ノート、本',
         ],
         [
-          'division_name' => 'ノート',
+          'division_name' => '道具等',
         ],
         [
-          'division_name' => '筆記用具',
-        ],
-        [
-          'division_name' => '教具',
+          'division_name' => '名札、印鑑等',
         ],
         [
           'division_name' => 'その他',
