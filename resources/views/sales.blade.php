@@ -52,7 +52,7 @@
 
     <!-- カード -->
     @foreach ($sales as $sale)
-        <div class="card">
+        <div class="card mb-4">
             <h5 class="card-header text-center">{{$sale->name}}</h5>
             <div class="card-body">
                 <h5 class="card-title"></h5>
