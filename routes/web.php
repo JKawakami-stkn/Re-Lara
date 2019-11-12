@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Controllers\SaleEditController;
 use App\models\Supplier;
 /*
 |--------------------------------------------------------------------------
@@ -30,9 +32,8 @@ Route::get('/menu/sales/regist',"SaleRegistrationController@show")->name('sale-r
 Route::post('/menu/sales/regist',"SaleRegistrationController@store")->name('sale-registrationStore');
 
 # 販売会一覧/販売会/販売会編集
-Route::get('/menu/sales/{sale_name}/edit', function ($sale_name) {
-    return view('sale-edit', ["sale_name" => $sale_name]);
-})->name('sale-edit');
+Route::get('/menu/sales/{sale_id}/edit','SaleEditController@show')->name('sale-edit');
+Route::post('/menu/sales/{sale_id}/edit','SaleEditController@store')->name('sale-editStore');
 
 # 販売会一覧/販売会/販売会メニュー
 Route::get('/menu/sales/{sale_id}','SaleMenuController@show')->name('sale-menu');
