@@ -81,7 +81,7 @@
         </div>
 
         <div class="col-3">
-            <a href="{{ route('sale-edit', $sale->id) }}">
+            <a href="{{ route('sale-editStore', $sale->id) }}">
                 <div class="card card-body">
                     <img class="card-img" src="{{ asset('img/edit.png') }}" alt="カードの画像" data-toggle="tooltip" title="情報編集">
                 </div>
