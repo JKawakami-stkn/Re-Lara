@@ -39,9 +39,9 @@ Route::post('/menu/sales/{sale_id}/edit','SaleEditController@store')->name('sale
 Route::get('/menu/sales/{sale_id}','SaleMenuController@show')->name('sale-menu');
 
 # 販売会一覧/販売会/購入対象選択
-Route::get('/menu/sales/{sale_name}/purchase', function ($sale_name) {
-    return view('purchase-target', ["sale_name" => $sale_name]);
-})->name('purchase-target');
+Route::get('/menu/sales/{sale_id}/purchase','PurchaseTargetController@show')->name('purchase-target');
+Route::post('/menu/sales/{sale_id}/purchase/{GP_CD?}', 'PurchaseTargetController@load')->name('purchase-target.load');
+Route::post('/menu/sales/{sale_id}/purchase','PurchaseTargetController@store')->name('purchase-target.store');
 
 # 販売会一覧/販売会/購入対象選択/購入/用品一覧
 Route::get('/menu/sales/{sale_name}/purchase/{target}', function ($sale_name, $target) {
