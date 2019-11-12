@@ -12,20 +12,20 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('職員ID') }}</label>
+                            <label for="staff_id" class="col-md-4 col-form-label text-md-right">{{ __('職員ID') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="staff_id" type="text" class="form-control @error('staff_id') is-invalid @enderror" name="staff_id" value="{{ old('staff_id') }}" required autocomplete="staff_id" autofocus>
 
-                                @error('')
+                                @error('staff_id')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
                         </div>
-                        
 
+                        <!--
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('ユーザー名') }}</label>
 
@@ -39,6 +39,7 @@
                                 @enderror
                             </div>
                         </div>
+                        -->
 
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('メールアドレス') }}</label>
