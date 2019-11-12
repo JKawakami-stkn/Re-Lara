@@ -39,7 +39,8 @@ class SaleRegistrationController extends Controller
         // //saleテーブルとm_wf_groupテーブルとの紐付け処理
         $sale->sale_m_wf_group($sale->id,$kumi);
 
-        return view('sales');
+        $saletop = new SalesTopController;
+        return $saletop->show();
 
     }
 }
