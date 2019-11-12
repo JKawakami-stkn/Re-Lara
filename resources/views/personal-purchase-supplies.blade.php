@@ -26,7 +26,7 @@
                 <p>￥{{ number_format($supplie->price) }}</p>
                 <!-- {{ \App\models\Personal_order::where('personal_sale_id', $personal_sale->id)->where('supplie_id', $supplie->id)->get() }} -->
                 @if( \App\models\Personal_order::where('personal_sale_id', $personal_sale->id)->where('supplie_id', $supplie->id)->get()->isEmpty() )
-                    <p class="mt-4 text-danger">状態：未入力</p>
+                    <p class="mt-4 _text-danger">状態：未入力</p>
                 @else
                     <p class="mt-4 text-success">状態：入力済み</p>
                 @endif
@@ -34,11 +34,13 @@
         </div>
     </a>
     @endforeach
-    <div class="mt-5 mb-3">
-        <a class="btn btn-primary btn-block" href="">
-            確　　定
-        </a>
-    </div>
+
+    <form action="{{ route('personal-purchase-supplies.store', $personal_sale->id) }}" method="post">
+        @csrf
+        <div class="mt-5 mb-3">
+            <button type="submit" class="btn btn-primary btn-block" onclick="window.onbeforeunload=null">確　　定</button>
+        </div>
+    </form>
 
 </div>
 

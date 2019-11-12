@@ -13,4 +13,14 @@ class PersonalPurchaseSuppliesController extends Controller
 
         return view('personal-purchase-supplies', ['supplies' => $supplies, 'personal_sale' => $personal_sale ]);
     }
+
+    public function store($personal_sale_id){
+        
+        $personal_sale = \App\models\Personal_sale::find($personal_sale_id);
+        $personal_sale->entered_at = date("Y/m/d H:i:s");
+        $personal_sale->save();
+
+        $personal_orders = new PersonalOrdersController;
+        return $personal_orders->show();
+    }
 }

@@ -28,6 +28,8 @@
             </tr>
         </thead>
         @foreach($personal_sales as $personal_sale)
+            <!-- 注文済み、印刷済み -->
+        
         <tbody>
             <tr class="table-success">
                 <th scope="row">{{ $personal_sale->id }}</th>
