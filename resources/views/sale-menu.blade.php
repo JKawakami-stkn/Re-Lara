@@ -36,10 +36,19 @@
              </a>
         </div>
 
+        <!--
         <div class="col-4">
             <a href="{{ route('inspection', $sale->id) }}">
                 <div class="card card-body">
                     <img class="card-img" src="{{ asset('img/check.png') }}" data-toggle="tooltip" title="検品">
+                </div>
+            </a>
+        </div>
+        -->
+        <div class="col-4">
+            <a href="{{ route('order-status', $sale->id) }}">
+                <div class="card card-body">
+                    <img class="card-img" src="{{ asset('img/purchase_confirmation.png') }}" data-toggle="tooltip" title="注文状況確認">
                 </div>
             </a>
         </div>
@@ -55,14 +64,6 @@
     </div>
 
     <div class="row">
-    
-        <div class="col-3">
-            <a href="{{ route('order-status', $sale->id) }}">
-                <div class="card card-body">
-                    <img class="card-img" src="{{ asset('img/purchase_confirmation.png') }}" data-toggle="tooltip" title="注文状況確認">
-                </div>
-            </a>
-        </div>
 
         <div class="col-3">
             <a href="">
@@ -72,6 +73,7 @@
             </a>
         </div>
 
+        <!--
         <div class="col-3">
             <a href="">
                 <div class="card card-body">
@@ -79,6 +81,7 @@
                 </div>
             </a>
         </div>
+        -->
 
         <div class="col-3">
             <a href="{{ route('sale-editStore', $sale->id) }}">
