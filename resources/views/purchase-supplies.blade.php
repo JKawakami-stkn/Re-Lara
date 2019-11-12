@@ -20,7 +20,7 @@
             <div class="media-body pl-2">
                 <h5 class="mt-0">体操服</h5>
                 <p>￥0,000</p>
-                <p class="mt-4 text-danger">購入状態：未購入</p>
+                <p class="mt-4 _text-danger">購入状態：未購入</p>
             </div>
         </div>
     </a>
@@ -37,6 +37,7 @@
     </a>
 
     <div class="mt-5 mb-3">
+        @csrf
         <a class="btn btn-primary btn-block" href="{{ route('sale-menu', $sale_name) }}">
             確　　定
         </a>
