@@ -32,10 +32,12 @@ class PurchaseTargetController extends Controller
          );
     }
 
-    public function store(PersonalOrderRequest $request){
+    public function store(PersonalOrderRequest $request,$sale_id){
         $request->session()->regenerateToken();
 
         \App\models\Personal_sale::create(['kids_id' => $request->kids_id, 'deadline' => $request->deadline]);
 
+        $salemenu = new SaleMenuController;
+        return $salemenu->show($sale_id);
     }
 }
