@@ -10,7 +10,7 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
-
+                        <!--
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('メールアドレス') }}</label>
 
@@ -24,7 +24,21 @@
                                 @enderror
                             </div>
                         </div>
+                        -->
+                        <div class="form-group row">
+                            <label for="staff_id" class="col-md-4 col-form-label text-md-right">{{ __('職員ID') }}</label>
 
+                            <div class="col-md-6">
+                                <input id="staff_id" type="staff_id" class="form-control @error('staff_id') is-invalid @enderror" name="staff_id" value="{{ old('staff_id') }}" required autocomplete="off" autofocus>
+
+                                @error('staff_id')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('パスワード') }}</label>
 
