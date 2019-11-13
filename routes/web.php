@@ -54,9 +54,9 @@ Route::get('/menu/sales/{sale_name}/purchase/{target}/{supplie}', function ($sal
 })->name('purchase-supplie');
 
 # 販売会一覧/販売会/引き渡し対象選択
-Route::get('/menu/sales/{sale_name}/delivery', function ($sale_name) {
-    return view('delivery-target', ["sale_name" => $sale_name]);
-})->name('delivery-target');
+Route::get('/menu/sales/{sale_id}/delivery', 'DeliveryTargetController@show')->name('delivery-target');
+Route::post('/menu/sales/{sale_id}/delivery/{GP_CD?}', 'DeliveryTargetController@load')->name('delivery-target.load');
+Route::post('/menu/sales/{sale_id}/delivery','DeliveryTargetController@store')->name('delivery-target.store');
 
 # 販売会一覧/販売会/引き渡し対象選択/引き渡しチェック
 Route::get('/menu/sales/{sale_name}/delivery/{target}', function ($sale_name, $target) {
