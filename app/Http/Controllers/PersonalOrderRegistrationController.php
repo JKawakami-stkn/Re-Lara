@@ -23,7 +23,6 @@ class PersonalOrderRegistrationController extends Controller
 
         // 絞り込みに使用する現在年度を取得
         $wf_year = (new \DateTime('-3 month'))->format('Y');
-
         $data = \App\models\M_wf_group::kids($gp_cd, $wf_year)
             ->toArray();
 

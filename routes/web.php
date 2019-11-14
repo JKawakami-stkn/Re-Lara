@@ -40,7 +40,7 @@ Route::get('/menu/sales/{sale_id}','SaleMenuController@show')->name('sale-menu')
 
 # 販売会一覧/販売会/購入対象選択
 Route::get('/menu/sales/{sale_id}/purchase','PurchaseTargetController@show')->name('purchase-target');
-Route::post('/menu/sales/{sale_id}/purchase/{GP_CD?}', 'PurchaseTargetController@load')->name('purchase-target.load');
+Route::post('/menu/sales/{sale_id}/purchase/load/{GP_CD?}', 'PurchaseTargetController@load')->name('purchase-target.load');
 Route::post('/menu/sales/{sale_id}/purchase','PurchaseTargetController@store')->name('purchase-target.store');
 
 # 販売会一覧/販売会/購入対象選択/購入/用品一覧
@@ -55,7 +55,7 @@ Route::get('/menu/sales/{sale_name}/purchase/{target}/{supplie}', function ($sal
 
 # 販売会一覧/販売会/引き渡し対象選択
 Route::get('/menu/sales/{sale_id}/delivery', 'DeliveryTargetController@show')->name('delivery-target');
-Route::post('/menu/sales/{sale_id}/delivery/{GP_CD?}', 'DeliveryTargetController@load')->name('delivery-target.load');
+Route::post('/menu/sales/{sale_id}/delivery/load/{GP_CD?}', 'DeliveryTargetController@load')->name('delivery-target.load');
 Route::post('/menu/sales/{sale_id}/delivery','DeliveryTargetController@store')->name('delivery-target.store');
 
 # 販売会一覧/販売会/引き渡し対象選択/引き渡しチェック
