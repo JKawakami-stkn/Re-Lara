@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Sale;
+use App\Http\Requests\PersonalOrderRequest;
 
 class DeliveryTargetController extends Controller
 {
@@ -13,7 +14,7 @@ class DeliveryTargetController extends Controller
         return view('delivery-target',compact("groups","sale"));
     }
 
-    public function load($gp_cd){
+    public function load($sale_id,$gp_cd){
 
         // 絞り込みに使用する現在年度を取得
         $wf_year = (new \DateTime('-3 month'))->format('Y');

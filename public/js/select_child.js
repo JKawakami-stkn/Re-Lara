@@ -19,6 +19,7 @@ $('#group').change( function() {
 function getKids(url){
   var group_selector =  $('#group');
   var kids_selector = $('#kids');
+  console.log(ajax_url + '/' + group_selector.val())
   $(function(){
       $.ajaxSetup({
           headers: {
@@ -26,11 +27,12 @@ function getKids(url){
           }
       })
       $.ajax({
-          type: 'POST',
+        type: 'POST',
           url: url + '/' + group_selector.val(),
           dataType: 'json', // 読み込むデータの種類
       }).done(function (results) {
           // 成功時の処理
+        console.log(results);
           kids_selector.empty(); // 子要素をすべて削除
           // 選択された組に園児が所属している場合
           if(results.length != 0){
