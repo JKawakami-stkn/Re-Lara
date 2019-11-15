@@ -30,7 +30,7 @@
 
         <p class="mb-2">価格</p>
         <div class="input-group mb-3 mt-0">
-            <input type="text" class="form-control" name="price" aria-label="">
+            <input type="number" class="form-control" name="price" aria-label="">
             <div class="input-group-append">
                 <span class="input-group-text">円</span>
             </div>
@@ -110,7 +110,7 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary" onclick="window.onbeforeunload=null">送信する</button>
+        <button type="submit" class="btn btn-primary" onclick="window.onbeforeunload=null">登録する</button>
 
     </form>
 

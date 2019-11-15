@@ -8,7 +8,7 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('menu.show') }}">メニュー</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('sales') }}">物品販売</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('sales') }}">一括注文</a></li>
         <li class="breadcrumb-item active" aria-current="page">{{ $sale->name }}</li>
     </ol>
 </nav>
@@ -17,8 +17,8 @@
   <div class="card-body">
     <h4>{{ $sale->name }}の詳細</h4>
     <br>
-    <p>　期日：</p>
-    <p>　対象：</p>
+    <p>　期日：{{ $sale->deadline }}</p>
+    <p>　対象：{{ $sale->m_wf_groups() }}</p>
   </div>
 </div>
 
