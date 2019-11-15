@@ -23,7 +23,24 @@ class SupplieMenuController extends Controller
 
         $supplie = Supplie::find($supplie_id);
         $supplie->delete();
+        //SKU削除
+        if(!empty(\App\models\Sku::where("supplie_id", $supplie_id)->get("id")->toArray())){
 
+          $delete_id  = \App\models\Sku::where("supplie_id", $supplie_id)->get("id")->toArray();
+          $id_v = [];
+          foreach($delete_id as $ids){
+            foreach ($ids as $id) {
+              array_push($id_v, $id);
+            }
+          }
+          // \Debugbar::addMessage(count($id_v));
+          for($i = 0; $i < count($id_v); $i++){
+            // \Debugbar::addMessage($i);
+            $delete = \App\models\Sku::find($id_v[$i]);
+            $delete->delete();
+          }
+
+        }
         $supplies_controller = new SuppliesController();
         return $supplies_controller->show($supplier_id);
 
