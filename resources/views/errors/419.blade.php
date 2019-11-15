@@ -4,7 +4,9 @@
 
 <div class="container" >
 
-    419えらー
+    <img src="{{ asset('img/419.png') }}" class="img-fluid img-responsive" alt="409_error_image">
+
+</div>
 
 @stop
 
