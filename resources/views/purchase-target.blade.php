@@ -9,7 +9,7 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('menu.show') }}">メニュー</a></li>
             <li class="breadcrumb-item"><a href="{{ route('sales') }}">物品販売</a></li>
-            <li class="breadcrumb-item"><a href="{{ route('sale-menu', $sale->name) }}">{{ $sale->name }}</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('sale-menu', $sale->id) }}">{{ $sale->name }}</a></li>
             <li class="breadcrumb-item active" aria-current="page">購入</li>
         </ol>
     </nav>
@@ -50,7 +50,6 @@
 </div>
 
 @section('script')
-<script src="{{ asset('js/dialog.js') }}"></script>
 <script src="{{ asset('js/select_child.js') }}"></script>
 @stop
 

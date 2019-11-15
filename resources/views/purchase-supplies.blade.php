@@ -14,31 +14,22 @@
 
 
     <!-- メディアオブジェクト -->
-    <a class="text-decoration-none" href="{{ route('purchase-supplie', [$sale_name, $target, '体操服']) }}">
+    @foreach($supplies as $supplie)
+    <a class="text-decoration-none" href="{{ route('purchase-supplie', [$sale->id, $target, $supplie->id]) }}">
         <div class="media mt-4 pb-4 border-bottom text-dark">
             <img class="card-img-top img-thumbnail" src="{{ asset('storage/spplie_imgs/taisougi.png') }}">
             <div class="media-body pl-2">
-                <h5 class="mt-0">体操服</h5>
-                <p>￥0,000</p>
+            <h5 class="mt-0">{{$supplie->name}}</h5>
+            <p>{{$supplie->price}}</p>
                 <p class="mt-4 _text-danger">購入状態：未購入</p>
             </div>
         </div>
     </a>
-
-    <a class="text-decoration-none" href="{{ route('purchase-supplie', [$sale_name, $target, '帽子']) }}">
-        <div class="media mt-4 pb-4 border-bottom text-dark">
-            <img class="card-img-top img-thumbnail" src="{{ asset('storage/spplie_imgs/fashion_tsuugakubou_hat.png') }}">
-            <div class="media-body pl-2">
-                <h5 class="mt-0">帽子</h5>
-                ￥0,000
-                <p class="mt-4 text-success">購入状態：購入済み</p>
-            </div>
-        </div>
-    </a>
+    @endforeach
 
     <div class="mt-5 mb-3">
         @csrf
-        <a class="btn btn-primary btn-block" href="{{ route('sale-menu', $sale_name) }}">
+        <a class="btn btn-primary btn-block" href="{{ route('sale-menu', $sale->name) }}">
             確　　定
         </a>
     </div>

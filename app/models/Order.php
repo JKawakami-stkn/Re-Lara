@@ -3,6 +3,7 @@
 namespace App\models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Order extends Model
 {
@@ -14,14 +15,14 @@ class Order extends Model
     protected $dates = ['deleted_at'];
 
     public function kids(){
-        // return $this->belongsToMany('App\models\');
+        return $this->belongsTo('App\models\M_kids');
     }
 
     public function skus(){
-        return $this->belongsToMany('App\models\Sku');
+        return $this->belongsTo('App\models\Sku');
     }
 
     public function sales(){
-        return $this->belongsToMany('App\models\Sale');
+        return $this->belongsTo('App\models\Sale');
     }
 }
