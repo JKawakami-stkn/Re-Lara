@@ -37,7 +37,9 @@ class PurchaseTargetController extends Controller
 
         \App\models\Personal_sale::create(['kids_id' => $request->kids_id, 'deadline' => $request->deadline]);
 
-        $salemenu = new SaleMenuController;
-        return $salemenu->show($sale_id);
+        $purchsesupplies = new PurchaseSuppliesController;
+
+        $kids = $request->kids_id;
+        return $purchsesupplies->show($sale_id,$kids);
     }
 }

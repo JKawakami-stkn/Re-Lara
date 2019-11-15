@@ -44,14 +44,11 @@ Route::post('/menu/sales/{sale_id}/purchase/load/{GP_CD?}', 'PurchaseTargetContr
 Route::post('/menu/sales/{sale_id}/purchase','PurchaseTargetController@store')->name('purchase-target.store');
 
 # 販売会一覧/販売会/購入対象選択/購入/用品一覧
-Route::get('/menu/sales/{sale_name}/purchase/{target}', function ($sale_name, $target) {
-    return view('purchase-supplies', ["sale_name" => $sale_name, "target" => $target]);
-})->name('purchase-supplies');
+Route::get('/menu/sales/{sale_id}/purchase/{target}','PurchaseSuppliesController@show')->name('purchase-supplies');
 
 # 販売会一覧/販売会/購入対象選択/購入/用品一覧/用品
-Route::get('/menu/sales/{sale_name}/purchase/{target}/{supplie}', function ($sale_name, $target, $supplie) {
-    return view('purchase-supplie', ["sale_name" => $sale_name, "target" => $target, "supplie" => $supplie]);
-})->name('purchase-supplie');
+Route::get('/menu/sales/{sale_id}/purchase/{target}/{supplie_id}','PurchaseSupplieController@show')->name('purchase-supplie');
+Route::post('/menu/sales/{sale_id}/purchase/{target}/{supplie_id}','PurchaseSupplieController@store')->name('purchase-supplie.store');
 
 # 販売会一覧/販売会/引き渡し対象選択
 Route::get('/menu/sales/{sale_id}/delivery', 'DeliveryTargetController@show')->name('delivery-target');
