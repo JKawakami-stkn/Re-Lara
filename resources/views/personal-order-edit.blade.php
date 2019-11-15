@@ -39,7 +39,7 @@
             <input type="date" class="form-control" name="deadline" aria-label="deadline" value={{$kids_deadline}}>
         </div>
 
-        <button type="submit" class="btn btn-primary" onclick="window.onbeforeunload=null">送信する</button>
+        <button type="submit" class="btn btn-primary" onclick="window.onbeforeunload=null">保存する</button>
         <input name="id" type="hidden" value={{$personal_sale_id}}>
     </form>
 

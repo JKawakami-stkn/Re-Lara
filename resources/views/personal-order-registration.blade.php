@@ -62,7 +62,7 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary" onclick="window.onbeforeunload=null">送信する</button>
+        <button type="submit" class="btn btn-primary" onclick="window.onbeforeunload=null">登録する</button>
 
     </form>
 
