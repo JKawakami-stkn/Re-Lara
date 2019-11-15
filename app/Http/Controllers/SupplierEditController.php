@@ -26,7 +26,7 @@ class SupplierEditController extends Controller
 
         $supplier = Supplier::find($supplier_id);
 
-        \Debugbar::info($supplier);
+        #\Debugbar::info($supplier);
         $supplier->name = $request->name;
         $supplier->person_charge = $request->person_charge;
         $supplier->phone_number = $request->phone_number_1.$request->phone_number_2;

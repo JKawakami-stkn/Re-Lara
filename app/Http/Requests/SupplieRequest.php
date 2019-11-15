@@ -26,6 +26,8 @@ class SupplieRequest extends FormRequest
         return [
             'name' => 'required',
             'price' => 'required|integer',
+            'sizes.*' => 'required',
+            'colors.*' => 'required'
         ];
     }
 }

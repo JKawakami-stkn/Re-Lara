@@ -16,7 +16,7 @@
     </nav>
     <?php print_r(mb_get_info()); ?>
     <!-- フォーム -->
-    <form action="{{ route('supplie-registration.store', $supplier->id) }}" method="post" enctype="multipart/form-data" accept-charset="ASCII">
+    <form action="{{ route('supplie-registration.store', $supplier->id) }}" method="post" enctype="multipart/form-data" accept-charset="UTF-8">
         {{ csrf_field() }}
         <div class="form-group">
             <label for="name">用品名</label>
@@ -37,7 +37,17 @@
         </div>
 
         <p class="mb-2">サイズ</p>
-        <div class="border rounded p-2 mb-3">
+        <div id="no_radio" class="mb-3">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="yes" checked>
+            <label class="form-check-label" for="inlineRadio1">あり</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="no">
+            <label class="form-check-label" for="inlineRadio2">なし</label>
+          </div>
+        </div>
+        <div class="border rounded p-2 mb-3" id="input_size">
             <div id="size-form-row" class="form-row">
                 <div class="input-group input-group-size col-md-6 mb-1">
                     <input type="text" class="form-control @error('size') is-invalid @enderror size bachsize" name="sizes[]" value="{{ old('size')}}" placeholder="" aria-label="" aria-describedby="button-addon">
@@ -50,11 +60,21 @@
         </div>
 
         <p class="mb-2">カラー</p>
-        <div class="border rounded p-2 mb-4">
+        <div id="no_radio2">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="color_inlineRadioOptions" id="color_inlineRadio1" value="yes" checked>
+            <label class="form-check-label" for="color_inlineRadio1">あり</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="color_inlineRadioOptions" id="color_inlineRadio2" value="no">
+            <label class="form-check-label" for="color_inlineRadio2">なし</label>
+          </div>
+        </div>
+        <div class="border rounded p-2 mb-4" id="input_color">
             <div id="color-form-row" class="form-row">
 
                 <div class="input-group input-group-color col-md-12 mb-1">
-                    <input type="text" class="form-control @error('color') is-invalid @enderror color colorsize" name="colors[color]" value="{{ old('color')}}" placeholder="" aria-label="" aria-describedby="button-addon">
+                    <input type="text" class="form-control @error('color') is-invalid @enderror color colorsize" name="colors[]" value="{{ old('color')}}" placeholder="" aria-label="" aria-describedby="button-addon">
                     <!--<select class="custom-select" name="colors[target]" id="inputGroupSelect01">
                         <option selected value="">対象</option>
                         <option value="1">その1</option>
@@ -90,11 +110,11 @@
         <div class="mt-3 mb-3">
             <div class="form-group">
                 <label for="division">用品区分</label>
-                <select class="form-control form-control" id="division">
+                <select class="form-control form-control" id="division" name="division">
                     <option selected disabled="disabled">選択してください</option>
-                    <option>区分１</option>
-                    <option>区分２</option>
-                    <option>区分３</option>
+                    @foreach($supplie_division as $division)
+                        <option value="{{ $division->id }}">{{ $division->division_name }}</option>
+                    @endforeach
                 </select>
             </div>
         </div>

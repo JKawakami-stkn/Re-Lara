@@ -3,6 +3,7 @@
 namespace App\models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Sku extends Model
 {
@@ -11,5 +12,5 @@ class Sku extends Model
     protected $table = 'skus';
     protected $primaryKey = 'id';
     protected $dates = ['deleted_at'];
-    
+
 }
