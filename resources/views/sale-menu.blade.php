@@ -18,7 +18,7 @@
     <h4>{{ $sale->name }}の詳細</h4>
     <br>
     <p>　期日：{{ $sale->deadline }}</p>
-    <p>　対象：{{ $sale->m_wf_groups() }}</p>
+    <p>　対象：</p>
   </div>
 </div>
 
