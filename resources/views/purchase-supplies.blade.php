@@ -21,7 +21,7 @@
             <div class="media-body pl-2">
             <h5 class="mt-0">{{$supplie->name}}</h5>
             <p>{{$supplie->price}}</p>
-                <p class="mt-4 _text-danger">購入状態：未購入</p>
+                <p class="mt-4 _text-danger">{{$purchasesupplies->tablecheck($supplie->id,$sale->id,$target)}}</p>
             </div>
         </div>
     </a>
