@@ -4,7 +4,7 @@
 
 <div class="container" >
 
-    
+
 
     <!-- パンくずリスト -->
     <nav aria-label="breadcrumb">
@@ -20,8 +20,8 @@
         <img class="card-img-top img-thumbnail" src="{{ asset('storage/'.\App\models\Supplie::withTrashed()->find($personal_order->supplie_id)->img_path) }}">
         <div class="media-body pl-2">
             <h5 class="mt-0">{{ \App\models\Supplie::withTrashed()->find($personal_order->supplie_id)->name }}</h5>
-            <p class="mt-3 mb-0">サイズ：</p>
-            <p class="m-0">カラー：</p>
+            <p class="mt-3 mb-0">サイズ：{{$personal_sku_data[$personal_order->sku_id]["size"]}}</p>
+            <p class="m-0">カラー：{{$personal_sku_data[$personal_order->sku_id]["color"]}}</p>
             <p class="m-0">数　量：{{ $personal_order->quantity }}</p>
         </div>
     </div>
@@ -32,4 +32,3 @@
 
 
 @stop
-
