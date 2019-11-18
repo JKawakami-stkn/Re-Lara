@@ -62,7 +62,7 @@
             @endforeach
         </div>
 
-        <button type="submit" class="btn btn-primary" onclick="window.onbeforeunload=null">送信する</button>
+        <button type="submit" class="btn btn-primary" onclick="window.onbeforeunload=null">保存する</button>
     </form>
 
 </div>
