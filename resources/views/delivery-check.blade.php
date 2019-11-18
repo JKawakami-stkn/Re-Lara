@@ -2,6 +2,10 @@
 
 @section('content')
 
+{{--$sale--}}
+{{--$kid--}}
+{{--$orders--}}
+
 <div class="container">
 
     <!-- パンくずリスト -->
@@ -9,55 +13,40 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('menu.show') }}">メニュー</a></li>
             <li class="breadcrumb-item"><a href="{{ route('sales') }}">物品販売</a></li>
-            <li class="breadcrumb-item"><a href="{{ route('sale-menu', $sale_name) }}">{{ $sale_name }}</a></li>
-            <li class="breadcrumb-item"><a href="{{ route('delivery-target', [$sale_name, $target]) }}">引き渡し</a></li>
-            <li class="breadcrumb-item active" aria-current="page">{{$target}}</li>
+            <li class="breadcrumb-item"><a href="">(販売会名)</a></li>
+            <li class="breadcrumb-item"><a href="">引き渡し</a></li>
+            <li class="breadcrumb-item active" aria-current="page"></li>
         </ol>
     </nav>
 
-
-    <!-- メディアオブジェクト -->
-    <div class="media mt-4 pb-4 border-bottom">
-        <img class="card-img-top img-thumbnail" src="{{ asset('storage/spplie_imgs/taisougi.png') }}">
-        <div class="media-body pl-2">
-            <h5 class="mt-0">体操服</h5>
-            <p class="mt-3 mb-0">サイズ：</p>
-            <p class="m-0">カラー：</p>
-            <p class="m-0">数　量：</p>
-        </div>
-        <div class="mt-5 mb-3">
-           <form action="#">
+    @if($orders)
+    <form action="{{ route('delivery-check.store', [$sale->id, $kid->KIDS_ID]) }}" method="post" onsubmit="return checkbox_check()">
+        {{ csrf_field() }}
+        <!-- メディアオブジェクト -->
+        @foreach($orders as $order)
+        <div class="media mt-4 pb-4 border-bottom">
+            <img class="card-img-top img-thumbnail" src="{{ asset('storage/'.\App\models\Supplie::find($order->supplie_id)->img_path) }}">
+            <div class="media-body pl-2">
+                <h5 class="mt-0">{{ \App\models\Supplie::find($order->supplie_id)->name }}</h5>
+                <p class="mt-3 mb-0">サイズ：</p>
+                <p class="m-0">カラー：</p>
+                <p class="m-0">数　量：{{ $order->quantity }}</p>
+            </div>
+            <div class="mt-5 mb-3">
                 <p>
-                    <input type="checkbox" id="cb1" />
-                    <label for="cb1"></label>
+                    <input type="checkbox" id="cb-{{$loop->index}}" />
+                    <label for="cb-{{$loop->index}}"></label>
                 </p>
-            </form>
+            </div>
         </div>
-    </div>
-
-    <div class="media mt-4 pb-4 border-bottom">
-        <img class="card-img-top img-thumbnail" src="{{ asset('storage/spplie_imgs/fashion_tsuugakubou_hat.png') }}">
-        <div class="media-body pl-2">
-            <h5 class="mt-0">帽子</h5>
-            <p class="mt-0">サイズ：</p>
-            <p class="mt-0">カラー：</p>
-            <p class="mt-0">数　量：</p>
-        </div>
+        @endforeach
         <div class="mt-5 mb-3">
-           <form action="#">
-                <p>
-                    <input type="checkbox" id="cb2" checked="checked" disabled="disabled"/>
-                    <label for="cb2"></label>
-                </p>
-            </form>
+             <button type="submit"class="btn btn-primary btn-block" id="confirm" onclick="window.onbeforeunload=null">送信する</button>
         </div>
-    </div>
-
-     <div class="mt-5 mb-3">
-        <a class="btn btn-primary btn-block" href="{{ route('sale-menu', $sale_name) }}" role="button" onclick="window.onbeforeunload=null"> 
-            確　　定
-        </a>
-    </div>
+    </form>
+    @else
+        <p>注文された商品がありません.。</p>
+    @endif
 
 </div>
 
@@ -72,6 +61,7 @@
 
 @section('script')
 <script src="{{ asset('public/js/dialog.js') }}"></script>
+<script src="{{ asset('js/multiple_checkbox_checker.js') }}"></script>
 @stop
 
 

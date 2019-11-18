@@ -55,7 +55,6 @@
 
 
 @section('script')
-<script src="{{ asset('js/dialog.js') }}"></script>
 <script src="{{ asset('js/select_child.js') }}"></script>
 @stop
 
