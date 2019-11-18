@@ -30,11 +30,12 @@ class DeliveryTargetController extends Controller
         );
    }
 
-   public function store(PersonalOrderRequest $request,$sale_id){
-    $request->session()->regenerateToken();
+   public function store($sale_id, Request $request){
 
-    \App\models\Personal_sale::create(['kids_id' => $request->kids_id, 'deadline' => $request->deadline]);
-    $salemenu = new SaleMenuController;
-    return $salemenu->show($sale_id);
+    $request->session()->regenerateToken();
+    
+    $delivery_check = new DeliveryCheckController;
+
+    return $delivery_check->show($sale_id, $request->kids_id);
     }
 }

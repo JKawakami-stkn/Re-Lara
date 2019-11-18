@@ -56,9 +56,8 @@ Route::post('/menu/sales/{sale_id}/delivery/load/{GP_CD?}', 'DeliveryTargetContr
 Route::post('/menu/sales/{sale_id}/delivery','DeliveryTargetController@store')->name('delivery-target.store');
 
 # 販売会一覧/販売会/引き渡し対象選択/引き渡しチェック
-Route::get('/menu/sales/{sale_name}/delivery/{target}', function ($sale_name, $target) {
-    return view('delivery-check', ["sale_name" => $sale_name, "target" => $target]);
-})->name('delivery-check');
+Route::get('/menu/salRes/{sale_id}/delivery/{target}','DeliveryCheckController@show')->name('delivery-check.show');
+Route::post('/menu/sales/{sale_id}/delivery/{target}','DeliveryCheckController@store')->name('delivery-check.store');
 
 # 販売会一覧/販売会/検品
 Route::get('/menu/sales/{sale_name}/inspection', function ($sale_name) {
