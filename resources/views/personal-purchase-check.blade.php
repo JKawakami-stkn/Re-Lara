@@ -27,12 +27,15 @@
                 <p class="m-0">数　量：{{ $personal_order->quantity }}</p>
             </div>
 
-            <form action="{{ route('personal-purchase-check.delete', [$personal_sale->id, $personal_order->id]) }}" method="post">
-                @csrf
-                <button type="submit" class="btn btn-danger align-self-end">
-                    <i class="far fa-trash-alt"></i>
-                </button>
-            </form>
+            <div class="align-self-end">
+                <form action="{{ route('personal-purchase-check.delete', [$personal_sale->id, $personal_order->id]) }}" method="post">
+                    @csrf
+                    <button type="submit" class="btn btn-danger">
+                        <i class="far fa-trash-alt"></i>
+                    </button>
+                </form>
+            </div>
+
         </div>
         @endforeach
 
