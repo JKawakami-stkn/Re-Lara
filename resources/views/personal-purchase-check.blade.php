@@ -17,7 +17,7 @@
 
     @if(!$personal_orders->isEmpty())
         @foreach($personal_orders as $personal_order)
-        {{ \App\models\Supplie::withTrashed()->find($personal_order->supplie_id) }}a?
+        <!-- {{ \App\models\Supplie::withTrashed()->find($personal_order->supplie_id) }} -->
         <div class="media mt-4 pb-4 border-bottom">
             <img class="card-img-top img-thumbnail" src="{{ asset('storage/'.\App\models\Supplie::withTrashed()->find($personal_order->supplie_id)->img_path) }}">
             <div class="media-body pl-2">
