@@ -92,6 +92,7 @@ Route::post('/menu/porders/{personal_sale}/purchase/{supplie}', 'PersonalPurchas
 
 # 個別注文一覧/注文/注文内容確認
 Route::get('/menu/porders/{personal_sale}/order', 'PersonalPurchaseCheckController@show')->name('personal-purchase-check.show');
+Route::post('/menu/porders/{personal_sale}/order/delete/{order}', 'PersonalPurchaseCheckController@delete')->name('personal-purchase-check.delete');
 Route::post('/menu/porders/{personal_sale}/order', 'PersonalPurchaseCheckController@store')->name('personal-purchase-check.store');
 
 # 個別注文一覧/注文/引き渡し
