@@ -35,7 +35,7 @@
         </div>
         @endforeach
 
-        <form action="{{ route('personal-purchase-supplies.store', $personal_sale->id) }}" method="post">
+        <form action="{{ route('personal-purchase-check.store', $personal_sale->id) }}" method="post">
             @csrf
             <div class="mt-5 mb-3">
                 <button type="submit" class="btn btn-primary btn-block" onclick="window.onbeforeunload=null">確　　定</button>
