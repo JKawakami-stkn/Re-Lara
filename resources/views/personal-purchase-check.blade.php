@@ -27,11 +27,12 @@
                 <p class="m-0">数　量：{{ $personal_order->quantity }}</p>
             </div>
 
-            <a href="" class="align-self-end" data-toggle="modal" data-target="#ModalLong">
-                <button type="button" class="btn btn-danger">
+            <form action="{{ route('personal-purchase-check.delete', [$personal_sale->id, $personal_order->id]) }}" method="post">
+                @csrf
+                <button type="submit" class="btn btn-danger align-self-end">
                     <i class="far fa-trash-alt"></i>
                 </button>
-            </a>
+            </form>
         </div>
         @endforeach
 

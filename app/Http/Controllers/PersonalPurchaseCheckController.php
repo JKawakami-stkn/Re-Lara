@@ -33,4 +33,13 @@ class PersonalPurchaseCheckController extends Controller
       $personal_orders = new PersonalOrdersController;
       return $personal_orders->show();
     }
+
+    public function delete($personal_sale_id, $personal_order_id){
+
+      // 削除処理
+      $personal_order = \App\models\Personal_order::find($personal_order_id);
+      $personal_order->delete();
+
+      return $this->show($personal_sale_id);
+    }
 }
