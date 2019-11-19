@@ -11,11 +11,13 @@
             <li class="breadcrumb-item active" aria-current="page"></li>
         </ol>
     </nav>
-    <!--
-    {{ $supplies }}
-    <br> <br>
-    {{ $personal_sale }}
-    -->
+    
+    <a href="{{ route('personal-purchase-check.show', $personal_sale->id) }}">
+        <button type="button" class="btn btn-primary rounded-circle p-0 position-fixed border-white" style="width:4rem;height:4rem; bottom:55px; right:20px; z-index:30;">
+            <i class="fas fa-shopping-cart"></i>
+        </button>
+    </a>
+
     <!-- メディアオブジェクト -->
     @foreach($supplies as $supplie)
     <a class="text-decoration-none" href="{{ route('personal-purchase-supplie.show', [$personal_sale->id, $supplie->id]) }}">
@@ -26,21 +28,14 @@
                 <p>￥{{ number_format($supplie->price) }}</p>
                 <!-- {{ \App\models\Personal_order::where('personal_sale_id', $personal_sale->id)->where('supplie_id', $supplie->id)->get() }} -->
                 @if( \App\models\Personal_order::where('personal_sale_id', $personal_sale->id)->where('supplie_id', $supplie->id)->get()->isEmpty() )
-                    <p class="mt-4 _text-danger">状態：未入力</p>
+                    <!--<p class="mt-4 _text-danger">状態：未入力</p>-->
                 @else
-                    <p class="mt-4 text-success">状態：入力済み</p>
+                    <!--<p class="mt-4 text-success">状態：入力済み</p>-->
                 @endif
             </div>
         </div>
     </a>
     @endforeach
-
-    <form action="{{ route('personal-purchase-supplies.store', $personal_sale->id) }}" method="post">
-        @csrf
-        <div class="mt-5 mb-3">
-            <button type="submit" class="btn btn-primary btn-block" onclick="window.onbeforeunload=null">確　　定</button>
-        </div>
-    </form>
 
 </div>
 
