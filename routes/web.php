@@ -84,7 +84,7 @@ Route::get('/menu/porders/{personal_sale}', 'PersonalOrderMenuController@show')-
 
 # 個別注文一覧/注文/用品一覧
 Route::get('/menu/porders/{personal_sale}/purchase', 'PersonalPurchaseSuppliesController@show')->name('personal-purchase-supplies.show');
-Route::post('/menu/porders/{personal_sale}/purchase', 'PersonalPurchaseSuppliesController@store')->name('personal-purchase-supplies.store');
+// Route::post('/menu/porders/{personal_sale}/purchase', 'PersonalPurchaseSuppliesController@store')->name('personal-purchase-supplies.store');
 
 # 個別注文一覧/注文/用品一覧/用品
 Route::get('/menu/porders/{personal_sale}/purchase/{supplie}', 'PersonalPurchaseSupplieController@show')->name('personal-purchase-supplie.show');
@@ -92,6 +92,7 @@ Route::post('/menu/porders/{personal_sale}/purchase/{supplie}', 'PersonalPurchas
 
 # 個別注文一覧/注文/注文内容確認
 Route::get('/menu/porders/{personal_sale}/order', 'PersonalPurchaseCheckController@show')->name('personal-purchase-check.show');
+Route::post('/menu/porders/{personal_sale}/order', 'PersonalPurchaseCheckController@store')->name('personal-purchase-check.store');
 
 # 個別注文一覧/注文/引き渡し
 Route::get('/menu/porders/{personal_sale}/delivery', 'PersonalPurchaseDeliveryController@show')->name('personal-purchase-delivery.show');

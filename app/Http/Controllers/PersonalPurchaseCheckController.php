@@ -21,6 +21,16 @@ class PersonalPurchaseCheckController extends Controller
 
         // \Debugbar::info($personal_sku_data["1"]["color"]);
         // \Debugbar::info($personal_orders[0]->sku_id);
-        return view('personal-purchase-check', ['personal_sales' => $personal_sale, 'personal_orders' => $personal_orders, "personal_sku_data" => $personal_sku_data]);
+        return view('personal-purchase-check', ['personal_sale' => $personal_sale, 'personal_orders' => $personal_orders, "personal_sku_data" => $personal_sku_data]);
+    }
+
+    public function store($personal_sale_id){
+        
+      $personal_sale = \App\models\Personal_sale::find($personal_sale_id);
+      $personal_sale->entered_at = date("Y/m/d H:i:s");
+      $personal_sale->save();
+
+      $personal_orders = new PersonalOrdersController;
+      return $personal_orders->show();
     }
 }
