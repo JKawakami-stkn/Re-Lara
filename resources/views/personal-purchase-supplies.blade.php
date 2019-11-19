@@ -27,10 +27,8 @@
                 <h5 class="mt-0">{{ $supplie->name }}</h5>
                 <p>￥{{ number_format($supplie->price) }}</p>
                 <!-- {{ \App\models\Personal_order::where('personal_sale_id', $personal_sale->id)->where('supplie_id', $supplie->id)->get() }} -->
-                @if( \App\models\Personal_order::where('personal_sale_id', $personal_sale->id)->where('supplie_id', $supplie->id)->get()->isEmpty() )
-                    <!--<p class="mt-4 _text-danger">状態：未入力</p>-->
-                @else
-                    <!--<p class="mt-4 text-success">状態：入力済み</p>-->
+                @if(!\App\models\Personal_order::where('personal_sale_id', $personal_sale->id)->where('supplie_id', $supplie->id)->get()->isEmpty() )
+                    <p class="mt-4 text-success">カートに入っています</p>
                 @endif
             </div>
         </div>
