@@ -64,10 +64,13 @@ Route::get('/menu/sales/{sale_name}/inspection', function ($sale_name) {
     return view('inspection', ["sale_name" => $sale_name]);
 })->name('inspection');
 
-# 販売会一覧/販売会/注文内容確認
-Route::get('/menu/sales/{sale_name}/order', function ($sale_name) {
-    return view('order-status', ["sale_name" => $sale_name]);
-})->name('order-status');
+# 販売会一覧/販売会/販売会チェック対象選択
+Route::get('/menu/sales/{sale_id}/order','OrdersStatusController@show' )->name('orders-status');
+Route::post('/menu/sales/{sale_id}/order/load/{GP_CD?}', 'OrdersStatusController@load')->name('orders-status.load');
+Route::post('/menu/sales/{sale_id}/order','OrdersStatusController@store')->name('orders-status.store');
+
+#販売会一覧/販売会/販売会チェック対象選択/注文内容確認
+Route::get('/menu/sales/{sale_id}/order/{kids_id}','OrderStatusController@show' )->name('order-status');
 
 ### 個別注文 #####################################################################################
 

@@ -46,7 +46,7 @@
         </div>
         -->
         <div class="col-4">
-            <a href="{{ route('order-status', $sale->id) }}">
+            <a href="{{ route('orders-status', $sale->id) }}">
                 <div class="card card-body">
                     <img class="card-img" src="{{ asset('img/purchase_confirmation.png') }}" data-toggle="tooltip" title="注文状況確認">
                 </div>
