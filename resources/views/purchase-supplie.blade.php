@@ -18,7 +18,7 @@
 
     <p>企業名</p>
     <p>{{$supplier->name}}</p>
-    
+
 
     <img src="{{ asset('spplie_imgs/taisougi.png') }}" height="250px" class="img-fluid mx-auto d-block">
 
@@ -26,19 +26,23 @@
         {{ csrf_field() }}
         <div class="form-group">
             <label>サイズ</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
+            <select class="form-control" id="exampleFormControlSelect1" name="size_value">
+              @foreach($supplie_size as $size_v)
+                  @foreach($size_v as $key => $value)
+                    <option value="{{ $value }}">{{ $value }}</option>
+                  @endforeach
+              @endforeach
             </select>
         </div>
 
         <div class="form-group">
             <label>カラー</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
+            <select class="form-control" id="exampleFormControlSelect1" name="color_value">
+              @foreach($supplie_color as $color_v)
+                  @foreach($color_v as $key => $value)
+                    <option value="{{ $value }}">{{ $value }}</option>
+                  @endforeach
+              @endforeach
             </select>
         </div>
 
@@ -52,7 +56,7 @@
             </div>
         </div>
 
-        
+
 
         <div class="mt-5 mb-3">
              <button type="submit" class="btn btn-primary btn-block">選　　択</button>
@@ -72,5 +76,3 @@
 @section('script')
 <script src="{{ asset('public/js/dialog.js') }}"></script>
 @stop
-
-
