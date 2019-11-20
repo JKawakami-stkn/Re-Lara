@@ -13,43 +13,45 @@
                 <li class="breadcrumb-item active" aria-current="page">購入</li>
             </ol>
      </nav>
-  
 
-    <div class="accordion" id="accordion2" role="tablist">
-            <div class="card">
-                <div class="card-header" role="tab" id="heading1" style="background-color:#c9c9c9;">
-                    <h5 class="mb-0">
-                        <a data-toggle="collapse" class="text-body stretched-link text-decoration-none" href="#collapse1" aria-expanded="true" aria-controls="collapse1"> {{$kid->KIDS_NM_KJ}} </a>
-                    </h5>
-                </div>
-                <div id="collapse1" class="collapse show" role="tabpanel" aria-labelledby="heading1" _data-parent="#accordion2">
-                    <div class="card-body">
-                        <table class="table">
-                            <!-- 園児の名前を表示-->
-                            <caption>{{$kid->KIDS_NM_KJ}}の注文</caption>
-                            <thead class="thead-light">
-                                <tr>
-                                    <th></th>
-                                    <th scope="col">用品</th>
-                                    <th scope="col">数量</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                  <!-- 用品を表示-->
-                                    @foreach ($orders as $order)
-                                <tr>
-                                    <th>・</th>
-                                    <td>{{$order->name}}</td>
-                                    <td>810</td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+    @if(!$orders->isEmpty())
+        @foreach ($orders as $order)
+        <!-- {{ \App\models\Supplie::withTrashed()->find($order->supplie_id) }} -->
+        <div class="media mt-4 pb-4 border-bottom">
+            <img class="card-img-top img-thumbnail" src="{{ asset('storage/'.\App\models\Supplie::withTrashed()->find($order->supplie_id)->img_path) }}">
+            <div class="media-body pl-2">
+                <h5 class="mt-0">{{ \App\models\Supplie::withTrashed()->find($order->supplie_id)->name }}</h5>
+                <p class="mt-3 mb-0">サイズ：</p>
+                <p class="m-0">カラー：</p>
+                <p class="m-0">数　量：{{ $order->quantity }}</p>
             </div>
-    
 
+            <div class="align-self-end">
+                <form action="{{ route('order-status.delete', [$sale->id, $target, $order->id]) }}" method="post">
+                    @csrf
+                    <button type="submit" class="btn btn-danger">
+                        <i class="far fa-trash-alt"></i>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+        @endforeach
+
+        <!-- <form action="" > -->
+        <form action="{{ route('order-status.store', [$sale->id, $target]) }}" method="post">
+            @csrf
+            <div class="mt-5 mb-3">
+                <button type="submit" class="btn btn-primary btn-block" onclick="window.onbeforeunload=null">確　　定</button>
+            </div>
+        </form>
+
+    @else
+        <p>カートに商品はありません</p>
+        <a href="{{ route('purchase-supplies', [$sale->id, $target]) }}">用品一覧画面へ</a>
+    @endif
 </div>
+
+
 
 @stop

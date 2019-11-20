@@ -12,6 +12,11 @@
         </ol>
     </nav>
 
+    <a href="{{ route('order-status.show', [ $sale->id, $target ]) }}">
+        <button type="button" class="btn btn-primary rounded-circle p-0 position-fixed border-white" style="width:4rem;height:4rem; bottom:55px; right:20px; z-index:30;">
+            <i class="fas fa-shopping-cart"></i>
+        </button>
+    </a>
 
     <!-- メディアオブジェクト -->
     @foreach($supplies as $supplie)
@@ -26,13 +31,6 @@
         </div>
     </a>
     @endforeach
-
-    <div class="mt-5 mb-3">
-        @csrf
-        <a class="btn btn-primary btn-block" href="{{ route('sale-menu', $sale->name) }}">
-            確　　定
-        </a>
-    </div>
 
 </div>
 
