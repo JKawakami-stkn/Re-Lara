@@ -14,7 +14,7 @@
     </nav>
 
     <!-- ページタイトル -->
-    <form action="{{ route('sale-registrationStore') }}" method="POST">
+    <form action="{{ route('sale-registration.store')}}" method="POST">
         @csrf
         <div class="form-group">
             <label for="sale_name">販売会の名前</label>
@@ -42,6 +42,15 @@
 
 
         <p class="mb-2">用品選択</p>
+        <div class="form-group col-md-4">
+        <label for="inputState">区分</label>
+          <select id="division_inputState" class="form-control">
+            <option selected>全て</option>
+            @foreach($supp_divi as $division)
+                <option value="{{ $division->id }}">{{ $division->division_name }}</option>
+            @endforeach
+          </select>
+        </div>
         <div class="form-group form-check border rounded">
             @foreach ($supplies as $supplie)
                 @if($loop->index % 2 == 0)
@@ -65,8 +74,8 @@
 </div>
 
 @section('script')
-<script src="{{ asset('public/js/dialog.js') }}"></script>
+<script src="{{ asset('js/dialog.js') }}"></script>
+<script src="{{ asset('js/division_change.js') }}"></script>
 @stop
 
 @stop
-
