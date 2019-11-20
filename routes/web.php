@@ -29,8 +29,9 @@ Route::get('/menu/sales', "SalesTopController@show")->name('sales');
 
 # 販売会一覧/販売会登録
 Route::get('/menu/sales/regist',"SaleRegistrationController@show")->name('sale-registration');
-Route::post('/menu/sales/regist',"SaleRegistrationController@store")->name('sale-registrationStore');
+Route::post('/menu/sales/regist',"SaleRegistrationController@store")->name('sale-registration.store');
 Route::post('/menu/sales/regist/load/{division_id}',"SaleRegistrationController@load")->name('sale-registrationLoad');
+
 # 販売会一覧/販売会/販売会編集
 Route::get('/menu/sales/{sale_id}/edit','SaleEditController@show')->name('sale-edit');
 Route::post('/menu/sales/{sale_id}/edit','SaleEditController@store')->name('sale-editStore');
@@ -70,7 +71,9 @@ Route::post('/menu/sales/{sale_id}/order/load/{GP_CD?}', 'OrdersStatusController
 Route::post('/menu/sales/{sale_id}/order','OrdersStatusController@store')->name('orders-status.store');
 
 #販売会一覧/販売会/販売会チェック対象選択/注文内容確認
-Route::get('/menu/sales/{sale_id}/order/{kids_id}','OrderStatusController@show' )->name('order-status');
+Route::get('/menu/sales/{sale_id}/order/{kids_id}','OrderStatusController@show' )->name('order-status.show');
+Route::post('/menu/sales/{sale_id}/order/{kids_id}', 'OrderStatusController@store')->name('order-status.store');
+Route::post('/menu/sales/{sale_id}/order/{kids_id}/delete/{order_id}', 'OrderStatusController@delete')->name('order-status.delete');
 
 ### 個別注文 #####################################################################################
 

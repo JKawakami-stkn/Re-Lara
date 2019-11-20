@@ -4,8 +4,6 @@
 
 <div class="container" >
 
-
-
     <!-- パンくずリスト -->
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
