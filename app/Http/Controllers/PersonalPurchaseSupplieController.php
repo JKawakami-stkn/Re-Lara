@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Personal_order;
 
 class PersonalPurchaseSupplieController extends Controller
 {
@@ -25,6 +26,28 @@ class PersonalPurchaseSupplieController extends Controller
         \Debugbar::info($supplie_sku["id"]);
         \Debugbar::info($supplie_sku);
 
+
+        //追加
+        $quantity = $request->quantity;
+
+        $sku_id = \App\models\Sku::where("supplie_id", $supplie_id)->where("color", $request->color_value)->where("size", $request->size_value)->select("id")->get()->toArray()[0];
+        $already_sku = \App\models\Personal_order::where("personal_sale_id", $personal_sale_id)->where("sku_id", $sku_id)->count();
+        if($already_sku == 1){
+          \Debugbar::addMessage("既にある");
+          $order_id = \App\models\Personal_order::where("personal_sale_id", $personal_sale_id)->where("sku_id", $sku_id)->select("id")->get()->toArray()[0];
+          $kids_order = \App\models\Personal_order::find($order_id["id"]);
+          $kids_order->quantity =  $quantity;
+          $kids_order->save();
+        }else{
+          //値の追加
+          $order = new Personal_order;
+          $order->personal_sale_id = $personal_sale_id;
+          $order->supplie_id = $supplie_id;
+          $order->sku_id = $sku_id["id"];
+          $order->quantity = $quantity;
+          $order->save();
+        }
+        /*
         // 登録
         if(empty($request->personal_order_id)){
 
@@ -41,6 +64,8 @@ class PersonalPurchaseSupplieController extends Controller
             $personal_order->quantity = $request->quantity;
             $personal_order->save();
         }
+        */
+
 
         $personal_purchase_supplies_controller = new PersonalPurchaseSuppliesController();
         return $personal_purchase_supplies_controller->show($personal_sale_id);
