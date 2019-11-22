@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\DB;
 
 class Sale extends Model
-{    
+{
     use SoftDeletes;
     protected $table = 'sales';
     protected $primaryKey = 'id';
@@ -19,7 +19,7 @@ class Sale extends Model
         return $this->belongsToMany('App\models\Supplie');
     }
 
-    
+
     public function sale_m_wf_group($id,$kumis)
     {
         if(DB::table('sale_m_wf_group')->where('sale_id',$id)->exists()){
@@ -40,5 +40,10 @@ class Sale extends Model
                 ]);
             }
         }
+    }
+
+    public function get_orders()
+    {
+        return $this->hasMany('App\models\Order');
     }
 }
