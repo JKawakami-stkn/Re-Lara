@@ -15,22 +15,29 @@ class SaleRegistrationController extends Controller
         $supplies = Supplie::all();
 
         //組情報
+        $division_id = "1";
         $Mwfgroup = new M_wf_group;
         $kumis = $Mwfgroup->currentYearGroups();
         $supp_divi = \App\models\Supplie_division::get();
-        return view('sale-registration',compact('supplies','kumis',"supp_divi"));
+        return view('sale-registration',compact('supplies','kumis',"supp_divi", "division_id"));
     }
 
     public function load($division_id){
       //用品情報取得
-      $supplies = Supplie::all();
+      if($division_id == "1"){
+        $supplies = Supplie::all();
+      }else{
+        $supplies = Supplie::where("division_id", $division_id)->get();
+      }
       //組情報
       \Debugbar::info($division_id);
       \Debugbar::addMessage("成功");
+      \Debugbar::info($supplies);
       $Mwfgroup = new M_wf_group;
       $kumis = $Mwfgroup->currentYearGroups();
       $supp_divi = \App\models\Supplie_division::get();
-      return view('sale-registration',compact('supplies','kumis',"supp_divi"));
+      // return view('sale-registration',compact('supplies','kumis',"supp_divi"));
+      return view('sale-registration',compact('supplies','kumis',"supp_divi", "division_id"));
     }
 
     public function store(Request $request)

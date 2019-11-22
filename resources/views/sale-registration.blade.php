@@ -39,15 +39,18 @@
 
             @endforeach
         </div>
-
-
+        <?php $division_url = "http://localhost/UNK/menu/sales/regist/load/"?>
+        <input id="ajax_division" type="hidden" value= {{$division_url}} >
         <p class="mb-2">用品選択</p>
         <div class="form-group col-md-4">
         <label for="inputState">区分</label>
           <select id="division_inputState" class="form-control">
-            <option selected>全て</option>
             @foreach($supp_divi as $division)
+              @if($division_id == $division->id)
+                <option selected value="{{ $division->id }}">{{ $division->division_name }}</option>
+              @else
                 <option value="{{ $division->id }}">{{ $division->division_name }}</option>
+              @endif
             @endforeach
           </select>
         </div>
