@@ -14,7 +14,7 @@
     </nav>
 
     <!-- ページタイトル -->
-    <form action="{{ route('sale-registrationStore')}}" method="POST">
+    <form action="{{ route('sale-registration.store')}}" method="POST">
         @csrf
         <div class="form-group">
             <label for="sale_name">販売会の名前</label>
