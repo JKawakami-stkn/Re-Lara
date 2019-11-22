@@ -57,7 +57,7 @@
         @endif
 
         <div class="mt-5 mb-3">
-            <button type="submit" class="btn btn-primary btn-block" onclick="window.onbeforeunload=null">確　　定</button>
+            <button type="submit" class="btn btn-primary btn-block" onclick="window.onbeforeunload=null">カートに入れる</button>
         </div>
 
     </form>
