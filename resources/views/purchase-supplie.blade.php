@@ -59,7 +59,7 @@
 
 
         <div class="mt-5 mb-3">
-             <button type="submit" class="btn btn-primary btn-block">選　　択</button>
+             <button type="submit" class="btn btn-primary btn-block">カートに入れる</button>
         </div>
     </form>
 </div>
