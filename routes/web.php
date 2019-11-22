@@ -30,7 +30,7 @@ Route::get('/menu/sales', "SalesTopController@show")->name('sales');
 # 販売会一覧/販売会登録
 Route::get('/menu/sales/regist',"SaleRegistrationController@show")->name('sale-registration');
 Route::post('/menu/sales/regist',"SaleRegistrationController@store")->name('sale-registration.store');
-Route::post('/menu/sales/regist/load/{division_id}',"SaleRegistrationController@load")->name('sale-registrationLoad');
+Route::get('/menu/sales/regist/load/{division_id}',"SaleRegistrationController@load")->name('sale-registrationLoad');
 
 # 販売会一覧/販売会/販売会編集
 Route::get('/menu/sales/{sale_id}/edit','SaleEditController@show')->name('sale-edit');

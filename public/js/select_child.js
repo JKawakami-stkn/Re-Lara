@@ -19,7 +19,8 @@ $('#group').change( function() {
 function getKids(url){
   var group_selector =  $('#group');
   var kids_selector = $('#kids');
-  console.log(ajax_url + '/' + group_selector.val())
+  // console.log(ajax_url + '/' + group_selector.val())
+  console.log(url + '/' + group_selector.val())
   $(function(){
       $.ajaxSetup({
           headers: {
