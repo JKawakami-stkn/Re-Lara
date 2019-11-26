@@ -115,6 +115,9 @@ Route::post('/menu/porders/{personal_sale}/edit', 'PersonalOrderEditController@s
 # 個別注文一覧/注文/注文書印刷
 Route::get('/menu/porders/{personal_sale}/print', 'PersonalPurchasePrintController@show')->name('personal-purchase-print.show');
 
+# 個別注文一覧/注文/メール
+Route::get('/menu/porders/{personal_sale}/mail', 'PersonalPurchaseMailController@show')->name('personal-purchase-print.show');
+
 ### 取引先登録 #####################################################################################
 
 # 取引先一覧
@@ -149,6 +152,18 @@ Route::post('/menu/suppliers/{supplier}/supplies/{supplie}/edit', 'SupplieEditCo
 
 Route::get('/contacts', 'ContactController@show');
 Route::post('/contacts', 'ContactController@ajax')->name('contacts.ajax');
+
+### 保護者入力 #####################################################################################
+
+# ユーザー/販売会id/カート
+Route::get('/contacts', 'ContactController@show');
+Route::post('/contacts', 'ContactController@ajax')->name('contacts.ajax');
+
+# /ユーザー/個別注文id/カート
+Route::get('/contacts', 'ContactController@show');
+Route::post('/contacts', 'ContactController@ajax')->name('contacts.ajax');
+
+### その他 #####################################################################################
 
 Auth::routes();
 
