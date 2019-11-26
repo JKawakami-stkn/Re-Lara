@@ -75,6 +75,9 @@ Route::get('/menu/sales/{sale_id}/order/{kids_id}','OrderStatusController@show' 
 Route::post('/menu/sales/{sale_id}/order/{kids_id}', 'OrderStatusController@store')->name('order-status.store');
 Route::post('/menu/sales/{sale_id}/order/{kids_id}/delete/{order_id}', 'OrderStatusController@delete')->name('order-status.delete');
 
+# 販売会一覧/販売会/印刷
+Route::get('/menu/sales/{sale_id}/print','PrintController@show' )->name('print.show');
+
 ### 個別注文 #####################################################################################
 
 # 個別注文一覧

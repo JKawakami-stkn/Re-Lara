@@ -1,39 +1,27 @@
 @extends('./layout')
 
 @section('content')
-<link rel="stylesheet" href="{{ asset('css/print_details.css') }}">
-@section('style')
 
+@section('style')
+    <link rel="stylesheet" href="{{ asset('css/print_details.css') }}">
 @stop
+
 <div class="container">
     <!-- パンくずリスト -->
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb noprint">
             <li class="breadcrumb-item"><a href="{{ route('menu.show') }}">メニュー</a></li>
-            <li class="breadcrumb-item"><a href="">個別注文</a></li>
-            <li class="breadcrumb-item active" aria-current="page">注文確認</li>
         </ol>
     </nav>
-    <!--
-    <div class="form-group noprint">
-        <label for="supplier">発注書の選択</label>
-        <select class="form-control" id="supplier">
-            <option value="0">全て表示</option>
-        @foreach($suppliers as $supplier)
-            <option value="{{ $supplier->id }}">{{ $supplier->name }}</option>
-        @endforeach
-        </select>
-    </div>
-    -->
 
     @foreach($suppliers as $supplier)
         @if($loop->first)
-        <div id="{{$supplier->id}}" class="layout">
+        <div id="{{$supplier->supplier_id}}" class="layout">
         @else
-        <div id="{{$supplier->id}}" class="layout">
+        <div id="{{$supplier->supplier_id}}" class="layout">
         @endif
             <div class="day">{{ date("Y/m/d") }}</div>
-            <div class="number">注文番号：{{ sprintf('%05d', $personal_sale->id). sprintf('%02d',$supplier->id) }}</div>
+            <div class="number">注文番号：{{ sprintf('%05d', $sale->id). sprintf('%02d',$supplier->supplier_id) }}</div>
 
             <div class="header">
                 <div class="title">注　文　書</div>
@@ -41,8 +29,8 @@
             </div>
 
             <div class="vender">
-                <div class="vendor-name"> {{ $supplier->name }} </div>
-                <div class="vendor-rep">{{ $supplier->person_charge }}　様</div>
+                <div class="vendor-name">{{$supplier->supplier_name}}</div>
+                <div class="vendor-rep">{{$supplier->supplier_person_charge}}　様</div>
             </div>
 
             <div class="office">
@@ -65,41 +53,43 @@
                 </tr>
                 </thead>
                 <tbody>
-                    <?php
-                        $order_loop_index = 0;
-                        $order_match = 0;
-                    ?>
-                    @foreach ($personal_orders as $personal_order)
-                        <!-- 一致するオーダーが存在する -->
-                        @if($supplier->id == \App\models\Supplie::find($personal_order->supplie_id)->supplier_id)
-                            <td class="no">{{ $order_match + 1 }}</td>
 
+                    <?php $matches = 0 ?>
+                    @foreach($skus as $sku)
+                        @if($sku->supplier_id == $supplier->supplier_id)
+                            <?php $matches += 1 ?>
+                            <td class="no">{{ $matches }}</td>
                             <td class="supplie-name">
-                                {{ \App\models\Supplie::find($personal_order->supplie_id)->name }}
-                                <?php $sku = \App\models\Sku::find($personal_order->sku_id) ?>
-                                @if( $sku->color != "なし")
-                                    {{ $sku->color }}
-                                @endif
-                                @if( $sku->size != "なし")
+                                {{ $sku->supplie_name }}
+                                @if($sku->size != 'なし')
                                     {{ $sku->size }}
                                 @endif
+                                @if($sku->color != 'なし')
+                                    {{ $sku->color }}
+                                @endif
                             </td>
-                            <td class="num">{{$personal_order->quantity}}</td>
+                            <td class="num">{{ \App\models\Order::join('supplies', 'supplie_id', 'supplies.id')
+                                ->where('supplies.supplier_id', '=', $supplier->supplier_id)
+                                ->where('sku_id', '=',$sku->sku_id)
+                                ->sum("quantity")
+                            }}
+                            </td>
                             </tr>
-                            <?php  $order_match += 1;?>
                         @endif
-                        <?php  $order_loop_index += 1;?>
-                        <!-- オーダーのループ終了 -->
-                        @if ($order_loop_index == count($personal_orders))
-                            @for ($i = $order_match + 1; $i < 16; $i++)
+
+                        @if($loop->last)
+                            @if($matches < 15)
+                                @foreach(range($matches,15) as $i)
                                 <td class="no">{{ $i }}</td>
                                 <td class="supplie-name"></td>
                                 <td class="num"></td>
                                 </tr>
-                            @endfor
+                                @endforeach
+                            @endif
                         @endif
 
                     @endforeach
+
                 </tbody>
             </table>
 
@@ -113,7 +103,6 @@
 
     <!-- 印刷ボタン -->
     <button type="button" class="btn btn-primary btn-block mt-5 noprint" onclick="window.print();">印　刷</button>
-
 
 </div>
 
