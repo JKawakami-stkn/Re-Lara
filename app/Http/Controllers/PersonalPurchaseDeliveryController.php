@@ -27,8 +27,8 @@ class PersonalPurchaseDeliveryController extends Controller
         $personal_sale->delivered_at = date("Y/m/d H:i:s");
         $personal_sale->save();
 
-        $personal_orders = new PersonalOrdersController;
-        return $personal_orders->show();
+        $personal_order_menu = new PersonalOrderMenuController;
+        return $personal_order_menu->show($personal_sale_id);
 
     }
 }
