@@ -116,7 +116,7 @@ Route::post('/menu/porders/{personal_sale}/edit', 'PersonalOrderEditController@s
 Route::get('/menu/porders/{personal_sale}/print', 'PersonalPurchasePrintController@show')->name('personal-purchase-print.show');
 
 # 個別注文一覧/注文/メール
-Route::get('/menu/porders/{personal_sale}/mail', 'PersonalPurchaseMailController@show')->name('personal-purchase-print.show');
+Route::get('/menu/porders/{personal_sale}/mail', 'PersonalPurchaseMailController@show')->name('personal-purchase-mail.show');
 
 ### 取引先登録 #####################################################################################
 

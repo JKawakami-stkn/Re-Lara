@@ -18,9 +18,11 @@ class DatabaseSeeder extends Seeder
         #$this->call(MWfStaffPosiSeeder::class);
         #$this->call(MWfStaffSeeder::class);
         #$this->call(TKidsGpPosiSeeder::class);
-        $this->call(SupplieDivision::class);
+        #$this->call(SupplieDivision::class);
         #$this->call(SuppliersSeeder::class);
-        $this->call(SuppliesSeeder::class);
+        #$this->call(SuppliesSeeder::class);
         #$this->call(SkuSeeder::class);
+        $this->call(MKidsCareLedgSeeder::class);
+        $this->call(MMailAdrSeeder::class);
     }
 }
