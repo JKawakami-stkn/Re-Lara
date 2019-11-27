@@ -37,12 +37,12 @@ class PersonalPurchaseMailController extends Controller
         $mail = $kid->M_kids_care_ledg->M_mail_adr;
         
         // メール送信
-        $TOKEN_LENGTH = 124; // uuidの長さ
+        $TOKEN_LENGTH = 128; // uuidの長さ
         $bytes = openssl_random_pseudo_bytes($TOKEN_LENGTH);
         $token = bin2hex($bytes);
         
         Mail::send('emails.mail', [
-            "Url" => "http://".env('LOCAL_IP')."/Re-Lara/".$token."/ps/".$personal_sale_id,
+            "Url" => "http://".env('LOCAL_IP')."/ps/".$personal_sale_id."/Re-Lara/".$token,
             "Text" => "URLにアクセスして購入する商品を入力してください。",
         ], function($message) use ($kid, $mail){
             $message
