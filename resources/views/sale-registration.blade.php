@@ -2,6 +2,10 @@
 
 @section('content')
 
+@section('style')
+  <link rel="stylesheet" href="{{ asset('css/active_or_none.css') }}">
+@stop
+
 <div class="container" >
 
     <!-- パンくずリスト -->
@@ -39,17 +43,18 @@
 
             @endforeach
         </div>
-        <?php $division_url = "http://localhost/UNK/menu/sales/regist/load/"?>
-        <input id="ajax_division" type="hidden" value= {{$division_url}} >
+
+
+        <input id="ajax_division" type="hidden" value= "{{route('sale-registrationLoad', {})}}">
         <p class="mb-2">用品選択</p>
         <div class="form-group col-md-4">
         <label for="inputState">区分</label>
           <select id="division_inputState" class="form-control">
             @foreach($supp_divi as $division)
               @if($division_id == $division->id)
-                <option selected value="{{ $division->id }}">{{ $division->division_name }}</option>
+                <option selected value="{{ $division->id }}" data-group = "{{$division->id}}"　class="search_item is-active">{{ $division->division_name }}</option>
               @else
-                <option value="{{ $division->id }}">{{ $division->division_name }}</option>
+                <option value="{{ $division->id }}" data-group = "{{$division->id}}" class="search_item" >{{ $division->division_name }}</option>
               @endif
             @endforeach
           </select>
@@ -59,10 +64,10 @@
                 @if($loop->index % 2 == 0)
                 <div class="row">
                 @endif
-                    <div class="col-sm-6 col-12">
-                        <input type="checkbox" class="form-check-input" name="supplie[]" id="{{$supplie->id}}" value="{{$supplie->id}}">
-                        <label class="form-check-label mt-2 mb-1 mr-3" for="{{$supplie->id}}" >{{$supplie->name}}</label>
-                    </div>
+                      <div class="col-sm-6 col-12" >
+                          <input type="checkbox" class="form-check-input list_item" data-group="{{$supplie->division_id}}" name="supplie[]" id="{{$supplie->id}}" value="{{$supplie->id}}">
+                          <label class="form-check-label mt-2 mb-1 mr-3" for="{{$supplie->id}}" >{{$supplie->name}}</label>
+                      </div>
                 @if($loop->index % 2 == 1)
                 </div>
                 @elseif($loop->last && $loop->index % 2 == 0)

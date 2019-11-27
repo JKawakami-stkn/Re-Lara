@@ -17,7 +17,6 @@
             <i class="fas fa-shopping-cart"></i>
         </button>
     </a>
-
     <!-- メディアオブジェクト -->
     @foreach($supplies as $supplie)
     <a class="text-decoration-none" href="{{ route('purchase-supplie', [$sale->id, $target, $supplie->id]) }}">
@@ -42,5 +41,3 @@
     }
 </style>
 @stop
-
-

@@ -11,12 +11,27 @@
             <li class="breadcrumb-item active" aria-current="page"></li>
         </ol>
     </nav>
-    
+
     <a href="{{ route('personal-purchase-check.show', $personal_sale->id) }}">
         <button type="button" class="btn btn-primary rounded-circle p-0 position-fixed border-white" style="width:4rem;height:4rem; bottom:55px; right:20px; z-index:30;">
             <i class="fas fa-shopping-cart"></i>
         </button>
     </a>
+
+    <input id="ajax_division" type="hidden" value= "{{route('personal-purchase-supplies.load', $personal_sale->id)}}">
+
+    <div class="form-group col-md-4">
+    <label for="inputState">区分</label>
+      <select id="division_inputState" class="form-control">
+        @foreach($supp_divi as $division)
+          @if($division_id == $division->id)
+            <option selected value="{{ $division->id }}" data-group = "{{$division->id}}"　class="search_item is-active">{{ $division->division_name }}</option>
+          @else
+            <option value="{{ $division->id }}" data-group = "{{$division->id}}" class="search_item" >{{ $division->division_name }}</option>
+          @endif
+        @endforeach
+      </select>
+    </div>
 
     <!-- メディアオブジェクト -->
     @foreach($supplies as $supplie)
@@ -36,6 +51,9 @@
     @endforeach
 
 </div>
+@section('script')
+<script src="{{ asset('js/division_change_Laravel.js') }}"></script>
+@stop
 
 <style>
     .card-img-top {
@@ -45,5 +63,3 @@
     }
 </style>
 @stop
-
-
