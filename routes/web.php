@@ -117,6 +117,10 @@ Route::get('/menu/porders/{personal_sale}/print', 'PersonalPurchasePrintControll
 
 # 個別注文一覧/注文/メール
 Route::get('/menu/porders/{personal_sale}/mail', 'PersonalPurchaseMailController@show')->name('personal-purchase-mail.show');
+Route::post('/menu/porders/{personal_sale}/mail', 'PersonalPurchaseMailController@send')->name('personal-purchase-mail.send');
+
+# 個別注文一覧/注文/メール/送信結果
+Route::get('/menu/porders/{personal_sale}/mail/send', 'PersonalPurchaseMailSendController@show')->name('personal-purchase-mail-send.show');
 
 ### 取引先登録 #####################################################################################
 
@@ -155,13 +159,16 @@ Route::post('/contacts', 'ContactController@ajax')->name('contacts.ajax');
 
 ### 保護者入力 #####################################################################################
 
+# ユーザー/販売会id/入力
+#Route::get('/{token}/ps/{personal_sale}/', '')->name('');
+#Route::post('/{token}/ps/{personal_sale}/', '')->name('');
+
 # ユーザー/販売会id/カート
-Route::get('/contacts', 'ContactController@show');
-Route::post('/contacts', 'ContactController@ajax')->name('contacts.ajax');
+#Route::get('/{token}/{personal_sale}/', '')->name('');
+#Route::post('/{token}/{personal_sale}/', '')->name('');
 
 # /ユーザー/個別注文id/カート
-Route::get('/contacts', 'ContactController@show');
-Route::post('/contacts', 'ContactController@ajax')->name('contacts.ajax');
+
 
 ### その他 #####################################################################################
 
