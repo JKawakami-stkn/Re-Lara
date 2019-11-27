@@ -36,13 +36,21 @@ class PersonalPurchaseMailController extends Controller
         // 対象者メールアドレス
         $mail = $kid->M_kids_care_ledg->M_mail_adr;
         
-        // メール送信
+        // トークン生成
         $TOKEN_LENGTH = 128; // uuidの長さ
         $bytes = openssl_random_pseudo_bytes($TOKEN_LENGTH);
         $token = bin2hex($bytes);
+
+        // トークン保存
+        \App\models\Tokens::create(
+            [
+                'token' => $token,
+                'kids_id' => $kid->KIDS_ID
+            ]
+        );
         
         Mail::send('emails.mail', [
-            "Url" => "http://".env('LOCAL_IP')."/ps/".$personal_sale_id."/Re-Lara/".$token,
+            "Url" => "http://".env('LOCAL_IP')."/Re-Lara/"."/ps/".$personal_sale_id.$token,
             "Text" => "URLにアクセスして購入する商品を入力してください。",
         ], function($message) use ($kid, $mail){
             $message
@@ -51,10 +59,7 @@ class PersonalPurchaseMailController extends Controller
                 ->subject($kid->KIDS_NM_KJ."さんの用品購入用リンク"); // メールタイトル 
         });
         
-
         $personal_purchase_mail_send_controller = new PersonalPurchaseMailSendController;
         return $personal_purchase_mail_send_controller -> show($personal_sale_id);
-
-        return $mail;
     }
 }
