@@ -14,6 +14,14 @@ class M_kids extends Model
 
     public $incrementing = false;
 
+    // 保育児童台帳マスタ
+    public function M_kids_care_ledg()
+    {
+        return $this->hasOne('App\models\M_kids_care_ledg', 'LEDG_NUM', 'LEDG_NUM');
+    }
+
+
+
     public static function group($GP_CD, $WF_YEAR)
     {
 
