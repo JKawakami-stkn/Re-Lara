@@ -33,6 +33,7 @@ class SaleRegistrationController extends Controller
       \Debugbar::info($division_id);
       \Debugbar::addMessage("成功");
       \Debugbar::info($supplies);
+      \Debugbar::info(url()->full());
       $Mwfgroup = new M_wf_group;
       $kumis = $Mwfgroup->currentYearGroups();
       $supp_divi = \App\models\Supplie_division::get();

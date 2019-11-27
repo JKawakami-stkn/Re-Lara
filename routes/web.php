@@ -30,10 +30,11 @@ Route::get('/menu/sales', "SalesTopController@show")->name('sales');
 # 販売会一覧/販売会登録
 Route::get('/menu/sales/regist',"SaleRegistrationController@show")->name('sale-registration');
 Route::post('/menu/sales/regist',"SaleRegistrationController@store")->name('sale-registration.store');
-Route::get('/menu/sales/regist/load/{division_id}',"SaleRegistrationController@load")->name('sale-registrationLoad');
+Route::get('/menu/sales/regist/load/{division_id?}',"SaleRegistrationController@load")->name('sale-registrationLoad');
 
 # 販売会一覧/販売会/販売会編集
 Route::get('/menu/sales/{sale_id}/edit','SaleEditController@show')->name('sale-edit');
+
 Route::post('/menu/sales/{sale_id}/edit','SaleEditController@store')->name('sale-editStore');
 
 # 販売会一覧/販売会/販売会メニュー
@@ -93,6 +94,7 @@ Route::get('/menu/porders/{personal_sale}', 'PersonalOrderMenuController@show')-
 
 # 個別注文一覧/注文/用品一覧
 Route::get('/menu/porders/{personal_sale}/purchase', 'PersonalPurchaseSuppliesController@show')->name('personal-purchase-supplies.show');
+Route::get('/menu/porders/{personal_sale}/purchase/load/{division_id?}', 'PersonalPurchaseSuppliesController@load')->name('personal-purchase-supplies.load');
 // Route::post('/menu/porders/{personal_sale}/purchase', 'PersonalPurchaseSuppliesController@store')->name('personal-purchase-supplies.store');
 
 # 個別注文一覧/注文/用品一覧/用品
