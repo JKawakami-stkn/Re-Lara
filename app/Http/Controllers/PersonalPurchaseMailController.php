@@ -50,7 +50,7 @@ class PersonalPurchaseMailController extends Controller
         );
         
         Mail::send('emails.mail', [
-            "Url" => "http://".env('LOCAL_IP')."/Re-Lara/"."/ps/".$personal_sale_id.$token,
+            "Url" => "http://".env('LOCAL_IP')."/Re-Lara/"."ps/".$personal_sale_id."/".$token,
             "Text" => "URLにアクセスして購入する商品を入力してください。",
         ], function($message) use ($kid, $mail){
             $message

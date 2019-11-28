@@ -159,16 +159,17 @@ Route::post('/contacts', 'ContactController@ajax')->name('contacts.ajax');
 
 ### 保護者入力 #####################################################################################
 
-# ユーザー/販売会id/入力
-#Route::get('/{token}/ps/{personal_sale}/', '')->name('');
-#Route::post('/{token}/ps/{personal_sale}/', '')->name('');
 
-# ユーザー/販売会id/カート
-#Route::get('/{token}/{personal_sale}/', '')->name('');
-#Route::post('/{token}/{personal_sale}/', '')->name('');
+# ユーザー/個別注文id/用品一覧
+Route::get('/ps/{personal_sale_id}/{token}', 'PersonalPurchaseParentInputSupplieListController@show')->name('personal-purchase-parent-input-supplie-list.show');
 
-# /ユーザー/個別注文id/カート
+# ユーザー/個別注文id/用品一覧/用品
+Route::get('/ps/{personal_sale_id}/{token}/supplie/{supplie_id}', 'PersonalPurchaseParentInputSupplieController@show')->name('personal-purchase-parent-input-supplie.show');
+Route::post('/ps/{personal_sale_id}/{token}/supplie/{supplie_id}', 'PersonalPurchaseParentInputSupplieController@store')->name('personal-purchase-parent-input-supplie.store');
 
+# ユーザー/個別注文id/カート
+Route::get('/ps/{personal_sale_id}/{token}/cart', 'PersonalPurchaseParentCartController@show')->name('personal-purchase-parent-cart.show');
+Route::post('/ps/{personal_sale_id}/{token}/cart', 'PersonalPurchaseParentCartController@store')->name('personal-purchase-parent-cart.store');
 
 ### その他 #####################################################################################
 
