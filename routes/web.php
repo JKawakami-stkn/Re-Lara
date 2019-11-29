@@ -78,6 +78,24 @@ Route::post('/menu/sales/{sale_id}/order/{kids_id}/delete/{order_id}', 'OrderSta
 # 販売会一覧/販売会/印刷
 Route::get('/menu/sales/{sale_id}/print','PrintController@show' )->name('print.show');
 
+# 販売会一覧/販売会/メール送信タイプ選択
+Route::get('/menu/sales/{sale_id}/mail','MailTargetTypeController@show' )->name('mail-target-type.show');
+
+# 販売会一覧/販売会/メール送信タイプ選択/メール送信確認
+Route::get('/menu/sales/{sale_id}/mail/all', 'MailAllController@show')->name('mail-all.show');
+
+# 販売会一覧/販売会/メール送信タイプ選択/組選択
+Route::get('/menu/sales/{sale_id}/mail/class', 'MailClassSelectController@show')->name('mail-class-select.show');
+
+# 販売会一覧/販売会/メール送信タイプ選択/個人選択
+Route::get('/menu/sales/{sale_id}/mail/personal', 'MailPersonalSelectController@show')->name('mail-personal-select.show');
+
+# 販売会一覧/販売会/メール/メール送信確認
+Route::get('/menu/sales/{sale_id}/mail/confirm', 'MailConfirmController@show')->name('mail-confirm.show');
+
+# 販売会一覧/販売会/メール/送信結果
+Route::get('/menu/sales/{sale_id}/mail/result', 'MailResultController@show')->name('mail-result.show');
+
 ### 個別注文 #####################################################################################
 
 # 個別注文一覧

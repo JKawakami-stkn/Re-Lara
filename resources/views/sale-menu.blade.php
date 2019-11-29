@@ -91,6 +91,14 @@
             </a>
         </div>
 
+        <div class="col-3">
+            <a href="{{ route('mail-target-type.show', $sale->id) }}">
+                <div class="card card-body">
+                    <img class="card-img" src="{{ asset('img/mail.png') }}" alt="カードの画像" data-toggle="tooltip" title="メール送信">
+                </div>
+            </a>
+        </div>
+
     </div>
 </div>
 
