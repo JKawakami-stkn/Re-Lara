@@ -11,7 +11,7 @@
         </ol>
     </nav>
 
-    <form action="{{ route('delivery-target.store',$sale->id) }}" method="post">
+    <form action="{{ route('mail-confirm.show',$sale->id) }}" method="get">
 
         {{ csrf_field() }}
 
@@ -41,10 +41,13 @@
         </div>
 
         <div class="mt-5 mb-3">
-                <button type="submit" class="btn btn-primary btn-block">選　　択</button> 
+                <button type="submit" class="btn btn-primary btn-block">選　　択</button>
         </div>
 
     </form>
 
 @stop
 
+@section('script')
+<script src="{{ asset('js/select_child.js') }}"></script>
+@stop

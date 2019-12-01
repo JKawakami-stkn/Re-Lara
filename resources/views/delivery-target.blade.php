@@ -50,9 +50,7 @@
     </form>
 </div>
 
-
 @stop
-
 
 @section('script')
 <script src="{{ asset('js/select_child.js') }}"></script>
