@@ -12,7 +12,7 @@
     </nav>
 
 
-    <form action="{{ route('mail-confirm.show',$sale->id) }}" method="get">
+    <form action="{{ route('mail-class-confirm.show',$sale->id) }}" method="get">
 
         {{ csrf_field() }}
 

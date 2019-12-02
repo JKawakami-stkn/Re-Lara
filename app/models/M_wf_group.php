@@ -48,6 +48,7 @@ class M_wf_group extends Model
 
         return $kids;
     }
+    
     #KIDS_IDから組みの名前を持ってくるメソッド
     public static function getgroup($KIDS_ID){
       $WF_CD = "0001";

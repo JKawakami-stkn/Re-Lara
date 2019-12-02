@@ -13,11 +13,15 @@
     </nav>
 
 
-    <p>さんの注文</p>
+    <p>{{$sale->name}}</p>
 
-    <p class="text-center"></p>
+    <p class="text-center">{{$class->GP_NM}}</p>
 
-    <p>上記のメールアドレス宛に、保護者入力用のURLが記載されたメールを送信しますか？</p>
+    @foreach($kids as $kid)
+        <!-- {{$kid->KIDS_NM_KJ}}<br> -->
+    @endforeach
+
+    <p>上記の対象宛に、保護者入力用のURLが記載されたメールを送信しますか？</p>
 
     <div class="row">
         <form action="" method="POST">

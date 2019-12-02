@@ -87,6 +87,10 @@ Route::get('/menu/sales/{sale_id}/mail/all', 'MailAllConfirmController@show')->n
 # 販売会一覧/販売会/メール送信タイプ選択/組選択
 Route::get('/menu/sales/{sale_id}/mail/class', 'MailClassSelectController@show')->name('mail-class-select.show');
 
+# 販売会一覧/販売会/メール送信タイプ選択/組選択/送信確認
+Route::get('/menu/sales/{sale_id}/mail/class/confirm', 'MailClassConfirmController@show')->name('mail-class-confirm.show');
+Route::post('/menu/sales/{sale_id}/mail/class/confirm/{kid}', 'MailClassConfirmController@send')->name('mail-class-confirm.send');
+
 # 販売会一覧/販売会/メール送信タイプ選択/個人選択
 Route::get('/menu/sales/{sale_id}/mail/personal', 'MailPersonalSelectController@show')->name('mail-personal-select.show');
 
