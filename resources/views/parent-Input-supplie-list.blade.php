@@ -25,7 +25,7 @@
             <div class="media-body pl-2">
                 <h5 class="mt-0">{{ $supplie->name }}</h5>
                 <p>￥{{ number_format($supplie->price) }}</p>
-                @if(!\App\models\Order::where('sale_id', $sale->id)->where('supplie_id', $supplie->id)->get()->isEmpty() )
+                @if(!\App\models\Order::where('sale_id', $sale->id)->where('supplie_id', $supplie->id)->where('kids_id', $target)->get()->isEmpty() )
                     <p class="mt-4 text-success">カートに入っています</p>
                 @endif
             </div>

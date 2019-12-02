@@ -13,6 +13,8 @@ class ParentInputSupplieListController extends Controller
         $kids_id = \App\models\Tokens::where('token', $token)->get('kids_id');
         $kid = \App\models\M_kids::find($kids_id);
 
+        $target = \App\models\Tokens::where('token', $token)->get('kids_id')->first()["kids_id"];
+
         //sale_idからsale情報を取得
         $sale = Sale::find($sale_id);
     
@@ -20,7 +22,7 @@ class ParentInputSupplieListController extends Controller
 
         $purchasesupplies= new PurchaseSuppliesController;
 
-        return view('parent-input-supplie-list',compact('token', 'sale','kid','supplies','purchasesupplies'));
+        return view('parent-input-supplie-list',compact('token', 'sale', 'target','kid','supplies','purchasesupplies'));
     }
 
     public function tablecheck($supplie_id,$sale_id,$target)
@@ -38,4 +40,5 @@ class ParentInputSupplieListController extends Controller
              return '購入状態：未購入';
         }
     }
+
 }

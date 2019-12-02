@@ -36,7 +36,7 @@
 
     @else
         <p>カートに商品はありません</p>
-        <a href="{{ route('personal-purchase-supplies.show', $sale->id) }}">用品一覧画面へ</a>
+        <a href="{{ route('parent-input-supplie-list.show', [$sale->id, $token]) }}">用品一覧画面へ</a>
     @endif
 </div>
 
