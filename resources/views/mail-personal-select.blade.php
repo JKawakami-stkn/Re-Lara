@@ -11,7 +11,7 @@
         </ol>
     </nav>
 
-    <form action="{{ route('mail-confirm.show',$sale->id) }}" method="get">
+    <form action="{{ route('mail-personal-confirm.show', $sale->id) }}" method="get">
 
         {{ csrf_field() }}
 
@@ -22,7 +22,7 @@
         <div class="col-md mt-3 mb-3">
             <div class="form-group">
                 <label for="FormControlSelect">組の名前</label>
-                <select class="form-control form-control-lg" id="group">
+                <select class="form-control form-control-lg" id="group" name="group">
                     <option selected disabled="disabled">選択してください</option>
                         @foreach($groups as $group)
                             <option value="{{ $group->GP_CD }}">{{ $group->GP_NM }}</option>
@@ -33,7 +33,7 @@
         <div class="col-md mt-3 mb-3">
             <div class="form-group">
                 <label for="FormControlSelect">メールを送信する園児</label>
-                <select id="kids" class="form-control form-control" name="kids_id" disabled>
+                <select id="kids" class="form-control form-control" name="kids" disabled>
                         <option selected disabled="disabled">選択してください</option>
                 </select>
             </div>

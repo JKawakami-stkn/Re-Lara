@@ -82,7 +82,7 @@ Route::get('/menu/sales/{sale_id}/print','PrintController@show' )->name('print.s
 Route::get('/menu/sales/{sale_id}/mail','MailTargetTypeController@show' )->name('mail-target-type.show');
 
 # 販売会一覧/販売会/メール送信タイプ選択/メール送信確認
-Route::get('/menu/sales/{sale_id}/mail/all', 'MailAllController@show')->name('mail-all.show');
+Route::get('/menu/sales/{sale_id}/mail/all', 'MailAllConfirmController@show')->name('mail-all-confirm.show');
 
 # 販売会一覧/販売会/メール送信タイプ選択/組選択
 Route::get('/menu/sales/{sale_id}/mail/class', 'MailClassSelectController@show')->name('mail-class-select.show');
@@ -90,8 +90,12 @@ Route::get('/menu/sales/{sale_id}/mail/class', 'MailClassSelectController@show')
 # 販売会一覧/販売会/メール送信タイプ選択/個人選択
 Route::get('/menu/sales/{sale_id}/mail/personal', 'MailPersonalSelectController@show')->name('mail-personal-select.show');
 
-# 販売会一覧/販売会/メール/メール送信確認
-Route::get('/menu/sales/{sale_id}/mail/confirm', 'MailConfirmController@show')->name('mail-confirm.show');
+# 販売会一覧/販売会/メール送信タイプ選択/個人選択/送信確認
+Route::get('/menu/sales/{sale_id}/mail/personal/confirm', 'MailPersonalConfirmController@show')->name('mail-personal-confirm.show');
+Route::post('/menu/sales/{sale_id}/mail/personal/confirm/{kid}', 'MailPersonalConfirmController@send')->name('mail-personal-confirm.send');
+
+# 販売会一覧/販売会/メール送信タイプ選択/個人選択/送信完了
+Route::get('/menu/sales/{sale_id}/mail/personal/send', 'MailPersonalConfirmController@show')->name('mail-personal-confirm.show');
 
 # 販売会一覧/販売会/メール/送信結果
 Route::get('/menu/sales/{sale_id}/mail/result', 'MailResultController@show')->name('mail-result.show');
@@ -188,6 +192,17 @@ Route::post('/ps/{personal_sale_id}/{token}/supplie/{supplie_id}', 'PersonalPurc
 # ユーザー/個別注文id/カート
 Route::get('/ps/{personal_sale_id}/{token}/cart', 'PersonalPurchaseParentCartController@show')->name('personal-purchase-parent-cart.show');
 Route::post('/ps/{personal_sale_id}/{token}/cart', 'PersonalPurchaseParentCartController@store')->name('personal-purchase-parent-cart.store');
+
+# ユーザー/販売会id/用品一覧
+Route::get('/s/{sale_id}/{token}', 'ParentInputSupplieListController@show')->name('parent-input-supplie-list.show');
+
+# ユーザー/販売会id/用品一覧/用品
+Route::get('/s/{sale_id}/{token}/supplie/{supplie_id}', 'ParentInputSupplieController@show')->name('parent-input-supplie.show');
+Route::post('/s/{sale_id}/{token}/supplie/{supplie_id}', 'ParentInputSupplieController@store')->name('parent-input-supplie.store');
+
+# ユーザー/販売会id/カート
+Route::get('/s/{sale_id}/{token}/cart', 'ParentCartController@show')->name('parent-cart.show');
+Route::post('/s/{sale_id}/{token}/cart', 'ParentCartController@store')->name('parent-cart.store');
 
 ### その他 #####################################################################################
 

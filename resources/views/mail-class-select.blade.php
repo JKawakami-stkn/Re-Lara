@@ -20,7 +20,7 @@
             <div class="col-md mt-3 mb-3">
                 <div class="form-group">
                     <label for="FormControlSelect">組の名前</label>
-                    <select class="form-control form-control-lg" id="group">
+                    <select class="form-control form-control-lg" id="group" name="group">
                         <option selected disabled="disabled">選択してください</option>
                             @foreach($groups as $group)
                                 <option value="{{ $group->GP_CD }}">{{ $group->GP_NM }}</option>

@@ -14,7 +14,7 @@
     <!-- カード -->
     <div class="card mb-4">
         <div class="card-body">
-            <a href="{{ route('mail-all.show', $sale->id) }}">
+            <a href="{{ route('mail-all-confirm.show', $sale->id) }}">
                 <h5 class="card-title">全ての対象者</h5>
                 <p class="card-text">対象者全員にメールを送信します</p>
             </a>

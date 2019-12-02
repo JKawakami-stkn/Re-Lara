@@ -19,7 +19,7 @@ class PersonalPurchaseParentCartController extends Controller
           }
         }
         
-        return view('personal-purchase-parent-cart', compact('token', 'personal_sale', 'personal_orders', "personal_sku_data"));
+        return view('parent-cart', compact('token', 'personal_sale', 'personal_orders', "personal_sku_data"));
     }
 
     public function store($personal_sale_id, $token){
