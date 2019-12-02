@@ -203,6 +203,8 @@ Route::post('/s/{sale_id}/{token}/supplie/{supplie_id}', 'ParentInputSupplieCont
 # ユーザー/販売会id/カート
 Route::get('/s/{sale_id}/{token}/cart', 'ParentCartController@show')->name('parent-cart.show');
 Route::post('/s/{sale_id}/{token}/cart', 'ParentCartController@store')->name('parent-cart.store');
+Route::post('/s/{sale_id}/{token}/cart/delete/{order}', 'ParentCartController@delete')->name('parent-cart.delete');
+
 
 ### その他 #####################################################################################
 
