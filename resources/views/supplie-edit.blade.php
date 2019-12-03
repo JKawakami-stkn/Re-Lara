@@ -16,7 +16,7 @@
     </nav>
 
     <!-- フォーム -->
-    <form action="{{ route('supplie-edit.edit', [$supplier->id, $supplie->id]) }}" method="post">
+    <form action="{{ route('supplie-edit.edit', [$supplier->id, $supplie->id]) }}" method="post" enctype="multipart/form-data" accept-charset="ASCII">
         {{ csrf_field() }}
         <div class="form-group">
             <label for="name">用品名</label>

@@ -26,10 +26,6 @@ class SupplieRegistrationController extends Controller
     public function store($supplier_id, SupplieRequest $request)
     {
         $request->session()->regenerateToken();
-        // デコード
-        $encoded_name = $request->name;
-        #$decoded_name = mb_convert_encoding($encoded_name, "UTF-8", "HTML-ENTITIES");
-        #\Debugbar::info($request);
 
         // 画像保存処理
         if ($request->file('img_path') != null) {
@@ -42,7 +38,7 @@ class SupplieRegistrationController extends Controller
 
         $create_data = \App\models\Supplie::create(
             [
-                'name' => $encoded_name,
+                'name' =>  $request->name,
                 'supplier_id' => $supplier_id,
                 'price' => $request->price,
                 'img_path' => $path,
