@@ -17,6 +17,21 @@
             <i class="fas fa-shopping-cart"></i>
         </button>
     </a>
+
+    <input id="ajax_division" type="hidden" value= "{{route('purchase-supplies.load', [$sale->id, $target])}}">
+
+    <div class="form-group col-md-4">
+    <label for="inputState">区分</label>
+      <select id="division_inputState" class="form-control">
+        @foreach($supp_divi as $division)
+          @if($division_id == $division->id)
+            <option selected value="{{ $division->id }}" data-group = "{{$division->id}}"　class="search_item is-active">{{ $division->division_name }}</option>
+          @else
+            <option value="{{ $division->id }}" data-group = "{{$division->id}}" class="search_item" >{{ $division->division_name }}</option>
+          @endif
+        @endforeach
+      </select>
+    </div>
     <!-- メディアオブジェクト -->
     @foreach($supplies as $supplie)
     <a class="text-decoration-none" href="{{ route('purchase-supplie', [$sale->id, $target, $supplie->id]) }}">
@@ -24,7 +39,7 @@
             <img class="card-img-top img-thumbnail" src="{{ asset('storage/spplie_imgs/taisougi.png') }}">
             <div class="media-body pl-2">
             <h5 class="mt-0">{{$supplie->name}}</h5>
-            <p>{{$supplie->price}}</p>
+            <p>{{$supplie->price}}円</p>
                 <p class="mt-4 _text-danger">{{$purchasesupplies->tablecheck($supplie->id,$sale->id,$target)}}</p>
             </div>
         </div>
@@ -32,6 +47,9 @@
     @endforeach
 
 </div>
+@section('script')
+<script src="{{ asset('js/division_change_Laravel.js') }}"></script>
+@stop
 
 <style>
     .card-img-top {

@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ asset('css/sticky-footer.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/checkbox.css') }}">
-    <link rel="manifest" href="{{ asset('manifest.json') }}">
+    <!-- <link rel="manifest" href="{{ asset('manifest.json') }}">　-->
     @yield('style')
     <title>Partone</title>
 </head>
@@ -34,7 +34,7 @@
     <script src="https://kit.fontawesome.com/bfb7cb4853.js" crossorigin="anonymous"></script>
 
     @yield('script')
-
+    <!--
     <script>
     // ツールチップ
     $('[data-toggle="tooltip"]').tooltip()
@@ -47,6 +47,7 @@
     }
 
     </script>
+  -->
 </body>
 
 </html>

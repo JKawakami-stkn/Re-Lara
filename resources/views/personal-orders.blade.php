@@ -27,10 +27,96 @@
             <th scope="col"></th>
             </tr>
         </thead>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModalCenter">
+          表示順変更
+        </button>
 
-        
+
+
+
+
+
+
+        <!-- ajax もどき-->
+        <input id="ajax_division" type="hidden" value= "{{route('personal-orders.load')}}">
+        <!-- ここまで -->
+
+
+
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">表示順変更</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="narabi">
+                  <h5>絞り込み</h5>
+                  <div class="form-group">
+                    <label for="group_select">組</label>
+                    <select class="form-control" id="group_select">
+                      @if($group_id == "all")
+                        <option value="all" selected>全て</option>
+                      @else
+                        <option value="all">全て</option>
+                      @endif
+
+                      @foreach($this_year_group as $group)
+                        @if($group_id == $group->GP_CD)
+                          <option value="{{$group->GP_CD}}" selected>{{$group->GP_NM}}</option>
+                        @else
+                          <option value="{{$group->GP_CD}}">{{$group->GP_NM}}</option>
+                        @endif
+                      @endforeach
+                    </select>
+                  </div>
+                </div>
+
+                <div class="sibori">
+                  <h5>並び替え</h5>
+                  <h7>期日</h7>
+                  @if($radio_name == "up_sort")
+                    <div class="form-check form-check-inline　sort_radio">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="up_sort" checked>
+                      <label class="form-check-label" for="inlineRadio1">昇順</label>
+                    </div>
+                  @else
+                    <div class="form-check form-check-inline　sort_radio">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="up_sort">
+                      <label class="form-check-label" for="inlineRadio1">昇順</label>
+                    </div>
+                  @endif
+
+                  @if($radio_name == "down_sort")
+                    <div class="form-check form-check-inline sort_radio">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="down_sort" checked>
+                      <label class="form-check-label" for="inlineRadio2">降順</label>
+                    </div>
+                  @else
+                    <div class="form-check form-check-inline sort_radio">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="down_sort">
+                      <label class="form-check-label" for="inlineRadio2">降順</label>
+                    </div>
+                  @endif
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="NotSave_button">Close</button>
+                <button type="button" class="btn btn-primary" id="Save_button">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
         @foreach($personal_sales as $personal_sale)
-  
+
             <!-- 引き渡し済み -->
             @if($personal_sale->delivered_at)
                 <tbody>
@@ -43,7 +129,7 @@
                 </tbody>
                 @continue
             @endif
-            
+
             <!-- 入力済み -->
             @if($personal_sale->entered_at)
                 <tbody>
@@ -114,6 +200,7 @@
     </table>
 
 </div>
-
+@section('script')
+<script src="{{ asset('js/personal_order_sort.js') }}"></script>
 @stop
-
+@stop
