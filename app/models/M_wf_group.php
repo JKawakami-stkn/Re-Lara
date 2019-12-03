@@ -59,4 +59,13 @@ class M_wf_group extends Model
       return $group_neme;
 
     }
+    public static function getgroup_id($KIDS_ID){
+      $WF_CD = "0001";
+      $WC_CD = "0014";
+      $WF_YEAR = (new \DateTime('-3 month'))->format('Y');
+      $GP_CD = \App\models\T_kids_gp_posi::where("KIDS_ID", $KIDS_ID)->where("WF_YEAR", $WF_YEAR)->value("GP_CD");
+
+      return $GP_CD;
+
+    }
 }

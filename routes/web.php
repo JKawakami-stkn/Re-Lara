@@ -47,7 +47,7 @@ Route::post('/menu/sales/{sale_id}/purchase','PurchaseTargetController@store')->
 
 # 販売会一覧/販売会/購入対象選択/購入/用品一覧
 Route::get('/menu/sales/{sale_id}/purchase/{target}','PurchaseSuppliesController@show')->name('purchase-supplies');
-
+Route::get('/menu/sales/{sale_id}/purchase/{target}/load/{division_id?}','PurchaseSuppliesController@load')->name('purchase-supplies.load');
 # 販売会一覧/販売会/購入対象選択/購入/用品一覧/用品
 Route::get('/menu/sales/{sale_id}/purchase/{target}/{supplie_id}','PurchaseSupplieController@show')->name('purchase-supplie');
 Route::post('/menu/sales/{sale_id}/purchase/{target}/{supplie_id}','PurchaseSupplieController@store')->name('purchase-supplie.store');
@@ -83,6 +83,7 @@ Route::get('/menu/sales/{sale_id}/print','PrintController@show' )->name('print.s
 
 # 個別注文一覧
 Route::get('/menu/porders', 'PersonalOrdersController@show')->name('personal-orders.show');
+Route::get('/menu/porders/load/{sibori?}/{narabi?}', 'PersonalOrdersController@load')->name('personal-orders.load');
 
 # 個別注文一覧/注文登録
 Route::get('/menu/porders/regist', 'PersonalOrderRegistrationController@show')->name('personal-order-registration.show');
