@@ -7,6 +7,7 @@ use App\models\Supplie;
 use App\models\Sale;
 use App\models\M_wf_group;
 use App\models\Supplie_division;
+use App\Http\Requests\SaleRequest;
 class SaleRegistrationController extends Controller
 {
     public function show()
@@ -41,8 +42,8 @@ class SaleRegistrationController extends Controller
       return view('sale-registration',compact('supplies','kumis',"supp_divi", "division_id"));
     }
 
-    public function store(Request $request)
-    {
+    public function store(SaleRequest $request)
+    {   
         //F5での更新制御
         $request->session()->regenerateToken();
 

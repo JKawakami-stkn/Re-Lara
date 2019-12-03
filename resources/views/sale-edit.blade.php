@@ -19,12 +19,15 @@
         @csrf
         <div class="form-group">
             <label for="sale_name">販売会の名前</label>
-            <input class="form-control" id="sale_name" name="sale_name" placeholder="例：">
+            <input class="form-control" id="sale_name" name="sale_name" value="{{$sale->name}}" placeholder="例：">
         </div>
 
     <input type="hidden" name="saleid" value="{{$sale->id}}">
 
         <p class="mb-2">対象選択</p>
+        @if($errors->has('kumis'))
+         <div class="alert alert-danger">{{ $errors->first('kumis') }}</div>
+        @endif
         <div class="form-group form-check border rounded">
             @foreach($kumis as $kumi)
                 @if($loop->index % 2 == 0)
@@ -45,6 +48,9 @@
 
 
         <p class="mb-2">用品選択</p>
+        @if($errors->has('supplie'))
+          <div class="alert alert-danger">{{ $errors->first('supplie') }}</div>
+        @endif
         <div class="form-group form-check border rounded">
             @foreach ($supplies as $supplie)
                 @if($loop->index % 2 == 0)

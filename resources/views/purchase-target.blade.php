@@ -24,20 +24,26 @@
             <div class="col-md mt-3 mb-3">
                 <div class="form-group">
                     <label for="FormControlSelect">組の名前</label>
-                    <select class="form-control form-control-lg" id="group">
+                    <select class="form-control form-control-lg " id="group">
                         <option selected disabled="disabled">選択してください</option>
                         @foreach($groups as $group)
                             <option value="{{ $group->GP_CD }}">{{ $group->GP_NM }}</option>
                         @endforeach
                     </select>
+                  
                 </div>
             </div>
             <div class="col-md mt-3 mb-3">
                 <div class="form-group">
                     <label for="FormControlSelect">購入する園児の名前</label>
-                    <select id="kids" class="form-control form-control" name="kids_id" disabled>
+                    <select id="kids" class="form-control form-control @error('kids_id') is-invalid @enderror" name="kids_id" disabled>
                             <option selected disabled="disabled">選択してください</option>
                     </select>
+                    @error('kids_id')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                     @enderror
                 </div>
             </div>
         </div>

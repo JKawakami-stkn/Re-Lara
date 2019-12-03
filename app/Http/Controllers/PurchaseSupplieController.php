@@ -6,6 +6,7 @@ use App\Models\Sale;
 use App\Models\Supplie;
 use App\Models\Order;
 use Illuminate\Http\Request;
+use App\Http\Requests\PersonalPurchaseSupplieRequest;
 
 
 class PurchaseSupplieController extends Controller
@@ -29,7 +30,7 @@ class PurchaseSupplieController extends Controller
      return view('purchase-supplie',compact('sale','target','supplie','supplier', "supplie_color", "supplie_size"));
     }
 
-    public function store(Request $request,$sale_id,$target,$supplie_id)
+    public function store(PersonalPurchaseSupplieRequest $request,$sale_id,$target,$supplie_id)
     {
         //購入数量の取得
         $quantity = $request->quantity;

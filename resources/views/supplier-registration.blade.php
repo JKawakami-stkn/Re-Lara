@@ -44,10 +44,13 @@
                     <option value="etc">その他</option>
                 </select>
             <input type="text" class="form-control col-9 @error('phone_number_2') is-invalid @enderror" name="phone_number_2" value="{{ old('phone_number_2') }}" placeholder="" aria-label="" aria-describedby="addon-wrapping">
-            @if($errors->has('phone_number_1') || $errors->has('phone_number_2'))
+            <input type="text" class="form-control col-9 @error('phone_number_2') is-invalid @enderror" name="phone_number_3" value="{{ old('phone_number_3') }}" placeholder="" aria-label="" aria-describedby="addon-wrapping">
+            @if($errors->has('phone_number_1') || $errors->has('phone_number_2')||$errors->has('phone_number_3'))
                 <?php
                     $phone_number_errors = $errors->get('phone_number_1');
                     $phone_number_errors += $errors->get('phone_number_2');
+                    $phone_number_errors += $errors->get('phone_number_3');
+
                 ?>
                 @foreach ($phone_number_errors as $phone_number_error)
                 <span class="invalid-feedback" role="alert">
@@ -58,6 +61,26 @@
         </div>
 
         <p>取引先の住所</p>
+        <!--エラーの判定処理-->
+        @if($errors->has('postal_code')|$errors->has('street_address_1')|$errors->has('street_address_2')|$errors->has('street_address_3'))
+            <div class="alert alert-danger">
+                @error('postal_code')
+                    {{ $message }}<br>
+                @enderror
+
+                @error('street_address_1')
+                    {{ $message }}<br>
+                @enderror
+
+                @error('street_address_2')
+                    {{ $message }}<br>
+                @enderror
+
+                @error('street_address_3')
+                    {{ $message }}<br>
+                @enderror
+            </div>
+        @endif
         <div class="border rounded p-2 mb-4">
             <div class="form-row">
                 <div class="form-group col-md-2">
@@ -141,7 +164,8 @@
     $('#inputGroup').change(function() {
         if($('option:selected').val() == 'etc'){
             $('#inputGroup').html('<input type="text" class="form-control col-3 @error('phone_number_1') is-invalid @enderror" placeholder="" aria-label="" aria-describedby="addon-wrapping">' +
-                '<input type="text" class="form-control col-9 @error('phone_number_2') is-invalid @enderror" placeholder="" aria-label="" aria-describedby="addon-wrapping">');
+                '<input type="text" class="form-control col-9 @error('phone_number_2') is-invalid @enderror" placeholder="" aria-label="" aria-describedby="addon-wrapping">'+
+                '<input type="text" class="form-control col-9 @error('phone_number_3') is-invalid @enderror" placeholder="" aria-label="" aria-describedby="addon-wrapping">');
         }
     })
 </script>

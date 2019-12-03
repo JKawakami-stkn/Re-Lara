@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\models\Sale;
 use App\models\M_wf_group;
 use App\models\Supplie;
+use App\Http\Requests\SaleRequest;
 
 class SaleEditController extends Controller
 {
@@ -23,7 +24,7 @@ class SaleEditController extends Controller
         return view('sale-edit',compact('supplies','kumis','sale'));
     }
 
-    public function store(Request $request){
+    public function store(SaleRequest $request){
          
         //F5での更新制御
         $request->session()->regenerateToken();

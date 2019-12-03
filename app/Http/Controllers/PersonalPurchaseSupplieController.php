@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Personal_order;
+use App\Http\Requests\PersonalPurchaseSupplieRequest;
 
 class PersonalPurchaseSupplieController extends Controller
 {
@@ -17,7 +18,7 @@ class PersonalPurchaseSupplieController extends Controller
         $supplie_size =  \App\models\Sku::where('supplie_id', $supplie_id)->select("size")->distinct()->get()->toArray();
         return view('personal-purchase-supplie', ['supplie' => $supplie, 'personal_sale' => $personal_sale, 'personal_order' => $personal_order, "supplie_size" => $supplie_size, "supplie_color" => $supplie_color]);
     }
-    public function store($personal_sale_id, $supplie_id, Request $request)
+    public function store($personal_sale_id, $supplie_id, PersonalPurchaseSupplieRequest $request)
     {
         $request->session()->regenerateToken();
 

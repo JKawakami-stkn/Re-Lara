@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Http\Requests\PersonalOrderRequest;
+use App\Http\Requests\TargetRequest;
 use App\Models\Sale;
 
 class PurchaseTargetController extends Controller
@@ -32,7 +32,7 @@ class PurchaseTargetController extends Controller
          );
     }
 
-    public function store(PersonalOrderRequest $request,$sale_id){
+    public function store(TargetRequest $request,$sale_id){
         $request->session()->regenerateToken();
 
         \App\models\Personal_sale::create(['kids_id' => $request->kids_id, 'deadline' => $request->deadline]);

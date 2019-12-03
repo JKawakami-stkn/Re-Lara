@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PersonalOrderRequest extends FormRequest
+class TargetRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,8 +23,8 @@ class PersonalOrderRequest extends FormRequest
      */
     public function rules()
     {
+        \Debugbar::info("ok");
         return [
-            'deadline' => 'required',
             'kids_id'=>'required',
         ];
     }
@@ -32,7 +32,6 @@ class PersonalOrderRequest extends FormRequest
     public function messages()
     {
         return [
-            'deadline.required' => '締め切りを入力してください',
             'kids_id.required' => '購入する園児を選択してください',
         ];
     }

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-#use App\Http\Requests\PersonalOrderEditRequest;
+use App\Http\Requests\PersonalOrderEditRequest;
 #PersonalOrderEditRequestがないって言われる
 #idをページ間で抱えておく方法
 #postのルートの記述が謎
@@ -21,7 +21,7 @@ class PersonalOrderEditController extends Controller
     }
 
 
-    public function store(Request $request){
+    public function store(PersonalOrderEditRequest $request){
       $request->session()->regenerateToken();
       \App\models\Personal_sale::where("id", $request->id)->update(["deadline" => $request->deadline]);
       $personal_sale_id = $request->id;

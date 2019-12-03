@@ -22,17 +22,25 @@
         @csrf
         <div class="form-group">
             <label for="sale_name">販売会の名前</label>
-            <input class="form-control" id="sale_name" name="sale_name" placeholder="例：">
+            <input class="form-control @error('sale_name') is-invalid @enderror" id="sale_name" name="sale_name" placeholder="例："　value="{{ old('sale_name')}}">
+            @error('sale_name')
+              <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+              </span>
+            @enderror
         </div>
 
         <p class="mb-2">対象選択</p>
+        @if($errors->has('kumis'))
+         <div class="alert alert-danger">{{ $errors->first('kumis') }}</div>
+        @endif
         <div class="form-group form-check border rounded">
             @foreach($kumis as $kumi)
                 @if($loop->index % 2 == 0)
                 <div class="row">
                 @endif
                     <div class="col-sm-6 col-12">
-                        <input type="checkbox" class="form-check-input " id="{{$kumi->GP_CD}}" name="kumis[]" value="{{$kumi->GP_CD}}">
+                        <input type="checkbox" class="form-check-input　@error('kumis') is-invalid @enderror" id="{{$kumi->GP_CD}}" name="kumis[]" value="{{$kumi->GP_CD}}">
                         <label class="form-check-label mt-2 mb-1 mr-3" for="{{$kumi->GP_CD}}">{{$kumi->GP_NM}}</label>
                     </div>
                 @if($loop->index % 2 == 1)
@@ -45,8 +53,11 @@
         </div>
 
 
-        <input id="ajax_division" type="hidden" value= "{{route('sale-registrationLoad', {})}}">
+        <input id="ajax_division" type="hidden" value= "{{route('sale-registrationLoad')}}">
         <p class="mb-2">用品選択</p>
+        @if($errors->has('supplie'))
+          <div class="alert alert-danger">{{ $errors->first('supplie') }}</div>
+        @endif
         <div class="form-group col-md-4">
         <label for="inputState">区分</label>
           <select id="division_inputState" class="form-control">

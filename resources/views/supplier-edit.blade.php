@@ -20,7 +20,7 @@
         {{ csrf_field() }}
         <div class="form-group">
             <label for="name">取引先の名前</label>
-            <input class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}" placeholder="例：">
+            <input class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{$supplier->name}}" placeholder="例：">
             @error('name')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -30,7 +30,7 @@
 
         <div class="form-group">
             <label for="person_charge">取引先の担当者</label>
-            <input class="form-control @error('person_charge') is-invalid @enderror" id="person_charge" name="person_charge" value="{{ old('person_charge') }}" placeholder="例：">
+            <input class="form-control @error('person_charge') is-invalid @enderror" id="person_charge" name="person_charge" value="{{$supplier->person_charge}}" placeholder="例：">
             @error('person_charge')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -60,15 +60,35 @@
         </div>
 
         <p>取引先の住所</p>
+         <!--エラーの判定処理-->
+         @if($errors->has('postal_code')|$errors->has('street_address_1')|$errors->has('street_address_2')|$errors->has('street_address_3'))
+            <div class="alert alert-danger">
+                @error('postal_code')
+                    {{ $message }}<br>
+                @enderror
+
+                @error('street_address_1')
+                    {{ $message }}<br>
+                @enderror
+
+                @error('street_address_2')
+                    {{ $message }}<br>
+                @enderror
+
+                @error('street_address_3')
+                    {{ $message }}<br>
+                @enderror
+            </div>
+          @endif
         <div class="border rounded p-2 mb-4">
             <div class="form-row">
                 <div class="form-group col-md-2">
                     <label for="inputZip">郵便番号</label>
-                    <input type="text" class="form-control @error('postal_code') is-invalid @enderror" id="postal_code" name="postal_code" value="{{ old('postal_code')}}">
+                    <input type="text" class="form-control @error('postal_code') is-invalid @enderror" id="postal_code" name="postal_code" value="{{$postal_code}}">
                 </div>
                 <div class="form-group col-md-4">
                     <label for="inputState">都道府県</label>
-                    <select id="street_address_1" class="form-control @error('street_address_1') is-invalid @enderror" name="street_address_1" value="{{ old('street_address_1')}}">
+                    <select id="street_address_1" class="form-control @error('street_address_1') is-invalid @enderror" name="street_address_1">
                     <option value="" selected>-</option>
                         <option value="北海道">北海道</option>
                         <option value="青森県">青森県</option>
@@ -121,12 +141,12 @@
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputCity">市町村</label>
-                    <input type="text" class="form-control @error('street_address_2') is-invalid @enderror" id="inputCity" name="street_address_2" value="{{ old('street_address_2')}}">
+                    <input type="text" class="form-control @error('street_address_2') is-invalid @enderror" id="inputCity" name="street_address_2" value="{{$supplier->street_address_2}}">
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputAddress">番地以下</label>
-                <input type="text" class="form-control @error('street_address_3') is-invalid @enderror" id="inputAddress" name="street_address_3" value="{{ old('street_address_3')}}" placeholder="1丁目2番3号" >
+                <input type="text" class="form-control @error('street_address_3') is-invalid @enderror" id="inputAddress" name="street_address_3" value="{{$supplier->street_address_3}}" placeholder="1丁目2番3号" >
             </div>
         </div>
         @if($errors->has('street_address_1') || $errors->has('street_address_2') || $errors->has('street_address_3') || $errors->has('postal_code'))
@@ -156,7 +176,8 @@
     $('#inputGroup').change(function() {
         if($('option:selected').val() == 'etc'){
             $('#inputGroup').html('<input type="text" class="form-control col-3 @error('phone_number_1') is-invalid @enderror" placeholder="" aria-label="" aria-describedby="addon-wrapping">' +
-                '<input type="text" class="form-control col-9 @error('phone_number_2') is-invalid @enderror" placeholder="" aria-label="" aria-describedby="addon-wrapping">');
+                '<input type="text" class="form-control col-9 @error('phone_number_2') is-invalid @enderror" placeholder="" aria-label="" aria-describedby="addon-wrapping">'+
+                '<input type="text" class="form-control col-9 @error('phone_number_3') is-invalid @enderror" placeholder="" aria-label="" aria-describedby="addon-wrapping">');
         }
     })
 </script>

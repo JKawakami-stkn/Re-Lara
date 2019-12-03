@@ -13,7 +13,7 @@ class SaleRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,18 @@ class SaleRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            "sale_name"=> "required",
+            "kumis"=> "required",
+            "supplie"=> "required",
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            "sale_name.required"=> "販売会の名前を入力してください",
+            "kumis.required"=> "組を少なくとも１つ選択してください",
+            "supplie.required"=> "用品を少なくとも１つ選択してください",
         ];
     }
 }

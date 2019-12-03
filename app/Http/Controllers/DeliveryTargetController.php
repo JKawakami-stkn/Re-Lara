@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Sale;
-use App\Http\Requests\PersonalOrderRequest;
+use App\Http\Requests\TargetRequest;
 
 class DeliveryTargetController extends Controller
 {
@@ -30,7 +30,7 @@ class DeliveryTargetController extends Controller
         );
    }
 
-   public function store($sale_id, Request $request){
+   public function store($sale_id, TargetRequest $request){
 
     $request->session()->regenerateToken();
     
