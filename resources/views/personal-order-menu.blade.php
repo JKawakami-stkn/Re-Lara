@@ -75,6 +75,14 @@
             </a>
         </div>
 
+        <div class="col-3">
+            <a href="{{route('personal-purchase-mail.show', $personal_sale->id)}}">
+                <div class="card card-body">
+                    <img class="card-img" src="{{ asset('img/mail.png') }}" alt="カードの画像" data-toggle="tooltip" title="メール送信">
+                </div>
+            </a>
+        </div>
+
     </div>
 </div>
 
