@@ -14,6 +14,24 @@ class SupplieRequest extends FormRequest
     public function authorize()
     {
         return true;
+    }  
+
+    /**
+     *  バリデーション前処理.
+     *  @return array
+     */
+    public function all($keys = null)
+    {
+
+        $results = parent::all($keys);
+
+        if($this->filled('name')) {
+            $encoded_name = $this->input('name');
+            $decoded_name = mb_convert_encoding($encoded_name, "UTF-8", "HTML-ENTITIES");
+            $results['name'] = $decoded_name;
+        }
+
+        return $results;
     }
 
     /**
