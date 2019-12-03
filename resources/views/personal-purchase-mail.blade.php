@@ -2,6 +2,10 @@
 
 @section('content')
 
+@section('style')
+<link rel="stylesheet" href="{{ asset('css/loading.css') }}">
+@stop
+
 <div class="container" >
 
     <!-- パンくずリスト -->
@@ -19,15 +23,18 @@
 
     <p>上記のメールアドレス宛に、保護者入力用のURLが記載されたメールを送信しますか？</p>
 
-    <div class="row">
-        <form action="{{ route('personal-purchase-mail.send', $personal_sale->id) }}" method="POST">
+    <div class="row ml-2">
+        <form class="" action="{{ route('personal-purchase-mail.send', $personal_sale->id) }}" method="POST">
             @csrf
-            <button type="submit" class="btn btn-primary">は　い</button>
+            <button id="submit" type="submit" class="btn btn-primary">は　い</button>
         </form>
 
         <a class="btn btn btn-danger ml-2" href="{{ route('personal-order-menu.show', $personal_sale->id) }}" role="button">いいえ</a>
     </div>
 </div>
 
+@section('script')
+<script src="{{ asset('js/loading.js') }}"></script>
+@stop
 
 @stop
