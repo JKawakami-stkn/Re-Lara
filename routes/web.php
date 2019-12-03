@@ -83,6 +83,7 @@ Route::get('/menu/sales/{sale_id}/mail','MailTargetTypeController@show' )->name(
 
 # 販売会一覧/販売会/メール送信タイプ選択/メール送信確認
 Route::get('/menu/sales/{sale_id}/mail/all', 'MailAllConfirmController@show')->name('mail-all-confirm.show');
+Route::post('/menu/sales/{sale_id}/mail/all/confirm', 'MailAllConfirmController@send')->name('mail-all-confirm.send');
 
 # 販売会一覧/販売会/メール送信タイプ選択/組選択
 Route::get('/menu/sales/{sale_id}/mail/class', 'MailClassSelectController@show')->name('mail-class-select.show');

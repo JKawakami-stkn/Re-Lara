@@ -32,6 +32,7 @@
 
         <a class="btn btn btn-danger ml-2" href="{{ route('menu.show', $sale->id) }}" role="button">いいえ</a>
     </div>
+    
 </div>
 
 @section('script')

@@ -17,14 +17,14 @@
     </nav>
 
 
-    <p>さんの注文</p>
+    <p>販売会名：{{ $sale->name }}</p>
 
     <p class="text-center"></p>
 
-    <p>上記のメールアドレス宛に、保護者入力用のURLが記載されたメールを送信しますか？</p>
+    <p>上記の対象宛に、保護者入力用のURLが記載されたメールを送信しますか？</p>
 
     <div class="row ml-2">
-        <form action="" method="POST">
+        <form action="{{ route('mail-all-confirm.send', $sale->id) }}" method="POST">
             @csrf
             <button id="submit" type="submit" class="btn btn-primary">は　い</button>
         </form>
