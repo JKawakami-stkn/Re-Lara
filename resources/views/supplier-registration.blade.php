@@ -163,9 +163,9 @@
 <script>
     $('#inputGroup').change(function() {
         if($('option:selected').val() == 'etc'){
-            $('#inputGroup').html('<input type="text" class="form-control col-3 @error('phone_number_1') is-invalid @enderror" placeholder="" aria-label="" aria-describedby="addon-wrapping">' +
-                '<input type="text" class="form-control col-9 @error('phone_number_2') is-invalid @enderror" placeholder="" aria-label="" aria-describedby="addon-wrapping">'+
-                '<input type="text" class="form-control col-9 @error('phone_number_3') is-invalid @enderror" placeholder="" aria-label="" aria-describedby="addon-wrapping">');
+            $('#inputGroup').html('<input type="text" class="form-control col-3 @error('phone_number_1') is-invalid @enderror" placeholder="" aria-label="" name="phone_number_1" aria-describedby="addon-wrapping">' +
+                '<input type="text" class="form-control col-9 @error('phone_number_2') is-invalid @enderror" placeholder="" name="phone_number_2" aria-label="" aria-describedby="addon-wrapping">'+
+                '<input type="text" class="form-control col-9 @error('phone_number_3') is-invalid @enderror" placeholder="" name="phone_number_3" aria-label="" aria-describedby="addon-wrapping">');
         }
     })
 </script>
