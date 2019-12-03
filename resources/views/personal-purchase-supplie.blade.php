@@ -20,34 +20,49 @@
         @csrf
         <div class="form-group">
             <label>サイズ</label>
-            <select class="form-control" id="exampleFormControlSelect1" name="size_value">
+            <select class="form-control @error('size_value') is-invalid @enderror" id="exampleFormControlSelect1" name="size_value">
               @foreach($supplie_size as $size_v)
                   @foreach($size_v as $key => $value)
                     <option value="{{ $value }}">{{ $value }}</option>
                   @endforeach
               @endforeach
             </select>
+            @error('size_value')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+             @enderror
         </div>
 
         <div class="form-group">
             <label>カラー</label>
-            <select class="form-control" id="exampleFormControlSelect1" name="color_value">
+            <select class="form-control @error('color_value') is-invalid @enderror"  id="exampleFormControlSelect1" name="color_value">
               @foreach($supplie_color as $color_v)
                   @foreach($color_v as $key => $value)
                     <option value="{{ $value }}">{{ $value }}</option>
                   @endforeach
               @endforeach
             </select>
+            @error('color_value')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
         </div>
 
         <p class="mt-5 mb-5">価格：{{ number_format($supplie->price) }}</p>
 
         <p>数量</p>
         <div class="input-group">
-            <input type="text" class="form-control" name="quantity" aria-label="数量">
+            <input type="text" class="form-control @error('quantity') is-invalid @enderror"  name="quantity" aria-label="数量">
             <div class="input-group-append">
                 <span class="input-group-text">個</span>
             </div>
+            @error('quantity')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
         </div>
 
         @if($personal_order->isEmpty())

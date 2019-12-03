@@ -35,9 +35,14 @@
             <div class="col-md mt-3 mb-3">
                 <div class="form-group">
                     <label for="FormControlSelect">購入する園児の名前</label>
-                    <select id="kids" class="form-control form-control" name="kids_id" disabled>
+                    <select id="kids" class="form-control form-control  @error('kids_id') is-invalid @enderror" name="kids_id" disabled>
                             <option selected disabled="disabled">選択してください</option>
                     </select>
+                    @error('kids_id')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                     @enderror
                 </div>
             </div>
         </div>

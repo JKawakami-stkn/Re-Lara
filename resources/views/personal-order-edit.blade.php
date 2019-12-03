@@ -28,6 +28,11 @@
         <div class="mt-3 mb-3">
             <div class="form-group">
                 <label for="kids">購入する園児の名前</label>
+                @if($errors->has('kids_id'))
+                 @foreach($errors->get('kids_id') as $message)
+                    <li style="color:#ff0000;"> {{ $message }} </li>
+                 @endforeach
+                @endif 
                 <select id="kids" class="form-control form-control" name="kids_id" disabled>
                     <option selected disabled="disabled">{{$kids_group}}</option>
                 </select>
@@ -36,7 +41,12 @@
 
         <p class="mb-2">期日</p>
         <div class="input-group mb-3 mt-0">
-            <input type="date" class="form-control" name="deadline" aria-label="deadline" value={{$kids_deadline}}>
+            <input type="date" class="form-control @error('deadline') is-invalid @enderror" name="deadline" value="{{old('deadline')}}" aria-label="deadline" value={{$kids_deadline}}>
+            @error('deadline')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+             @enderror
         </div>
 
         <button type="submit" class="btn btn-primary" onclick="window.onbeforeunload=null">保存する</button>
