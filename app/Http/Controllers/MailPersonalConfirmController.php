@@ -51,7 +51,7 @@ class MailPersonalConfirmController extends Controller
         );
         
         Mail::send('emails.mail', [
-            "Url" => "http://".env('LOCAL_IP')."/Re-Lara/"."s/".$sale_id."/".$token,
+            "Url" => "http://".env('LOCAL_IP')."/".env('PROJECT_NAME')."/s/".$sale_id."/".$token,
             "Text" => "URLにアクセスして購入する商品を入力してください。",
         ], function($message) use ($kid, $mail){
             $message

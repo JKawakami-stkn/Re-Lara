@@ -72,7 +72,7 @@ class MailClassConfirmController extends Controller
             \Debugbar::info($m_kid);
         
             Mail::send('emails.mail', [
-                "Url" => "http://".env('LOCAL_IP')."/Re-Lara/"."s/".$sale_id."/".$token,
+                "Url" => "http://".env('LOCAL_IP')."/".env('PROJECT_NAME')."/s/".$sale_id."/".$token,
                 "Text" => "URLにアクセスして購入する商品を入力してください。",
             ], function($message) use ($m_kid, $mail){
                 $message
