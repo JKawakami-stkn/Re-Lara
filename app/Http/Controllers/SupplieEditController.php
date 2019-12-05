@@ -17,7 +17,7 @@ class SupplieEditController extends Controller
     {
         $supplier = \App\models\Supplier::find($supplier_id);
         $supplie = \App\models\Supplie::find($supplie_id);
-        $supplie_division = \App\models\Supplie_division::get();
+        $supplie_division = \App\models\Supplie_division::where('id', '!=', '1')->get();
         return view('supplie-edit', ['supplier' => $supplier, 'supplie' => $supplie, 'supplie_division' => $supplie_division]);
     }
 
