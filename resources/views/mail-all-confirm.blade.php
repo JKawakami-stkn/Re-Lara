@@ -19,8 +19,36 @@
 
     <p>販売会名：{{ $sale->name }}</p>
 
-    <p class="text-center"></p>
 
+
+    <div class="row">
+        <div class="col text-center">
+            @foreach($class as $c)
+                <p class="">{{$c->GP_NM}}</p>
+            @endforeach
+            <p>
+                <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    送信先一覧を表示
+                </a>
+            </p>
+        </div>
+    </div>
+
+    <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+            @foreach($class as $c)
+                <p class="mt-4">・{{$c->GP_NM}}</p>
+                @foreach($kids_data[$c->GP_CD] as $name => $mail)
+                    {{ $name ."：". $mail }}<br>
+                @endforeach
+                @if(empty($kids_data[$c->GP_CD]))
+                    対象が見つかりません
+                @endif
+            @endforeach
+        </div>
+    </div>
+    
+    
     <p>上記の対象宛に、保護者入力用のURLが記載されたメールを送信しますか？</p>
 
     <div class="row ml-2">
