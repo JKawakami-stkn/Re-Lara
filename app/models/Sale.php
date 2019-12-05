@@ -48,7 +48,7 @@ class Sale extends Model
         return $this->hasMany('App\models\Order');
     }
 
-    public function get_sale_m_wf_group($sale_id)
+    public static function get_sale_m_wf_group($sale_id)
     {
         return DB::table('sale_m_wf_group')
         ->join('sales', 'sale_m_wf_group.sale_id', '=', 'sales.id')
