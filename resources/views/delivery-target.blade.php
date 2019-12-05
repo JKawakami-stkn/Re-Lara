@@ -27,9 +27,9 @@
                     <label for="FormControlSelect">組の名前</label>
                     <select class="form-control form-control-lg" id="group">
                           <option selected disabled="disabled">選択してください</option>
-                            @foreach($groups as $group)
-                                <option value="{{ $group->GP_CD }}">{{ $group->GP_NM }}</option>
-                            @endforeach
+                          @foreach($sale_m_wf_group as $key => $value)
+                            <option value="{{ $value->GP_CD }}">{{ $value->GP_NM }}</option>
+                         @endforeach
                     </select>
                 </div>
             </div>
