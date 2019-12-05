@@ -43,12 +43,12 @@ class SaleRegistrationController extends Controller
     }
 
     public function store(SaleRequest $request)
-    {   
+    {
         //F5での更新制御
         $request->session()->regenerateToken();
 
         //salesテーブルに値を登録
-         $sale = Sale::create(['name' => $request->sale_name]);
+         $sale = Sale::create(['name' => $request->sale_name, 'deadline' => $request->deadline]);
 
          //用品情報を取得
         $supplies = $request->supplie;

@@ -15,39 +15,57 @@
             <li class="breadcrumb-item active" aria-current="page">一括注文</li>
         </ol>
     </nav>
-
-    <!-- 並び替え -->
-    <div class="row">
-        <div class="col-12 clearfix">
-            <button type="button" class="btn btn-link mb-3 float-right" data-toggle="modal" data-target="#Modal" style="text-decoration: none; ">
-                現在選択中の並び替えを表示予定
-            </button>
-        </div>
+    <div>
+      <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModalCenter">
+        表示順変更
+      </button>
     </div>
+    <input id="ajax_division" type="hidden" value= "{{route('sales.load')}}">
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">表示順変更</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="並び">
+              <h5>並び替え</h5>
+              <h7>期日</h7>
+                @if($radio_name == "up_sort")
+                  <div class="form-check form-check-inline　sort_radio">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="up_sort" checked>
+                    <label class="form-check-label" for="inlineRadio1">昇順</label>
+                  </div>
+                @else
+                  <div class="form-check form-check-inline　sort_radio">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="up_sort">
+                    <label class="form-check-label" for="inlineRadio1">昇順</label>
+                  </div>
+                @endif
 
-    <!-- モーダル -->
-    <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="ModalLabel">並び替え</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    TODO : 並び替え項目洗い出し
-                    <div class="custom-control custom-radio mt-4 mb-4">
-                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                        <label class="custom-control-label" for="customRadio1">Toggle this custom radio</label>
-                    </div>
-                    <div class="custom-control custom-radio mt-4 mb-4">
-                        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                        <label class="custom-control-label" for="customRadio2">Or toggle this other custom radio</label>
-                    </div>
-                </div>
+                @if($radio_name == "down_sort")
+                  <div class="form-check form-check-inline sort_radio">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="down_sort" checked>
+                    <label class="form-check-label" for="inlineRadio2">降順</label>
+                  </div>
+                @else
+                  <div class="form-check form-check-inline sort_radio">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="down_sort">
+                    <label class="form-check-label" for="inlineRadio2">降順</label>
+                  </div>
+              @endif
             </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal" id="NotSave_button">Close</button>
+              <button type="button" class="btn btn-primary" id="Save_button_to_Sale">Save changes</button>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- カード -->
@@ -57,14 +75,16 @@
             <div class="card-body">
                 <h5 class="card-title"></h5>
                 <p class="card-text">
-                    期　日：
+                    期　日：{{$sale->deadline}}
                 </p>
                 <a href="{{ route('sale-menu', $sale->id) }}" class="btn btn-primary btn-block" style="width:100%;">選択する</a>
             </div>
         </div>
     @endforeach
-    
-</div>
 
+</div>
+@section('script')
+<script src="{{ asset('js/personal_order_sort.js') }}"></script>
 @stop
 
+@stop
