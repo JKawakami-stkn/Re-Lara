@@ -12,7 +12,8 @@ class OrdersStatusController extends Controller
     public function show($sale_id){
         $groups = \App\models\M_wf_group::currentYearGroups();
         $sale = Sale::find($sale_id);
-        return view('orders-status', compact("groups","sale"));
+        $sale_m_wf_group =  $sale->get_sale_m_wf_group($sale_id); 
+        return view('orders-status', compact("groups","sale","sale_m_wf_group"));
 
 
     }

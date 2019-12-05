@@ -13,7 +13,8 @@ class PurchaseTargetController extends Controller
 
         $groups = \App\models\M_wf_group::currentYearGroups();
         $sale = Sale::find($sale_id);
-        return view('purchase-target', compact("groups","sale"));
+        $sale_m_wf_group =  $sale->get_sale_m_wf_group($sale_id); 
+        return view('purchase-target', compact("groups","sale","sale_m_wf_group"));
     }
 
     public function load($sale_id,$gp_cd){

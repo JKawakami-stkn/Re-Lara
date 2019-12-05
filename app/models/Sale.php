@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 class Sale extends Model
 {
     use SoftDeletes;
+
     protected $table = 'sales';
     protected $primaryKey = 'id';
     protected $dates = ['deleted_at'];
@@ -46,4 +47,14 @@ class Sale extends Model
     {
         return $this->hasMany('App\models\Order');
     }
+
+    public function get_sale_m_wf_group($sale_id)
+    {
+        return DB::table('sale_m_wf_group')
+        ->join('sales', 'sale_m_wf_group.sale_id', '=', 'sales.id')
+        ->join('eatone.m_wf_group', 'sale_m_wf_group.GP_CD_id', '=', 'eatone.m_wf_group.GP_CD')
+        ->where('sales.id','=',$sale_id)
+        ->get();
+    }
+
 }
