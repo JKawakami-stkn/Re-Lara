@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\models\Supplier;
 use App\models\Supplie;
 use App\models\mkids;
+use App\models\Sku;
+use App\models\Supplie_division;
 
 class SupplieMenuController extends Controller
 {
@@ -15,8 +17,12 @@ class SupplieMenuController extends Controller
 
         $supplier = Supplier::find($supplier_id);
         $supplie = Supplie::find($supplie_id);
+        $sku = Sku::where("supplie_id", $supplie_id)->get();
+        $supplie_division = Supplie::where("id", $supplie_id)->get("division_id");
+        $division_name = Supplie_division::where("id", $supplie_division[0]["division_id"])->get("division_name");
 
-        return view('supplie-menu', compact('supplier', 'supplie'));
+
+        return view('supplie-menu', compact('supplier', 'supplie', 'sku', 'supplie_division', 'division_name'));
     }
 
     public function delete($supplier_id, $supplie_id){

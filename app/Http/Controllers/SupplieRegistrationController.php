@@ -18,7 +18,8 @@ class SupplieRegistrationController extends Controller
      public function show($supplier_id)
     {
         $supplier = \App\models\Supplier::find($supplier_id);
-        $supplie_division = \App\models\Supplie_division::get();
+        $supplie_division = \App\models\Supplie_division::where('id', '!=', '1')->get();
+
         return view('supplie-registration', ['supplier' => $supplier, 'supplie_division' => $supplie_division]);
     }
 

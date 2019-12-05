@@ -19,10 +19,19 @@
     <div class="card-body">
         <br>
         <p>　価　格：{{ $supplie->price }}</p>
-        <p>　サイズ：{{ $supplier->name }}</p>
-        <p>　カラー：{{ $supplier->name }}</p>
-        <p>　男女別：{{ $supplier->name }}</p>
-        <p>　区　分：{{ $supplier->name }}</p>
+        <p>　サイズ：
+          @foreach($sku as $s_sku)
+          {{ $s_sku["size"] }}
+          @endforeach
+        </p>
+        <p>　カラー：
+          @foreach($sku as $s_sku)
+          {{ $s_sku["color"] }}
+          @endforeach
+        </p>
+        <p>　区　分：
+          {{ $division_name[0]["division_name"] }}
+        </p>
   </div>
 </div>
 
@@ -74,4 +83,3 @@
 </div>
 
 @stop
-
