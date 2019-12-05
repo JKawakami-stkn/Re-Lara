@@ -29,6 +29,15 @@
               </span>
             @enderror
         </div>
+        <p class="mb-2">期日</p>
+        <div class="input-group mb-3 mt-0">
+            <input type="date" class="form-control @error('deadline') is-invalid @enderror" name="deadline" value="{{old('deadline')}}" aria-label="deadline">
+            @error('deadline')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+             @enderror
+        </div>
 
         <p class="mb-2">対象選択</p>
         @if($errors->has('kumis'))

@@ -56,7 +56,7 @@
              @enderror
         </div>
 
-        <p class="mb-2">入力</p>
+        <!-- <p class="mb-2">入力</p>
         <div class="border rounded p-2 mb-4">
             <div id="color-form-row" class="form-row">
                 <div class="input-group col-md-12 ">
@@ -70,7 +70,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <button type="submit" class="btn btn-primary" onclick="window.onbeforeunload=null">登録する</button>
 
@@ -84,4 +84,3 @@
 @stop
 
 @stop
-

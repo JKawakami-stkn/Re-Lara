@@ -26,6 +26,7 @@ Route::get('/menu', 'MenuController@show')->name('menu.show');
 
 # 販売会一覧
 Route::get('/menu/sales', "SalesTopController@show")->name('sales');
+Route::get('/menu/sales/load/{radio_id?}', "SalesTopController@load")->name('sales.load');
 
 # 販売会一覧/販売会登録
 Route::get('/menu/sales/regist',"SaleRegistrationController@show")->name('sale-registration');
