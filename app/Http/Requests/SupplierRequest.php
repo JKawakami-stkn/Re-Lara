@@ -75,7 +75,7 @@ class SupplierRequest extends FormRequest
         $input = $this->all();
 
         if (isset($input['postal_code'])) {
-            $input['postal_code'] = mb_convert_kana($input['postal_code'],'n');
+            $input['postal_code'] = mb_convert_kana(str_replace(array('-', 'ー', '−', '―', '‐'), '', $input['postal_code']),'n');
         }
 
         if (isset($input['phone_number_1'])) {
