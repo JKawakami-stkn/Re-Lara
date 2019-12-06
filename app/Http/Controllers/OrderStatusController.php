@@ -32,7 +32,7 @@ class OrderStatusController extends Controller
             $sku_data = [];
             foreach($sku_ids as $sku_id){
               foreach ($sku_id as $key => $value){
-              $sku_v = \App\models\Sku::where("id", $value)->select("size", "color")->get()->toArray();
+              $sku_v = \App\models\Sku::withTrashed()->where("id", $value)->select("size", "color")->get()->toArray();
               $sku_data[$value] = $sku_v[0];
               }
             }

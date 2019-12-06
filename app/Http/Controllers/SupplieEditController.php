@@ -34,11 +34,18 @@ class SupplieEditController extends Controller
         }
 
         $supplie = \App\models\Supplie::find($supplie_id);
-        $supplie->name = $request->name;
-        $supplie->price = $request->price;
-        $supplie->img_path = $path;
-        $supplie->division_id = $request->division;
-        $supplie->save();
+        $supplie->delete();
+
+        $new_supplie = new \App\models\Supplie;
+        $new_supplie->name = $request->name;
+        $new_supplie->price = $request->price;
+        $new_supplie->img_path = $path;
+        $new_supplie->supplier_id = $supplier_id;
+        $new_supplie->division_id = $request->division;
+        $new_supplie->save();
+
+        $new_supplie_id = \App\models\Supplie::withTrashed()->count();
+
 
 
         // if(!empty(\App\models\Sku::where("supplie_id", $supplie_id)->get("id")->toArray())){
@@ -83,7 +90,7 @@ class SupplieEditController extends Controller
           for($j = 0;$j < count($colors); $j++){
             DB::table('skus')->insert(
                 [
-                    'supplie_id' => $supplie_id,
+                    'supplie_id' => $new_supplie_id,
                     'color' => $colors[$j],
                     'size' => $sizes[$i]
                 ]
