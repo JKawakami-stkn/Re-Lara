@@ -21,11 +21,17 @@ class PersonalPurchaseDeliveryController extends Controller
         return view('personal-purchase-delivery', ['personal_sale' => $personal_sale, 'personal_orders' => $personal_orders, "personal_sku_data" => $personal_sku_data]);
     }
 
-    public function store($personal_sale_id){
+    public function store($personal_sale_id, Request $request){
 
-        $personal_sale = \App\models\Personal_sale::find($personal_sale_id);
-        $personal_sale->delivered_at = date("Y/m/d H:i:s");
-        $personal_sale->save();
+        // 引き渡し日を記録
+        if( $request->cb ){
+            foreach( $request->cb as $cb ){
+                $personal_order = \App\models\Personal_order::find($cb);
+                $personal_order->delivery_at = date("Y/m/d H:i:s");
+                $personal_order->save();
+            }
+        }
+        
 
         $personal_order_menu = new PersonalOrderMenuController;
         return $personal_order_menu->show($personal_sale_id);

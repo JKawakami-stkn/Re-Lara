@@ -26,9 +26,13 @@
             </div>
             <div class="mt-5 mb-3">
                 <p>
-                    <input type="checkbox" id="cb-{{$loop->index}}" />
+                    @if($personal_order->delivery_at)
+                    <input type="checkbox" id="cb-{{$loop->index}}" name="cb[]" value="{{ $personal_order->id }}" checked="checked" disabled="disabled"/>
+                    @else
+                    <input type="checkbox" id="cb-{{$loop->index}}" name="cb[]" value="{{ $personal_order->id }}" />
+                    @endif
                     <label for="cb-{{$loop->index}}"></label>
-                </p>
+                </p>   
             </div>
         </div>
         @endforeach
@@ -55,5 +59,5 @@
 
 @section('script')
 <script src="{{ asset('js/dialog.js') }}"></script>
-<script src="{{ asset('js/multiple_checkbox_checker.js') }}"></script>
+<!-- <script src="{{ asset('js/multiple_checkbox_checker.js') }}"></script> -->
 @stop

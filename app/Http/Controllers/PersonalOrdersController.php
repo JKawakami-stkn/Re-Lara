@@ -46,8 +46,11 @@ class PersonalOrdersController extends Controller
 
         }
       }
+
       $this_year_instance = new M_wf_group;
       $this_year_group = $this_year_instance->currentYearGroups();
+      
       return view('personal-orders', ['personal_sales' => $personal_sales, 'this_year_group' => $this_year_group, "group_id" => $group_id, "radio_name" => $radio_name]);
+
     }
 }
