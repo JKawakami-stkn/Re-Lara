@@ -67,7 +67,7 @@ class RegisterController extends Controller
         return User::create([
             'staff_id' => $data['staff_id'],
             // 'name' => $data['name'],
-            'name' => \App\models\M_wf_staff::find($data['staff_id'])->STAF_NM_KJ,
+            // 'name' => \App\models\M_wf_staff::find($data['staff_id'])->STAF_NM_KJ,
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
