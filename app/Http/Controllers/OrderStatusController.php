@@ -21,9 +21,14 @@ class OrderStatusController extends Controller
 
             //園児の用品情報を取得
             //TODO : 削除済みの注文を非表示にする
+            if($target == "all"){
+            $orders = Order::where('sale_id', $sale_id)
+                        ->get();
+            }else{
             $orders = Order::where('sale_id', $sale_id)
                         ->where('kids_id',$target)
                         ->get();
+            }
 
             #\Debugbar::info($orders);
             #sku表示

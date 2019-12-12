@@ -38,6 +38,7 @@ function getKids(url){
           // 選択された組に園児が所属している場合
           if(results.length != 0){
             kids_selector.append("<option selected disabled='disabled'>選択してください</option>"); // 初期値
+            kids_selector.append("<option selected value='all'>選択してください</option>");
             results.forEach(function(res){
               kids_selector.append("<option value='" + res.KIDS_ID + "'>" + res.KIDS_NM_KJ + "</option>"); // 園児追加
             });
