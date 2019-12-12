@@ -36,4 +36,17 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    /**
+     * Illuminate\Foundation\Auth\AuthenticatesUsers
+     * 
+     * Get the login username to be used by the controller.
+     *
+     * @return string
+     */
+    // ログインに利用するカラムを指定
+    public function username()
+    {
+        return 'staff_id';
+    }
 }
