@@ -116,59 +116,14 @@
 
 
         @foreach($personal_sales as $personal_sale)
-
-            <!-- 引き渡し済み -->
-            @if($personal_sale->delivered_at)
-                <tbody>
-                    <tr class="table-secondary">
-                        <th scope="row">{{ $personal_sale->id }}</th>
-                        <td>{{ $personal_sale->m_kids->KIDS_NM_KJ }}</td>
-                        <td>{{ date('Y/m/d', strtotime($personal_sale->deadline)) }}</td>
-                        <td><input type="button" class="btn-sm btn-outline-secondary" value="確　認" onclick="location.href='{{ route('personal-order-menu.show', $personal_sale->id)}}'"></td>
-                    </tr>
-                </tbody>
-                @continue
-            @endif
-
-            <!-- 入力済み -->
-            @if($personal_sale->entered_at)
-                <tbody>
-                    <tr class="table-success">
-                        <th scope="row">{{ $personal_sale->id }}</th>
-                        <td>{{ $personal_sale->m_kids->KIDS_NM_KJ }}</td>
-                        <td>{{ date('Y/m/d', strtotime($personal_sale->deadline)) }}</td>
-                        <td><input type="button" class="btn-sm btn-outline-success" value="確　認" onclick="location.href='{{ route('personal-order-menu.show', $personal_sale->id)}}'"></td>
-                    </tr>
-                </tbody>
-                @continue
-            @endif
-
-            <!-- 入力期限切れ -->
-            @if(strtotime($personal_sale->deadline) < strtotime(date("Y/m/d H:i:s")))
-                <tbody>
-                    <tr class="table-danger">
-                        <th scope="row">{{ $personal_sale->id }}</th>
-                        <td>{{ $personal_sale->m_kids->KIDS_NM_KJ }}</td>
-                        <td>{{ date('Y/m/d', strtotime($personal_sale->deadline)) }}</td>
-                        <td><input type="button" class="btn-sm btn-outline-danger" value="確　認" onclick="location.href='{{ route('personal-order-menu.show', $personal_sale->id)}}'"></td>
-                    </tr>
-                </tbody>
-                @continue
-            <!-- 入力期限切れてない -->
-            @else
-                <tbody>
-                    <tr class="table-warning">
-                        <th scope="row">{{ $personal_sale->id }}</th>
-                        <td>{{ $personal_sale->m_kids->KIDS_NM_KJ }}</td>
-                        <td>{{ date('Y/m/d', strtotime($personal_sale->deadline)) }}</td>
-                        <td><input type="button" class="btn-sm btn-outline-warning" value="確　認" onclick="location.href='{{ route('personal-order-menu.show', $personal_sale->id)}}'"></td>
-                    </tr>
-                </tbody>
-                @continue
-            @endif
-
-
-
+          <tbody>
+              <tr class="table">
+                  <th scope="row">{{ $personal_sale->id }}</th>
+                  <td>{{ $personal_sale->m_kids->KIDS_NM_KJ }}</td>
+                  <td>{{ date('Y/m/d', strtotime($personal_sale->deadline)) }}</td>
+                  <td><input type="button" class="btn-sm btn-outline" value="確　認" onclick="location.href='{{ route('personal-order-menu.show', $personal_sale->id)}}'"></td>
+              </tr>
+          </tbody>
         @endforeach
 <!--
 
