@@ -14,7 +14,7 @@ class AddColumnsOnOrdersTable extends Migration
     public function up()
     {
         Schema::table('orders', function (Blueprint $table) {
-            $table->timestamp('entered_at')->dedault(null)->nullable();
+            $table->timestamp('entered_at')->default(null)->nullable();
         });
     }
 

@@ -16,7 +16,7 @@ class RemoveColumnsOnPersonalSalesTable extends Migration
         Schema::table('personal_sales', function (Blueprint $table) {
             $table->dropColumn('entered_at');
             $table->dropColumn('delivered_at');
-            $table->date('deadline')->dedault(null)->nullable()->change();
+            //$table->date('deadline')->dedault(null)->nullable()->change();
         });
     }
 

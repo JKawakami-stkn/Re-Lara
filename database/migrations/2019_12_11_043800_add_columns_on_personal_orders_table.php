@@ -14,8 +14,8 @@ class AddColumnsOnPersonalOrdersTable extends Migration
     public function up()
     {
         Schema::table('personal_orders', function (Blueprint $table) {
-            $table->timestamp('entered_at')->dedault(null)->nullable();
-            $table->timestamp('delivery_at')->dedault(null)->nullable();
+            $table->timestamp('entered_at')->default(null)->nullable();
+            $table->timestamp('delivery_at')->default(null)->nullable();
         });
     }
 

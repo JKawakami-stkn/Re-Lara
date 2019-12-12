@@ -18,7 +18,7 @@ class RemakePersonalSalesTable extends Migration
             $table->increments('id')->change();
             
             // deadline を timestamp 型から datetime 型に変更
-            $table->date('deadline')->dedault(null)->nullable()->change();
+            $table->date('deadline')->default(null)->nullable()->change();
         });
     }
 
