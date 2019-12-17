@@ -17,11 +17,10 @@
 
     <div class="card _border-0 mb-4">
   <div class="card-body">
-    <h4>(個別注文ID)の詳細</h4>
+    <h4>{{$kid->KIDS_NM_KJ}}　さんの注文</h4>
     <br>
-    <p>　注文者：</p>
-    <p>　状　況：</p>
-    <p>　期　日：</p>
+    <p>　注文者：{{ $kid->KIDS_NM_KJ }}</p>
+    <p>　期　日：{{ $personal_sale->deadline }}</p>
   </div>
 </div>
 

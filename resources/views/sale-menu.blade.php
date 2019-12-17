@@ -20,7 +20,13 @@
     <h4>{{ $sale->name }}の詳細</h4>
     <br>
     <p>　期日：{{ $sale->deadline }}</p>
-    <p>　対象：</p>
+    <p>　対象：
+    <div class="ml-5">
+        @foreach($groups as $group)
+            {{ $group }}<br>
+        @endforeach
+        </div>
+    </p>
   </div>
 </div>
 

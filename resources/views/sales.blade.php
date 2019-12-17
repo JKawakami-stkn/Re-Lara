@@ -79,7 +79,7 @@
             <div class="card-body">
                 <h5 class="card-title"></h5>
                 <p class="card-text">
-                    期　日：{{$sale->deadline}}
+                    期　日：{{ $sale->deadline }}
                 </p>
                 <a href="{{ route('sale-menu', $sale->id) }}" class="btn btn-primary btn-block" style="width:100%;">選択する</a>
             </div>
