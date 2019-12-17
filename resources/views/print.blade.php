@@ -7,10 +7,15 @@
 @stop
 
 <div class="container">
-    <!-- パンくずリスト -->
+
+    <!-- 戻るボタン -->
     <nav aria-label="breadcrumb">
-        <ol class="breadcrumb noprint">
-            <li class="breadcrumb-item"><a href="{{ route('menu.show') }}">メニュー</a></li>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="{{ route('sale-menu', [$sale->id]) }}">
+                    <i class="fas fa-arrow-left"></i> 戻 る
+                </a>
+            </li>
         </ol>
     </nav>
 

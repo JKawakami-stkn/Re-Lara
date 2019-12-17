@@ -4,15 +4,16 @@
 
 <div class="container" >
 
-    <!-- パンくずリスト -->
+    <!-- 戻るボタン -->
     <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('menu.show') }}">メニュー</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('sales') }}">物品販売</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('sale-menu', $sale->id) }}">{{ $sale->name }}</a></li>
-                <li class="breadcrumb-item active" aria-current="page">購入</li>
-            </ol>
-     </nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="{{ route('orders-status', [$sale->id]) }}">
+                    <i class="fas fa-arrow-left"></i> 戻 る
+                </a>
+            </li>
+        </ol>
+    </nav>
 
     @if(!$orders->isEmpty())
         @foreach ($orders as $order)
@@ -39,12 +40,14 @@
         @endforeach
 
         <!-- <form action="" > -->
+        <!--
         <form action="{{ route('order-status.store', [$sale->id, $target]) }}" method="post">
             @csrf
             <div class="mt-5 mb-3">
                 <button type="submit" class="btn btn-primary btn-block" onclick="window.onbeforeunload=null">確　　定</button>
             </div>
         </form>
+        -->
 
     @else
         <p>カートに商品はありません</p>

@@ -3,13 +3,14 @@
 @section('content')
 <div class="container">
 
-    <!-- パンくずリスト -->
+    <!-- 戻るボタン -->
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('menu.show') }}">メニュー</a></li>
-            <li class="breadcrumb-item"><a href="{{ route('sales') }}">物品販売</a></li>
-            <li class="breadcrumb-item"><a href="{{ route('sale-menu', $sale->id) }}">{{ $sale->name }}</a></li>
-            <li class="breadcrumb-item active" aria-current="page">購入</li>
+            <li class="breadcrumb-item">
+                <a href="{{ route('sale-menu', [$sale->id]) }}">
+                    <i class="fas fa-arrow-left"></i> 戻 る
+                </a>
+            </li>
         </ol>
     </nav>
 
@@ -35,7 +36,7 @@
             <div class="col-md mt-3 mb-3">
                 <div class="form-group">
                     <label for="FormControlSelect">購入する園児の名前</label>
-                    <select id="kids" class="form-control form-control @error('kids_id') is-invalid @enderror" name="kids_id" disabled>
+                    <select id="kids" class="form-control form-control-lg @error('kids_id') is-invalid @enderror" name="kids_id" disabled>
                             <option selected disabled="disabled">選択してください</option>
                     </select>
                     @error('kids_id')

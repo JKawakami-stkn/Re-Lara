@@ -4,12 +4,14 @@
 
 <div class="container" >
 
-    <!-- パンくずリスト -->
+    <!-- 戻るボタン -->
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('menu.show') }}">メニュー</a></li>
-            <li class="breadcrumb-item"><a href="">個別注文</a></li>
-            <li class="breadcrumb-item active" aria-current="page">注文確認</li>
+            <li class="breadcrumb-item">
+                <a href="{{ route('personal-order-menu.show', [$personal_sale->id]) }}">
+                    <i class="fas fa-arrow-left"></i> 戻 る
+                </a>
+            </li>
         </ol>
     </nav>
 
@@ -37,12 +39,14 @@
         </div>
         @endforeach
 
+        <!--
         <form action="{{ route('personal-purchase-check.store', $personal_sale->id) }}" method="post">
             @csrf
             <div class="mt-5 mb-3">
                 <button type="submit" class="btn btn-primary btn-block" onclick="window.onbeforeunload=null">確　　定</button>
             </div>
         </form>
+        -->
 
     @else
         <p>カートに商品はありません</p>

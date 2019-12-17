@@ -14,6 +14,8 @@ class PersonalOrderMenuController extends Controller
 
         $personal_sale = \App\models\Personal_sale::find($personal_sale_id);
 
-        return view('personal-order-menu', ['personal_sale' => $personal_sale]);
+        $kid = \App\models\M_kids::find($personal_sale->kids_id);
+
+        return view('personal-order-menu', compact('personal_sale', 'kid'));
     }
 }

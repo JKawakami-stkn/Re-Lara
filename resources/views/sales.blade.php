@@ -8,13 +8,17 @@
 
 <div class="container" >
 
-    <!-- パンくずリスト -->
+    <!-- 戻るボタン -->
     <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('menu.show') }}">メニュー</a></li>
-            <li class="breadcrumb-item active" aria-current="page">一括注文</li>
-        </ol>
+      <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+              <a href="{{ route('menu.show') }}">
+                  <i class="fas fa-arrow-left"></i> 戻 る
+              </a>
+          </li>
+      </ol>
     </nav>
+
     <div>
       <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModalCenter">
         表示順変更
@@ -75,7 +79,7 @@
             <div class="card-body">
                 <h5 class="card-title"></h5>
                 <p class="card-text">
-                    期　日：{{$sale->deadline}}
+                    期　日：{{ $sale->deadline }}
                 </p>
                 <a href="{{ route('sale-menu', $sale->id) }}" class="btn btn-primary btn-block" style="width:100%;">選択する</a>
             </div>

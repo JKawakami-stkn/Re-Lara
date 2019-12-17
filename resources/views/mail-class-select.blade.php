@@ -4,10 +4,14 @@
 
 <div class="container">
 
-    <!-- パンくずリスト -->
+    <!-- 戻るボタン -->
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page">メニュー</li>
+            <li class="breadcrumb-item">
+                <a href="{{ route('mail-target-type.show', [$sale->id]) }}">
+                    <i class="fas fa-arrow-left"></i> 戻 る
+                </a>
+            </li>
         </ol>
     </nav>
 

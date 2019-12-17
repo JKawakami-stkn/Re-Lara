@@ -4,12 +4,14 @@
 
 <div class="container">
 
-<!-- パンくずリスト -->
+<!-- 戻るボタン -->
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{ route('menu.show') }}">メニュー</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('sales') }}">一括注文</a></li>
-        <li class="breadcrumb-item active" aria-current="page">{{ $sale->name }}</li>
+        <li class="breadcrumb-item">
+            <a href="{{ route('sales') }}">
+                <i class="fas fa-arrow-left"></i> 戻 る
+            </a>
+        </li>
     </ol>
 </nav>
 
@@ -18,7 +20,13 @@
     <h4>{{ $sale->name }}の詳細</h4>
     <br>
     <p>　期日：{{ $sale->deadline }}</p>
-    <p>　対象：</p>
+    <p>　対象：
+    <div class="ml-5">
+        @foreach($groups as $group)
+            {{ $group }}<br>
+        @endforeach
+        </div>
+    </p>
   </div>
 </div>
 

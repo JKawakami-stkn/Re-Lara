@@ -6,14 +6,18 @@
 
 @stop
 <div class="container">
-    <!-- パンくずリスト -->
+
+    <!-- 戻るボタン -->
     <nav aria-label="breadcrumb">
-        <ol class="breadcrumb noprint">
-            <li class="breadcrumb-item"><a href="{{ route('menu.show') }}">メニュー</a></li>
-            <li class="breadcrumb-item"><a href="">個別注文</a></li>
-            <li class="breadcrumb-item active" aria-current="page">注文確認</li>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="{{ route('personal-order-menu.show', [$personal_sale->id]) }}">
+                    <i class="fas fa-arrow-left"></i> 戻 る
+                </a>
+            </li>
         </ol>
     </nav>
+    
     <!--
     <div class="form-group noprint">
         <label for="supplier">発注書の選択</label>
