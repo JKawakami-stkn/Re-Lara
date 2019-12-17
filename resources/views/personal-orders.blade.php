@@ -4,11 +4,14 @@
 
 <div class="container" >
 
-    <!-- パンくずリスト -->
+    <!-- 戻るボタン -->
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('menu.show') }}">メニュー</a></li>
-            <li class="breadcrumb-item active" aria-current="page">個別注文</li>
+            <li class="breadcrumb-item">
+                <a href="{{ route('menu.show') }}">
+                    <i class="fas fa-arrow-left"></i> 戻 る
+                </a>
+            </li>
         </ol>
     </nav>
 

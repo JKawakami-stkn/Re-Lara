@@ -4,13 +4,14 @@
 
 <div class="container" >
 
-    <!-- パンくずリスト -->
+    <!-- 戻るボタン -->
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('menu.show') }}">メニュー</a></li>
-            <li class="breadcrumb-item"><a href="{{ route('suppliers.show') }}">取引先</a></li>
-            <li class="breadcrumb-item"><a href="{{ route('supplier-menu', $supplier->id) }}">{{ $supplier->name}}</a></li>
-            <li class="breadcrumb-item active" aria-current="page">取引先編集</li>
+            <li class="breadcrumb-item">
+                <a href="{{ route('supplier-menu', [$supplier->id]) }}">
+                    <i class="fas fa-arrow-left"></i> 戻 る
+                </a>
+            </li>
         </ol>
     </nav>
 
