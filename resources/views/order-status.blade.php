@@ -40,12 +40,14 @@
         @endforeach
 
         <!-- <form action="" > -->
+        <!--
         <form action="{{ route('order-status.store', [$sale->id, $target]) }}" method="post">
             @csrf
             <div class="mt-5 mb-3">
                 <button type="submit" class="btn btn-primary btn-block" onclick="window.onbeforeunload=null">確　　定</button>
             </div>
         </form>
+        -->
 
     @else
         <p>カートに商品はありません</p>
