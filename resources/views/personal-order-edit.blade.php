@@ -21,8 +21,8 @@
         <div class="mt-3 mb-3">
             <div class="form-group">
                 <label for="group">組の名前</label>
-                <select id="group" class="form-control form-control" disabled>
-                    <option selected disabled="disabled">{{$kids_name}}</option>
+                <select id="kids" class="form-control form-control" name="kids_id" disabled>
+                    <option selected disabled="disabled">{{$kids_group}}</option>
                 </select>
             </div>
         </div>
@@ -35,8 +35,8 @@
                     <li style="color:#ff0000;"> {{ $message }} </li>
                  @endforeach
                 @endif 
-                <select id="kids" class="form-control form-control" name="kids_id" disabled>
-                    <option selected disabled="disabled">{{$kids_group}}</option>
+                <select id="group" class="form-control form-control" disabled>
+                    <option selected disabled="disabled">{{$kids_name}}</option>
                 </select>
             </div>
         </div>
