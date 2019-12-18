@@ -19,8 +19,8 @@ class PersonalPurchaseCheckController extends Controller
           }
         }
 
-        \Debugbar::info($personal_sku_data);
-        \Debugbar::info($personal_orders[0]->sku_id);
+        // \Debugbar::info($personal_sku_data);
+        // \Debugbar::info($personal_orders[0]->sku_id);
         return view('personal-purchase-check', ['personal_sale' => $personal_sale, 'personal_orders' => $personal_orders, "personal_sku_data" => $personal_sku_data]);
     }
 
