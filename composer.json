@@ -9,9 +9,13 @@
     "license": "MIT",
     "require": {
         "php": "^7.2",
+        "barryvdh/laravel-debugbar": "^3.2",
+        "doctrine/dbal": "^2.9",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.0",
-        "laravel/tinker": "^1.0"
+        "laravel/tinker": "^1.0",
+        "laravel/ui": "^1.0",
+        "cooperl/laravel-db2": "~5.8"
     },
     "require-dev": {
         "facade/ignition": "^1.4",
@@ -35,6 +39,7 @@
             "App\\": "app/"
         },
         "classmap": [
+            "app/models",
             "database/seeds",
             "database/factories"
         ]

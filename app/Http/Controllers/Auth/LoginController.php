@@ -25,7 +25,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/menu';
 
     /**
      * Create a new controller instance.
@@ -35,5 +35,18 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    /**
+     * Illuminate\Foundation\Auth\AuthenticatesUsers
+     * 
+     * Get the login username to be used by the controller.
+     *
+     * @return string
+     */
+    // ログインに利用するカラムを指定
+    public function username()
+    {
+        return 'staff_id';
     }
 }

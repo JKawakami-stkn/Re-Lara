@@ -1,0 +1,42 @@
+
+{
+  "short_name": "Re:LaSo",
+  "name": "Re:LaSo",
+  "icons": [
+    {
+        "src": "img/logo.png",
+        "type": "image/png",
+        "sizes": "48x48"
+    },
+    {
+        "src": "img/logo.png",
+        "type": "image/png",
+        "sizes": "96x96"
+    },
+    {
+        "src": "img/logo.png",
+        "type": "image/png",
+        "sizes": "144x144"
+    },
+    {
+        "src": "img/logo.png",
+        "type": "image/png",
+        "sizes": "192x192"
+    },
+    {
+        "src": "img/logo.png",
+        "type": "image/png",
+        "sizes": "512x512"
+    }
+  ],
+  "start_url": "/Re-Lara/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#fff",
+  "theme_color": "#d1d1d1",
+  "description": "PWA",
+  "dir": "ltr",
+  "lang": "ja-jp",
+  "related_applications": [ ],
+  "prefer_related_applications": false
+}
